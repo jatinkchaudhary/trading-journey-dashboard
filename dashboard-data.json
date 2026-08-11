@@ -1,0 +1,1649 @@
+﻿{
+    "generatedAt":  "2026-08-10T17.17.26-07:00",
+    "sourceThrough":  "2026-08-10",
+    "methodology":  "Average-cost reconstruction. Open positions use the latest transaction price available in the source export, not an official closing quote.",
+    "summary":  {
+                    "funding":  31500,
+                    "equity":  33655.69,
+                    "netGain":  2155.69,
+                    "returnPct":  6.84,
+                    "realized":  5200.81,
+                    "unrealized":  -3458.14,
+                    "cash":  -20756.21,
+                    "exposure":  54411.9,
+                    "leverage":  1.62,
+                    "winDays":  32,
+                    "lossDays":  12,
+                    "winRate":  72.7,
+                    "avgWinDay":  171.48,
+                    "avgLossDay":  -23.87,
+                    "maxEstimatedDrawdown":  -6873.4,
+                    "openPositions":  54,
+                    "symbolsTraded":  130,
+                    "tradeRows":  987,
+                    "turnover":  379661.9,
+                    "costs":  47.47,
+                    "top5Pct":  41.9,
+                    "top10Pct":  61
+                },
+    "series":  [
+                   {
+                       "date":  "2026-06-02",
+                       "equity":  400,
+                       "funding":  500,
+                       "netPnl":  -100,
+                       "dailyRealized":  0,
+                       "cumulativeRealized":  0
+                   },
+                   {
+                       "date":  "2026-06-03",
+                       "equity":  400.1,
+                       "funding":  500,
+                       "netPnl":  -99.9,
+                       "dailyRealized":  0.08,
+                       "cumulativeRealized":  0.08
+                   },
+                   {
+                       "date":  "2026-06-04",
+                       "equity":  401.67,
+                       "funding":  500,
+                       "netPnl":  -98.33,
+                       "dailyRealized":  1.86,
+                       "cumulativeRealized":  1.95
+                   },
+                   {
+                       "date":  "2026-06-05",
+                       "equity":  401.74,
+                       "funding":  500,
+                       "netPnl":  -98.26,
+                       "dailyRealized":  -0.33,
+                       "cumulativeRealized":  1.62
+                   },
+                   {
+                       "date":  "2026-06-08",
+                       "equity":  402.69,
+                       "funding":  500,
+                       "netPnl":  -97.31,
+                       "dailyRealized":  -0.06,
+                       "cumulativeRealized":  1.56
+                   },
+                   {
+                       "date":  "2026-06-09",
+                       "equity":  1398.05,
+                       "funding":  1500,
+                       "netPnl":  -101.95,
+                       "dailyRealized":  -1.23,
+                       "cumulativeRealized":  0.33
+                   },
+                   {
+                       "date":  "2026-06-10",
+                       "equity":  1401.51,
+                       "funding":  1500,
+                       "netPnl":  -98.49,
+                       "dailyRealized":  4.82,
+                       "cumulativeRealized":  5.15
+                   },
+                   {
+                       "date":  "2026-06-11",
+                       "equity":  1402.26,
+                       "funding":  1500,
+                       "netPnl":  -97.74,
+                       "dailyRealized":  11.83,
+                       "cumulativeRealized":  16.98
+                   },
+                   {
+                       "date":  "2026-06-12",
+                       "equity":  1381.23,
+                       "funding":  1500,
+                       "netPnl":  -118.77,
+                       "dailyRealized":  4.08,
+                       "cumulativeRealized":  21.06
+                   },
+                   {
+                       "date":  "2026-06-15",
+                       "equity":  2397.03,
+                       "funding":  2500,
+                       "netPnl":  -102.97,
+                       "dailyRealized":  20.71,
+                       "cumulativeRealized":  41.78
+                   },
+                   {
+                       "date":  "2026-06-16",
+                       "equity":  2447.37,
+                       "funding":  2500,
+                       "netPnl":  -52.63,
+                       "dailyRealized":  78.36,
+                       "cumulativeRealized":  120.14
+                   },
+                   {
+                       "date":  "2026-06-17",
+                       "equity":  2453.66,
+                       "funding":  2500,
+                       "netPnl":  -46.34,
+                       "dailyRealized":  6.01,
+                       "cumulativeRealized":  126.14
+                   },
+                   {
+                       "date":  "2026-06-18",
+                       "equity":  2506.31,
+                       "funding":  2500,
+                       "netPnl":  6.31,
+                       "dailyRealized":  52.39,
+                       "cumulativeRealized":  178.53
+                   },
+                   {
+                       "date":  "2026-06-22",
+                       "equity":  2483.46,
+                       "funding":  2500,
+                       "netPnl":  -16.54,
+                       "dailyRealized":  29.81,
+                       "cumulativeRealized":  208.34
+                   },
+                   {
+                       "date":  "2026-06-23",
+                       "equity":  4457.54,
+                       "funding":  4500,
+                       "netPnl":  -42.46,
+                       "dailyRealized":  0.1,
+                       "cumulativeRealized":  208.45
+                   },
+                   {
+                       "date":  "2026-06-24",
+                       "equity":  5277.73,
+                       "funding":  5500,
+                       "netPnl":  -222.27,
+                       "dailyRealized":  -2.67,
+                       "cumulativeRealized":  205.78
+                   },
+                   {
+                       "date":  "2026-06-25",
+                       "equity":  10037.1,
+                       "funding":  10500,
+                       "netPnl":  -462.9,
+                       "dailyRealized":  -11.86,
+                       "cumulativeRealized":  193.92
+                   },
+                   {
+                       "date":  "2026-06-26",
+                       "equity":  9863.91,
+                       "funding":  10500,
+                       "netPnl":  -636.09,
+                       "dailyRealized":  23.6,
+                       "cumulativeRealized":  217.52
+                   },
+                   {
+                       "date":  "2026-06-29",
+                       "equity":  25056.17,
+                       "funding":  25500,
+                       "netPnl":  -443.83,
+                       "dailyRealized":  164.54,
+                       "cumulativeRealized":  382.06
+                   },
+                   {
+                       "date":  "2026-06-30",
+                       "equity":  25966.84,
+                       "funding":  25500,
+                       "netPnl":  466.84,
+                       "dailyRealized":  501.32,
+                       "cumulativeRealized":  883.37
+                   },
+                   {
+                       "date":  "2026-07-01",
+                       "equity":  25718.56,
+                       "funding":  25500,
+                       "netPnl":  218.56,
+                       "dailyRealized":  -31.11,
+                       "cumulativeRealized":  852.26
+                   },
+                   {
+                       "date":  "2026-07-02",
+                       "equity":  24891.04,
+                       "funding":  25500,
+                       "netPnl":  -608.96,
+                       "dailyRealized":  24.3,
+                       "cumulativeRealized":  876.56
+                   },
+                   {
+                       "date":  "2026-07-06",
+                       "equity":  25128.59,
+                       "funding":  25500,
+                       "netPnl":  -371.41,
+                       "dailyRealized":  259.64,
+                       "cumulativeRealized":  1136.2
+                   },
+                   {
+                       "date":  "2026-07-07",
+                       "equity":  25041.87,
+                       "funding":  25500,
+                       "netPnl":  -458.13,
+                       "dailyRealized":  0,
+                       "cumulativeRealized":  1136.2
+                   },
+                   {
+                       "date":  "2026-07-08",
+                       "equity":  24489.85,
+                       "funding":  25500,
+                       "netPnl":  -1010.15,
+                       "dailyRealized":  0,
+                       "cumulativeRealized":  1136.2
+                   },
+                   {
+                       "date":  "2026-07-09",
+                       "equity":  26251.69,
+                       "funding":  25500,
+                       "netPnl":  751.69,
+                       "dailyRealized":  828.74,
+                       "cumulativeRealized":  1964.94
+                   },
+                   {
+                       "date":  "2026-07-10",
+                       "equity":  26724,
+                       "funding":  25500,
+                       "netPnl":  1224,
+                       "dailyRealized":  229,
+                       "cumulativeRealized":  2193.94
+                   },
+                   {
+                       "date":  "2026-07-13",
+                       "equity":  26061.39,
+                       "funding":  25500,
+                       "netPnl":  561.39,
+                       "dailyRealized":  -24.78,
+                       "cumulativeRealized":  2169.16
+                   },
+                   {
+                       "date":  "2026-07-14",
+                       "equity":  26296.77,
+                       "funding":  25500,
+                       "netPnl":  796.77,
+                       "dailyRealized":  496.57,
+                       "cumulativeRealized":  2665.73
+                   },
+                   {
+                       "date":  "2026-07-15",
+                       "equity":  32155.52,
+                       "funding":  31500,
+                       "netPnl":  655.52,
+                       "dailyRealized":  97.88,
+                       "cumulativeRealized":  2763.61
+                   },
+                   {
+                       "date":  "2026-07-16",
+                       "equity":  30161.66,
+                       "funding":  31500,
+                       "netPnl":  -1338.34,
+                       "dailyRealized":  0.15,
+                       "cumulativeRealized":  2763.75
+                   },
+                   {
+                       "date":  "2026-07-17",
+                       "equity":  29983.22,
+                       "funding":  31500,
+                       "netPnl":  -1516.78,
+                       "dailyRealized":  -3.46,
+                       "cumulativeRealized":  2760.29
+                   },
+                   {
+                       "date":  "2026-07-20",
+                       "equity":  29866.57,
+                       "funding":  31500,
+                       "netPnl":  -1633.43,
+                       "dailyRealized":  0,
+                       "cumulativeRealized":  2760.29
+                   },
+                   {
+                       "date":  "2026-07-21",
+                       "equity":  32203.75,
+                       "funding":  31500,
+                       "netPnl":  703.75,
+                       "dailyRealized":  298.58,
+                       "cumulativeRealized":  3058.87
+                   },
+                   {
+                       "date":  "2026-07-22",
+                       "equity":  32868.87,
+                       "funding":  31500,
+                       "netPnl":  1368.87,
+                       "dailyRealized":  265.57,
+                       "cumulativeRealized":  3324.44
+                   },
+                   {
+                       "date":  "2026-07-23",
+                       "equity":  33001.93,
+                       "funding":  31500,
+                       "netPnl":  1501.93,
+                       "dailyRealized":  135.08,
+                       "cumulativeRealized":  3459.52
+                   },
+                   {
+                       "date":  "2026-07-24",
+                       "equity":  30833.61,
+                       "funding":  31500,
+                       "netPnl":  -666.39,
+                       "dailyRealized":  6.26,
+                       "cumulativeRealized":  3465.77
+                   },
+                   {
+                       "date":  "2026-07-27",
+                       "equity":  28903.34,
+                       "funding":  31500,
+                       "netPnl":  -2596.66,
+                       "dailyRealized":  -56.06,
+                       "cumulativeRealized":  3409.71
+                   },
+                   {
+                       "date":  "2026-07-28",
+                       "equity":  28614.14,
+                       "funding":  31500,
+                       "netPnl":  -2885.86,
+                       "dailyRealized":  -64.86,
+                       "cumulativeRealized":  3344.85
+                   },
+                   {
+                       "date":  "2026-07-29",
+                       "equity":  27669.84,
+                       "funding":  31500,
+                       "netPnl":  -3830.16,
+                       "dailyRealized":  -25.94,
+                       "cumulativeRealized":  3318.9
+                   },
+                   {
+                       "date":  "2026-07-30",
+                       "equity":  26128.53,
+                       "funding":  31500,
+                       "netPnl":  -5371.47,
+                       "dailyRealized":  168.76,
+                       "cumulativeRealized":  3487.66
+                   },
+                   {
+                       "date":  "2026-07-31",
+                       "equity":  28675.6,
+                       "funding":  31500,
+                       "netPnl":  -2824.4,
+                       "dailyRealized":  -64.03,
+                       "cumulativeRealized":  3423.63
+                   },
+                   {
+                       "date":  "2026-08-03",
+                       "equity":  30145.55,
+                       "funding":  31500,
+                       "netPnl":  -1354.45,
+                       "dailyRealized":  109,
+                       "cumulativeRealized":  3532.64
+                   },
+                   {
+                       "date":  "2026-08-04",
+                       "equity":  35123.56,
+                       "funding":  31500,
+                       "netPnl":  3623.56,
+                       "dailyRealized":  1015.01,
+                       "cumulativeRealized":  4547.64
+                   },
+                   {
+                       "date":  "2026-08-05",
+                       "equity":  34419.84,
+                       "funding":  31500,
+                       "netPnl":  2919.84,
+                       "dailyRealized":  218.84,
+                       "cumulativeRealized":  4766.48
+                   },
+                   {
+                       "date":  "2026-08-06",
+                       "equity":  33910.28,
+                       "funding":  31500,
+                       "netPnl":  2410.28,
+                       "dailyRealized":  38.8,
+                       "cumulativeRealized":  4805.29
+                   },
+                   {
+                       "date":  "2026-08-07",
+                       "equity":  32717.23,
+                       "funding":  31500,
+                       "netPnl":  1217.23,
+                       "dailyRealized":  217.97,
+                       "cumulativeRealized":  5023.26
+                   },
+                   {
+                       "date":  "2026-08-10",
+                       "equity":  33655.69,
+                       "funding":  31500,
+                       "netPnl":  2155.69,
+                       "dailyRealized":  177.55,
+                       "cumulativeRealized":  5200.81
+                   }
+               ],
+    "monthly":  [
+                    {
+                        "month":  "2026-06",
+                        "realized":  883.37
+                    },
+                    {
+                        "month":  "2026-07",
+                        "realized":  2540.26
+                    },
+                    {
+                        "month":  "2026-08",
+                        "realized":  1777.17
+                    }
+                ],
+    "symbols":  [
+                    {
+                        "symbol":  "TRU",
+                        "realized":  -5,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "BAH",
+                        "realized":  -11.46,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "NFLX",
+                        "realized":  -5.7,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "NOW",
+                        "realized":  21.32,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "ALLE",
+                        "realized":  -0.5,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MMM",
+                        "realized":  4.22,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "AUR",
+                        "realized":  -30.4,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MUU",
+                        "realized":  96.78,
+                        "closingEvents":  5
+                    },
+                    {
+                        "symbol":  "TCX",
+                        "realized":  10.1,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "GOOGL",
+                        "realized":  45.91,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "SYM",
+                        "realized":  -10.8,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "SNXX",
+                        "realized":  165.5,
+                        "closingEvents":  7
+                    },
+                    {
+                        "symbol":  "FCUV",
+                        "realized":  -1.2,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "YYAI",
+                        "realized":  -27.2,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "VOD",
+                        "realized":  4.2,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "GOOG",
+                        "realized":  39.42,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "TRV",
+                        "realized":  -3.46,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "GS",
+                        "realized":  30.06,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "JPM",
+                        "realized":  0.44,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "SKHY",
+                        "realized":  -1.97,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "AEHR",
+                        "realized":  10.04,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "DELL",
+                        "realized":  195.23,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "VICR",
+                        "realized":  -5.92,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "CHTR",
+                        "realized":  11.28,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "LITE",
+                        "realized":  306.08,
+                        "closingEvents":  6
+                    },
+                    {
+                        "symbol":  "ONDS",
+                        "realized":  -4,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "IREN",
+                        "realized":  4.74,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "USAR",
+                        "realized":  1.25,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "CLRO",
+                        "realized":  -27.3,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "U",
+                        "realized":  10.08,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MRAM",
+                        "realized":  6.65,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "DT",
+                        "realized":  -17.18,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "LITX",
+                        "realized":  24.15,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "MP",
+                        "realized":  -3.96,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "STXX",
+                        "realized":  29,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "CPNG",
+                        "realized":  -5.7,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "WDCX",
+                        "realized":  15.39,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "FSLR",
+                        "realized":  -15.88,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "APP",
+                        "realized":  4.33,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "DSY",
+                        "realized":  -14.2,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "SHOP",
+                        "realized":  0.64,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "AAOI",
+                        "realized":  308.35,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "PAY",
+                        "realized":  3.63,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "AMIX",
+                        "realized":  30.3,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "UPC",
+                        "realized":  -95.35,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "CNH",
+                        "realized":  -2.1,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "APLD",
+                        "realized":  89.4,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "W",
+                        "realized":  -5,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "AMZN",
+                        "realized":  6.78,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MTRN",
+                        "realized":  13.53,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "DRAM",
+                        "realized":  25.2,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "COHR",
+                        "realized":  38.43,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "KTOS",
+                        "realized":  34.18,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "INLF",
+                        "realized":  -53.85,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "AMKR",
+                        "realized":  5.38,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "UEC",
+                        "realized":  3.2,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "LEU",
+                        "realized":  0.51,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "SMCI",
+                        "realized":  4.22,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "SPCX",
+                        "realized":  -8.44,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "QBTS",
+                        "realized":  -3.16,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "CBRS",
+                        "realized":  85.96,
+                        "closingEvents":  9
+                    },
+                    {
+                        "symbol":  "MU",
+                        "realized":  503.01,
+                        "closingEvents":  35
+                    },
+                    {
+                        "symbol":  "SSRM",
+                        "realized":  -3.73,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "CRWV",
+                        "realized":  75.7,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "AMAT",
+                        "realized":  58.08,
+                        "closingEvents":  5
+                    },
+                    {
+                        "symbol":  "INTC",
+                        "realized":  9.72,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "QURE",
+                        "realized":  0.04,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "WDC",
+                        "realized":  69.21,
+                        "closingEvents":  17
+                    },
+                    {
+                        "symbol":  "FAF",
+                        "realized":  0.1,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "INFQ",
+                        "realized":  -1.33,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "NBIS",
+                        "realized":  511.15,
+                        "closingEvents":  13
+                    },
+                    {
+                        "symbol":  "AAPL",
+                        "realized":  22.94,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "NVDA",
+                        "realized":  13.64,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "RDDT",
+                        "realized":  6.21,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "BX",
+                        "realized":  0.17,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "C",
+                        "realized":  2.12,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "STX",
+                        "realized":  374.15,
+                        "closingEvents":  10
+                    },
+                    {
+                        "symbol":  "WOLF",
+                        "realized":  -3.88,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "CASY",
+                        "realized":  16.47,
+                        "closingEvents":  5
+                    },
+                    {
+                        "symbol":  "RDW",
+                        "realized":  74.98,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "PL",
+                        "realized":  0.6,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MRVL",
+                        "realized":  227.12,
+                        "closingEvents":  5
+                    },
+                    {
+                        "symbol":  "AMD",
+                        "realized":  206.95,
+                        "closingEvents":  6
+                    },
+                    {
+                        "symbol":  "NKE",
+                        "realized":  5.9,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "VSAT",
+                        "realized":  24.49,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "BIO",
+                        "realized":  -10.88,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "ALAB",
+                        "realized":  -5.18,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "PLTR",
+                        "realized":  24.78,
+                        "closingEvents":  3
+                    },
+                    {
+                        "symbol":  "CRDO",
+                        "realized":  13.46,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "QCOM",
+                        "realized":  -17.18,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "META",
+                        "realized":  198.45,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "GIS",
+                        "realized":  -4.2,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "WMT",
+                        "realized":  8.38,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "PEP",
+                        "realized":  5.18,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "IRDM",
+                        "realized":  2.57,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "AYI",
+                        "realized":  -7.28,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "NVCT",
+                        "realized":  8.86,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "CMCSA",
+                        "realized":  -17.74,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "APGE",
+                        "realized":  0.1,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "RUN",
+                        "realized":  -8.7,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "SNDK",
+                        "realized":  1051.64,
+                        "closingEvents":  50
+                    },
+                    {
+                        "symbol":  "BB",
+                        "realized":  28.25,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "DNN",
+                        "realized":  -0.08,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "RKLB",
+                        "realized":  352.77,
+                        "closingEvents":  10
+                    },
+                    {
+                        "symbol":  "XE",
+                        "realized":  -0.6,
+                        "closingEvents":  1
+                    },
+                    {
+                        "symbol":  "MSFT",
+                        "realized":  4.79,
+                        "closingEvents":  4
+                    },
+                    {
+                        "symbol":  "ASTS",
+                        "realized":  3.66,
+                        "closingEvents":  2
+                    },
+                    {
+                        "symbol":  "TSLA",
+                        "realized":  49.78,
+                        "closingEvents":  5
+                    }
+                ],
+    "positions":  [
+                      {
+                          "symbol":  "MRVL",
+                          "quantity":  10,
+                          "avgCost":  211.78,
+                          "mark":  215,
+                          "marketValue":  2150,
+                          "unrealized":  32.19,
+                          "returnPct":  1.52
+                      },
+                      {
+                          "symbol":  "HOOD",
+                          "quantity":  10,
+                          "avgCost":  101.97,
+                          "mark":  93,
+                          "marketValue":  930,
+                          "unrealized":  -89.68,
+                          "returnPct":  -8.79
+                      },
+                      {
+                          "symbol":  "MUU",
+                          "quantity":  10,
+                          "avgCost":  26.88,
+                          "mark":  26.69,
+                          "marketValue":  266.9,
+                          "unrealized":  -1.92,
+                          "returnPct":  -0.72
+                      },
+                      {
+                          "symbol":  "SMCI",
+                          "quantity":  2,
+                          "avgCost":  33.16,
+                          "mark":  33.16,
+                          "marketValue":  66.32,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "WDC",
+                          "quantity":  3,
+                          "avgCost":  485.27,
+                          "mark":  433.34,
+                          "marketValue":  1300.02,
+                          "unrealized":  -155.78,
+                          "returnPct":  -10.7
+                      },
+                      {
+                          "symbol":  "ABCL",
+                          "quantity":  11,
+                          "avgCost":  9.24,
+                          "mark":  9.24,
+                          "marketValue":  101.64,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "INTC",
+                          "quantity":  31.004642,
+                          "avgCost":  108.31,
+                          "mark":  101.38,
+                          "marketValue":  3143.25,
+                          "unrealized":  -214.8,
+                          "returnPct":  -6.4
+                      },
+                      {
+                          "symbol":  "ABNB",
+                          "quantity":  1.5,
+                          "avgCost":  174.5,
+                          "mark":  174.5,
+                          "marketValue":  261.75,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "NOW",
+                          "quantity":  1,
+                          "avgCost":  119.43,
+                          "mark":  119.43,
+                          "marketValue":  119.43,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "BP",
+                          "quantity":  10,
+                          "avgCost":  42.57,
+                          "mark":  42.57,
+                          "marketValue":  425.7,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "KO",
+                          "quantity":  5,
+                          "avgCost":  87.29,
+                          "mark":  87.29,
+                          "marketValue":  436.45,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "STX",
+                          "quantity":  2,
+                          "avgCost":  827.18,
+                          "mark":  784.5,
+                          "marketValue":  1569,
+                          "unrealized":  -85.35,
+                          "returnPct":  -5.16
+                      },
+                      {
+                          "symbol":  "AEHR",
+                          "quantity":  3,
+                          "avgCost":  108.99,
+                          "mark":  108.99,
+                          "marketValue":  326.97,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "DELL",
+                          "quantity":  1,
+                          "avgCost":  448.86,
+                          "mark":  448.86,
+                          "marketValue":  448.86,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "MSFT",
+                          "quantity":  2,
+                          "avgCost":  484.7,
+                          "mark":  495.51,
+                          "marketValue":  991.02,
+                          "unrealized":  21.62,
+                          "returnPct":  2.23
+                      },
+                      {
+                          "symbol":  "ASTS",
+                          "quantity":  3,
+                          "avgCost":  70.34,
+                          "mark":  70.34,
+                          "marketValue":  211.02,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "NET",
+                          "quantity":  1,
+                          "avgCost":  335.5,
+                          "mark":  335.5,
+                          "marketValue":  335.5,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "IREN",
+                          "quantity":  50,
+                          "avgCost":  41.23,
+                          "mark":  38.4,
+                          "marketValue":  1920,
+                          "unrealized":  -141.61,
+                          "returnPct":  -6.87
+                      },
+                      {
+                          "symbol":  "DLR",
+                          "quantity":  3,
+                          "avgCost":  198.07,
+                          "mark":  186.81,
+                          "marketValue":  560.43,
+                          "unrealized":  -33.78,
+                          "returnPct":  -5.68
+                      },
+                      {
+                          "symbol":  "CVX",
+                          "quantity":  2,
+                          "avgCost":  191.44,
+                          "mark":  191.44,
+                          "marketValue":  382.88,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "MP",
+                          "quantity":  5,
+                          "avgCost":  51.73,
+                          "mark":  51.73,
+                          "marketValue":  258.65,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "META",
+                          "quantity":  6,
+                          "avgCost":  618.93,
+                          "mark":  596.77,
+                          "marketValue":  3580.62,
+                          "unrealized":  -132.94,
+                          "returnPct":  -3.58
+                      },
+                      {
+                          "symbol":  "WDCX",
+                          "quantity":  5,
+                          "avgCost":  16.79,
+                          "mark":  17.53,
+                          "marketValue":  87.65,
+                          "unrealized":  3.7,
+                          "returnPct":  4.41
+                      },
+                      {
+                          "symbol":  "KLAC",
+                          "quantity":  5,
+                          "avgCost":  208.79,
+                          "mark":  184.08,
+                          "marketValue":  920.4,
+                          "unrealized":  -123.54,
+                          "returnPct":  -11.83
+                      },
+                      {
+                          "symbol":  "ALAB",
+                          "quantity":  20,
+                          "avgCost":  353.37,
+                          "mark":  314,
+                          "marketValue":  6280,
+                          "unrealized":  -787.38,
+                          "returnPct":  -11.14
+                      },
+                      {
+                          "symbol":  "ARM",
+                          "quantity":  5,
+                          "avgCost":  291.48,
+                          "mark":  261.28,
+                          "marketValue":  1306.4,
+                          "unrealized":  -150.98,
+                          "returnPct":  -10.36
+                      },
+                      {
+                          "symbol":  "BE",
+                          "quantity":  22,
+                          "avgCost":  249.91,
+                          "mark":  229.69,
+                          "marketValue":  5053.18,
+                          "unrealized":  -444.78,
+                          "returnPct":  -8.09
+                      },
+                      {
+                          "symbol":  "TSM",
+                          "quantity":  1,
+                          "avgCost":  420.24,
+                          "mark":  420.24,
+                          "marketValue":  420.24,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "SNXX",
+                          "quantity":  132,
+                          "avgCost":  11.36,
+                          "mark":  9.12,
+                          "marketValue":  1203.84,
+                          "unrealized":  -296,
+                          "returnPct":  -19.74
+                      },
+                      {
+                          "symbol":  "USAR",
+                          "quantity":  5,
+                          "avgCost":  18.28,
+                          "mark":  18.28,
+                          "marketValue":  91.4,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "COHR",
+                          "quantity":  1,
+                          "avgCost":  336.66,
+                          "mark":  336.66,
+                          "marketValue":  336.66,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "APLD",
+                          "quantity":  60,
+                          "avgCost":  29.62,
+                          "mark":  28.89,
+                          "marketValue":  1733.4,
+                          "unrealized":  -43.6,
+                          "returnPct":  -2.45
+                      },
+                      {
+                          "symbol":  "NVDA",
+                          "quantity":  6,
+                          "avgCost":  211.44,
+                          "mark":  221.6,
+                          "marketValue":  1329.6,
+                          "unrealized":  60.98,
+                          "returnPct":  4.81
+                      },
+                      {
+                          "symbol":  "NKE",
+                          "quantity":  5,
+                          "avgCost":  41.92,
+                          "mark":  41.92,
+                          "marketValue":  209.6,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "CRWV",
+                          "quantity":  11,
+                          "avgCost":  86.84,
+                          "mark":  88.73,
+                          "marketValue":  976.03,
+                          "unrealized":  20.81,
+                          "returnPct":  2.18
+                      },
+                      {
+                          "symbol":  "WULF",
+                          "quantity":  11,
+                          "avgCost":  20.08,
+                          "mark":  16.23,
+                          "marketValue":  178.53,
+                          "unrealized":  -42.4,
+                          "returnPct":  -19.19
+                      },
+                      {
+                          "symbol":  "BB",
+                          "quantity":  60,
+                          "avgCost":  12.37,
+                          "mark":  13.2,
+                          "marketValue":  792,
+                          "unrealized":  49.7,
+                          "returnPct":  6.7
+                      },
+                      {
+                          "symbol":  "AMIX",
+                          "quantity":  50,
+                          "avgCost":  16.2,
+                          "mark":  12.85,
+                          "marketValue":  642.5,
+                          "unrealized":  -167.54,
+                          "returnPct":  -20.68
+                      },
+                      {
+                          "symbol":  "GOOGL",
+                          "quantity":  3,
+                          "avgCost":  357.3,
+                          "mark":  357.3,
+                          "marketValue":  1071.9,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "INFQ",
+                          "quantity":  10,
+                          "avgCost":  12.78,
+                          "mark":  9.54,
+                          "marketValue":  95.4,
+                          "unrealized":  -32.35,
+                          "returnPct":  -25.32
+                      },
+                      {
+                          "symbol":  "NAMI",
+                          "quantity":  50,
+                          "avgCost":  7.75,
+                          "mark":  5.94,
+                          "marketValue":  297,
+                          "unrealized":  -90.6,
+                          "returnPct":  -23.37
+                      },
+                      {
+                          "symbol":  "RGTI",
+                          "quantity":  35,
+                          "avgCost":  17.92,
+                          "mark":  17.54,
+                          "marketValue":  613.9,
+                          "unrealized":  -13.3,
+                          "returnPct":  -2.12
+                      },
+                      {
+                          "symbol":  "SNAP",
+                          "quantity":  50,
+                          "avgCost":  5.79,
+                          "mark":  5.79,
+                          "marketValue":  289.5,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "SOFI",
+                          "quantity":  11,
+                          "avgCost":  18.19,
+                          "mark":  18.19,
+                          "marketValue":  200.09,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "AMD",
+                          "quantity":  10,
+                          "avgCost":  497.76,
+                          "mark":  476.43,
+                          "marketValue":  4764.3,
+                          "unrealized":  -213.28,
+                          "returnPct":  -4.28
+                      },
+                      {
+                          "symbol":  "RBRK",
+                          "quantity":  4,
+                          "avgCost":  98.77,
+                          "mark":  98.77,
+                          "marketValue":  395.08,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "MRAM",
+                          "quantity":  5,
+                          "avgCost":  18.28,
+                          "mark":  18.28,
+                          "marketValue":  91.4,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "PLTR",
+                          "quantity":  2,
+                          "avgCost":  178.06,
+                          "mark":  178.06,
+                          "marketValue":  356.12,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "NBIS",
+                          "quantity":  16,
+                          "avgCost":  208.47,
+                          "mark":  187.14,
+                          "marketValue":  2994.24,
+                          "unrealized":  -341.21,
+                          "returnPct":  -10.23
+                      },
+                      {
+                          "symbol":  "RUN",
+                          "quantity":  30,
+                          "avgCost":  11.15,
+                          "mark":  10.18,
+                          "marketValue":  305.4,
+                          "unrealized":  -29.1,
+                          "returnPct":  -8.7
+                      },
+                      {
+                          "symbol":  "XOM",
+                          "quantity":  3,
+                          "avgCost":  157.55,
+                          "mark":  157.55,
+                          "marketValue":  472.65,
+                          "unrealized":  0,
+                          "returnPct":  0
+                      },
+                      {
+                          "symbol":  "NOK",
+                          "quantity":  6,
+                          "avgCost":  9.98,
+                          "mark":  8.48,
+                          "marketValue":  50.88,
+                          "unrealized":  -9,
+                          "returnPct":  -15.03
+                      },
+                      {
+                          "symbol":  "AAOI",
+                          "quantity":  5,
+                          "avgCost":  140.74,
+                          "mark":  133.56,
+                          "marketValue":  667.8,
+                          "unrealized":  -35.88,
+                          "returnPct":  -5.1
+                      },
+                      {
+                          "symbol":  "RDW",
+                          "quantity":  30,
+                          "avgCost":  12.29,
+                          "mark":  13.28,
+                          "marketValue":  398.4,
+                          "unrealized":  29.65,
+                          "returnPct":  8.04
+                      }
+                  ],
+    "activity":  [
+                     {
+                         "date":  "2026-06-25",
+                         "trades":  19
+                     },
+                     {
+                         "date":  "2026-06-26",
+                         "trades":  19
+                     },
+                     {
+                         "date":  "2026-06-24",
+                         "trades":  10
+                     },
+                     {
+                         "date":  "2026-06-22",
+                         "trades":  17
+                     },
+                     {
+                         "date":  "2026-06-23",
+                         "trades":  5
+                     },
+                     {
+                         "date":  "2026-06-29",
+                         "trades":  31
+                     },
+                     {
+                         "date":  "2026-07-06",
+                         "trades":  34
+                     },
+                     {
+                         "date":  "2026-07-07",
+                         "trades":  2
+                     },
+                     {
+                         "date":  "2026-07-02",
+                         "trades":  33
+                     },
+                     {
+                         "date":  "2026-06-30",
+                         "trades":  36
+                     },
+                     {
+                         "date":  "2026-07-01",
+                         "trades":  39
+                     },
+                     {
+                         "date":  "2026-06-18",
+                         "trades":  19
+                     },
+                     {
+                         "date":  "2026-06-08",
+                         "trades":  5
+                     },
+                     {
+                         "date":  "2026-06-09",
+                         "trades":  3
+                     },
+                     {
+                         "date":  "2026-06-05",
+                         "trades":  6
+                     },
+                     {
+                         "date":  "2026-06-03",
+                         "trades":  4
+                     },
+                     {
+                         "date":  "2026-06-04",
+                         "trades":  4
+                     },
+                     {
+                         "date":  "2026-06-10",
+                         "trades":  12
+                     },
+                     {
+                         "date":  "2026-06-16",
+                         "trades":  26
+                     },
+                     {
+                         "date":  "2026-06-17",
+                         "trades":  5
+                     },
+                     {
+                         "date":  "2026-06-15",
+                         "trades":  19
+                     },
+                     {
+                         "date":  "2026-06-11",
+                         "trades":  10
+                     },
+                     {
+                         "date":  "2026-06-12",
+                         "trades":  10
+                     },
+                     {
+                         "date":  "2026-07-08",
+                         "trades":  3
+                     },
+                     {
+                         "date":  "2026-07-30",
+                         "trades":  31
+                     },
+                     {
+                         "date":  "2026-07-31",
+                         "trades":  37
+                     },
+                     {
+                         "date":  "2026-07-29",
+                         "trades":  14
+                     },
+                     {
+                         "date":  "2026-07-27",
+                         "trades":  30
+                     },
+                     {
+                         "date":  "2026-07-28",
+                         "trades":  9
+                     },
+                     {
+                         "date":  "2026-08-03",
+                         "trades":  49
+                     },
+                     {
+                         "date":  "2026-08-07",
+                         "trades":  30
+                     },
+                     {
+                         "date":  "2026-08-10",
+                         "trades":  30
+                     },
+                     {
+                         "date":  "2026-08-06",
+                         "trades":  45
+                     },
+                     {
+                         "date":  "2026-08-04",
+                         "trades":  56
+                     },
+                     {
+                         "date":  "2026-08-05",
+                         "trades":  45
+                     },
+                     {
+                         "date":  "2026-07-24",
+                         "trades":  24
+                     },
+                     {
+                         "date":  "2026-07-14",
+                         "trades":  35
+                     },
+                     {
+                         "date":  "2026-07-15",
+                         "trades":  29
+                     },
+                     {
+                         "date":  "2026-07-13",
+                         "trades":  17
+                     },
+                     {
+                         "date":  "2026-07-09",
+                         "trades":  20
+                     },
+                     {
+                         "date":  "2026-07-10",
+                         "trades":  17
+                     },
+                     {
+                         "date":  "2026-07-16",
+                         "trades":  9
+                     },
+                     {
+                         "date":  "2026-07-22",
+                         "trades":  28
+                     },
+                     {
+                         "date":  "2026-07-23",
+                         "trades":  27
+                     },
+                     {
+                         "date":  "2026-07-21",
+                         "trades":  24
+                     },
+                     {
+                         "date":  "2026-07-17",
+                         "trades":  4
+                     },
+                     {
+                         "date":  "2026-07-20",
+                         "trades":  6
+                     }
+                 ]
+}

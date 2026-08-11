@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive visual dashboard for a personal trading journey.">
+  <title>Trading Journey — Visual Performance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Trading Journey home"><span class="brand-mark">TJ</span><span>TRADING JOURNEY</span></a>
+    <nav aria-label="Dashboard sections">
+      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a>
+    </nav>
+    <div class="live-pill"><i></i><span id="asOf">Loading…</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero reveal">
+      <div>
+        <p class="eyebrow">YOUR MONEY, IN MOTION</p>
+        <h1>See the signal.<br><span>Control the risk.</span></h1>
+        <p class="hero-copy">A visual pulse of the journey—built to scan fast, explore deeply, and turn patterns into better decisions.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div>
+        <div class="score-disc"><small>NET RETURN</small><strong id="heroReturn">—</strong><span id="heroGain">—</span></div>
+      </div>
+    </section>
+
+    <section class="pulse-grid reveal" aria-label="Key performance indicators">
+      <article class="metric featured"><div><span>ESTIMATED EQUITY</span><button class="info" data-tip="Cash plus open positions valued at their latest transaction price.">?</button></div><strong id="equity">—</strong><small id="fundingNote">—</small><canvas id="sparkEquity" height="42"></canvas></article>
+      <article class="metric"><div><span>REALIZED P&amp;L</span></div><strong class="positive" id="realized">—</strong><small>Closed-trade result</small><div class="mini-meter"><i id="realizedMeter"></i></div></article>
+      <article class="metric"><div><span>OPEN P&amp;L</span></div><strong id="unrealized">—</strong><small id="giveback">—</small><div class="mini-meter danger"><i id="openMeter"></i></div></article>
+      <article class="metric"><div><span>GREEN DAYS</span></div><strong id="winRate">—</strong><small id="dayRecord">—</small><div class="dot-row" id="dayDots"></div></article>
+    </section>
+
+    <section class="focus-strip reveal" id="focusStrip">
+      <div class="focus-icon">!</div><div><span>FOCUS NOW</span><strong id="focusHeadline">Loading your strongest improvement signal…</strong></div><p id="focusDetail"></p>
+    </section>
+
+    <section id="performance" class="section reveal">
+      <div class="section-head"><div><p class="eyebrow">01 / PERFORMANCE</p><h2>The journey, not just the destination.</h2></div><div class="range-control" role="group" aria-label="Chart range"><button data-range="14">2W</button><button data-range="30">1M</button><button class="active" data-range="all">ALL</button></div></div>
+      <div class="chart-grid">
+        <article class="panel wide"><div class="panel-head"><div><h3>Equity vs. money added</h3><p>Gap shows estimated economic gain</p></div><div class="legend"><span class="cyan">Equity</span><span class="muted">Funding</span></div></div><div class="chart-wrap tall"><canvas id="equityChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Profit composition</h3><p>Closed gains vs. open drag</p></div></div><div class="composition"><div class="donut-wrap"><canvas id="compositionChart"></canvas><div class="donut-center"><small>NET</small><strong id="donutNet">—</strong></div></div><div class="split-stats"><div><i class="good"></i><span>Realized</span><strong id="splitRealized">—</strong></div><div><i class="bad"></i><span>Open</span><strong id="splitOpen">—</strong></div></div></div></article>
+        <article class="panel wide"><div class="panel-head"><div><h3>Daily realized P&amp;L</h3><p>Hover to inspect each active day</p></div><strong class="micro-stat" id="avgDay">—</strong></div><div class="chart-wrap"><canvas id="dailyChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Monthly momentum</h3><p>Realized result by month</p></div></div><div class="chart-wrap"><canvas id="monthlyChart"></canvas></div></article>
+      </div>
+    </section>
+
+    <section id="risk" class="section reveal">
+      <div class="section-head"><div><p class="eyebrow">02 / RISK RADAR</p><h2>Where attention pays.</h2></div></div>
+      <div class="risk-grid">
+        <article class="risk-card"><span>EXPOSURE</span><div class="ring" id="leverageRing"><strong id="leverage">—</strong><small>of equity</small></div><p id="exposureText">—</p></article>
+        <article class="risk-card"><span>CONCENTRATION</span><div class="ring orange" id="concentrationRing"><strong id="top5">—</strong><small>top 5</small></div><p id="concentrationText">—</p></article>
+        <article class="risk-card"><span>OPEN POSITIONS</span><div class="ring purple" id="positionsRing"><strong id="positionCount">—</strong><small>holdings</small></div><p>More positions can dilute attention without reducing correlated risk.</p></article>
+        <article class="risk-card alert"><span>UNREALIZED GIVEBACK</span><div class="big-risk" id="givebackPct">—</div><p>Share of realized stock profit currently offset by open losses.</p></article>
+      </div>
+      <div class="chart-grid risk-charts">
+        <article class="panel"><div class="panel-head"><div><h3>Winner / loser map</h3><p>Realized result by symbol</p></div></div><div class="chart-wrap tall"><canvas id="symbolChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Position risk map</h3><p>Size × return; bubble = dollars exposed</p></div></div><div class="chart-wrap tall"><canvas id="riskMap"></canvas></div></article>
+      </div>
+    </section>
+
+    <section id="positions" class="section reveal">
+      <div class="section-head"><div><p class="eyebrow">03 / OPEN BOOK</p><h2>Every position, sortable.</h2></div><div class="search"><span>⌕</span><input id="positionSearch" type="search" placeholder="Find a symbol…" aria-label="Find a symbol"></div></div>
+      <div class="position-layout">
+        <article class="panel allocation-panel"><div class="panel-head"><div><h3>Exposure allocation</h3><p>Largest positions and the long tail</p></div></div><div class="chart-wrap tall"><canvas id="allocationChart"></canvas></div></article>
+        <article class="table-shell"><table><thead><tr><th data-sort="symbol">Symbol</th><th data-sort="marketValue">Exposure</th><th data-sort="unrealized">Open P&amp;L</th><th data-sort="returnPct">Return</th><th data-sort="avgCost">Avg / Mark</th></tr></thead><tbody id="positionRows"></tbody></table><button id="showAll" class="show-all">Show all positions</button></article>
+      </div>
+    </section>
+
+    <section class="action-section reveal">
+      <p class="eyebrow">NEXT BEST MOVES</p><h2>Three rules worth testing.</h2>
+      <div class="action-grid">
+        <article><b>01</b><div><strong>Close the loop</strong><p>Set an exit before entry. Compare every open loss with the original invalidation point.</p></div></article>
+        <article><b>02</b><div><strong>Cap the heat</strong><p>Test a gross-exposure ceiling and a maximum allocation per correlated theme.</p></div></article>
+        <article><b>03</b><div><strong>Track total equity</strong><p>Grade decisions on realized plus unrealized results—not win rate alone.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div><span class="brand-mark">TJ</span><strong>Trading Journey</strong></div><p id="methodology">Loading methodology…</p><button id="downloadSnapshot">Download advisor snapshot</button></footer>
+  <div id="tooltip" class="custom-tip" role="tooltip"></div>
+</body>
+</html>
