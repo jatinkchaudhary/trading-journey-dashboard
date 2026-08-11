@@ -17,7 +17,7 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Trading Journey home"><span class="brand-mark">TJ</span><span>TRADING JOURNEY</span></a>
     <nav aria-label="Dashboard sections">
-      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a>
+      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a>
     </nav>
     <div class="live-pill"><i></i><span id="asOf">Loading…</span></div>
   </header>
@@ -47,7 +47,7 @@
     </section>
 
     <section id="performance" class="section reveal">
-      <div class="section-head"><div><p class="eyebrow">01 / PERFORMANCE</p><h2>The journey, not just the destination.</h2></div><div class="range-control" role="group" aria-label="Chart range"><button data-range="14">2W</button><button data-range="30">1M</button><button class="active" data-range="all">ALL</button></div></div>
+      <div class="section-head"><div><p class="eyebrow">01 / PERFORMANCE</p><h2>The journey, not just the destination.</h2></div><div class="range-control" role="group" aria-label="Chart range"><button data-range="1">1D</button><button data-range="5">5D</button><button data-range="14">2W</button><button data-range="30">1M</button><button class="active" data-range="all">ALL</button></div></div>
       <div class="chart-grid">
         <article class="panel wide"><div class="panel-head"><div><h3>Equity vs. money added</h3><p>Gap shows estimated economic gain</p></div><div class="legend"><span class="cyan">Equity</span><span class="muted">Funding</span></div></div><div class="chart-wrap tall"><canvas id="equityChart"></canvas></div></article>
         <article class="panel"><div class="panel-head"><div><h3>Profit composition</h3><p>Closed gains vs. open drag</p></div></div><div class="composition"><div class="donut-wrap"><canvas id="compositionChart"></canvas><div class="donut-center"><small>NET</small><strong id="donutNet">—</strong></div></div><div class="split-stats"><div><i class="good"></i><span>Realized</span><strong id="splitRealized">—</strong></div><div><i class="bad"></i><span>Open</span><strong id="splitOpen">—</strong></div></div></div></article>
@@ -76,6 +76,30 @@
         <article class="panel allocation-panel"><div class="panel-head"><div><h3>Exposure allocation</h3><p>Largest positions and the long tail</p></div></div><div class="chart-wrap tall"><canvas id="allocationChart"></canvas></div></article>
         <article class="table-shell"><table><thead><tr><th data-sort="symbol">Symbol</th><th data-sort="marketValue">Exposure</th><th data-sort="unrealized">Open P&amp;L</th><th data-sort="returnPct">Return</th><th data-sort="avgCost">Avg / Mark</th></tr></thead><tbody id="positionRows"></tbody></table><button id="showAll" class="show-all">Show all positions</button></article>
       </div>
+    </section>
+
+    <section id="activity" class="section reveal">
+      <div class="section-head">
+        <div><p class="eyebrow">04 / ACTIVITY</p><h2>Every move, right as it happens.</h2></div>
+        <div class="range-control activity-toggle" role="group" aria-label="Activity window"><button class="active" data-activity-range="1">1D</button><button data-activity-range="5">5D</button></div>
+      </div>
+
+      <div class="stat-grid">
+        <article class="stat-card"><span>TRANSACTIONS</span><strong id="actTxCount">—</strong><small id="actTxWindow">—</small></article>
+        <article class="stat-card"><span>SYMBOLS TRADED</span><strong id="actSymbols">—</strong><small id="actSymbolNote">—</small></article>
+        <article class="stat-card"><span>BUY / SELL VOLUME</span><strong id="actVolume">—</strong><small id="actVolumeNote">—</small></article>
+        <article class="stat-card"><span>REALIZED IN WINDOW</span><strong id="actRealized">—</strong><small id="actRealizedNote">—</small></article>
+      </div>
+
+      <div class="chart-grid">
+        <article class="panel wide"><div class="panel-head"><div><h3>Daily realized P&amp;L</h3><p>Closed-trade result for each day in the window</p></div></div><div class="chart-wrap"><canvas id="activityDailyChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Buy vs. sell volume</h3><p>Dollar volume traded</p></div></div><div class="composition"><div class="donut-wrap"><canvas id="activityCompositionChart"></canvas><div class="donut-center"><small>NET FLOW</small><strong id="actDonutNet">—</strong></div></div><div class="split-stats"><div><i class="good"></i><span>Buys</span><strong id="actSplitBuy">—</strong></div><div><i class="bad"></i><span>Sells</span><strong id="actSplitSell">—</strong></div></div></div></article>
+        <article class="panel wide"><div class="panel-head"><div><h3>Symbol activity</h3><p>Net dollar amount traded per symbol</p></div></div><div class="chart-wrap tall"><canvas id="activitySymbolChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Trades per day</h3><p>Buy + sell fills</p></div></div><div class="chart-wrap"><canvas id="activityCountChart"></canvas></div></article>
+      </div>
+
+      <div class="section-head" style="margin-top:40px"><div><h3 style="margin:0;font-size:20px">Transaction log</h3><p style="margin:6px 0 0;color:var(--muted);font-size:12px">Every ledger row inside the selected window</p></div><div class="search"><span>⌕</span><input id="activitySearch" type="search" placeholder="Find a symbol…" aria-label="Find a symbol"></div></div>
+      <article class="table-shell"><table><thead><tr><th data-asort="date">Date</th><th data-asort="symbol">Symbol</th><th data-asort="code">Action</th><th data-asort="quantity">Qty</th><th data-asort="price">Price</th><th data-asort="amount">Amount</th></tr></thead><tbody id="activityRows"></tbody></table><button id="activityShowAll" class="show-all">Show all transactions</button></article>
     </section>
 
     <section class="action-section reveal">

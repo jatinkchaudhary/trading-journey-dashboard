@@ -51,6 +51,19 @@ $monthlyData = @($monthly | ForEach-Object { [ordered]@{ month=$_.Month; realize
 $tradeCountByDay = $records | Where-Object Code -in @('Buy','Sell') | Group-Object { $_.Date.ToString('yyyy-MM-dd') }
 $activity = @($tradeCountByDay | ForEach-Object { [ordered]@{date=$_.Name; trades=$_.Count} } | Sort-Object date)
 
+# Full ledger, newest first, so the dashboard can power 1D / 5D style transaction
+# and activity views without needing a second data source.
+$transactionLog = @($records | Sort-Object Date, Index -Descending | ForEach-Object {
+    [ordered]@{
+        date     = $_.Date.ToString('yyyy-MM-dd')
+        symbol   = $_.Instrument
+        code     = $_.Code
+        quantity = [math]::Round([double]$_.Quantity, 4)
+        price    = [math]::Round([double]$_.Price, 4)
+        amount   = [math]::Round([double]$_.Amount, 2)
+    }
+})
+
 $dashboard = [ordered]@{
     generatedAt = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ssK')
     sourceThrough = $end.Date.ToString('yyyy-MM-dd')
@@ -84,6 +97,7 @@ $dashboard = [ordered]@{
     symbols = $symbolData
     positions = $positionData
     activity = $activity
+    transactions = $transactionLog
 }
 
 $json = $dashboard | ConvertTo-Json -Depth 8

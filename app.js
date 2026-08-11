@@ -3,13 +3,15 @@ const pct = n => `${n>=0?'+':''}${n.toFixed(1)}%`;
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const C={cyan:css('--cyan'),green:css('--green'),red:css('--red'),orange:css('--orange'),purple:css('--purple'),muted:css('--muted'),line:css('--line'),text:css('--text')};
 let D, charts={}, tableLimit=12, sortState={key:'marketValue',dir:-1};
+let activityWindow=1, activityLimit=12, activitySort={key:'date',dir:-1};
+const ACTION_CODES={Buy:'buy',Sell:'sell'};
 
 Chart.defaults.color=C.muted; Chart.defaults.borderColor='rgba(29,52,58,.65)'; Chart.defaults.font.family='DM Mono'; Chart.defaults.font.size=9;
 const tooltip={backgroundColor:'#15272c',borderColor:C.line,borderWidth:1,titleColor:C.text,bodyColor:C.muted,padding:12,displayColors:true};
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(29,52,58,.55)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -41,12 +43,59 @@ function buildCharts(){
   charts.risk=new Chart(document.querySelector('#riskMap'),{type:'bubble',data:{datasets:[{data:bubbles,backgroundColor:bubbles.map(x=>x.pnl>=0?'rgba(167,239,110,.65)':'rgba(255,107,107,.65)'),borderColor:bubbles.map(x=>x.pnl>=0?C.green:C.red),borderWidth:1}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.raw.symbol} · ${money(c.raw.x)} · ${pct(c.raw.y)}`}}},scales:{x:{title:{display:true,text:'POSITION SIZE'},ticks:{callback:v=>money(v,true)},grid:{color:'rgba(29,52,58,.55)'}},y:{title:{display:true,text:'OPEN RETURN'},ticks:{callback:v=>`${v}%`},grid:{color:'rgba(29,52,58,.55)'}}}}});
   const top=D.positions.slice(0,9),other=D.positions.slice(9).reduce((a,x)=>a+x.marketValue,0);charts.allocation=new Chart(document.querySelector('#allocationChart'),{type:'doughnut',data:{labels:[...top.map(x=>x.symbol),'OTHER'],datasets:[{data:[...top.map(x=>x.marketValue),other],backgroundColor:[C.cyan,C.purple,C.orange,C.green,'#5e8b90','#6d6288','#8d775d','#527869','#40565d','#263b40'],borderColor:css('--panel'),borderWidth:3}]},options:{cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:7,boxHeight:7,padding:13}},tooltip:{...tooltip,callbacks:{label:c=>`${c.label}: ${money(c.raw)}`}}}}});
 }
+function activityWindowDates(n){return new Set(D.series.slice(-n).map(x=>x.date))}
+function getActivityData(n){
+  const dateSet=activityWindowDates(n),dates=[...dateSet].sort();
+  const all=D.transactions.filter(t=>dateSet.has(t.date));
+  const trades=all.filter(t=>t.code==='Buy'||t.code==='Sell');
+  const buyVolume=trades.filter(t=>t.code==='Buy').reduce((a,t)=>a+Math.abs(t.amount),0);
+  const sellVolume=trades.filter(t=>t.code==='Sell').reduce((a,t)=>a+Math.abs(t.amount),0);
+  const symbols=new Set(trades.map(t=>t.symbol).filter(Boolean));
+  const bySymbol={};trades.forEach(t=>{bySymbol[t.symbol]=(bySymbol[t.symbol]||0)+t.amount});
+  const perDaySeries=D.series.filter(x=>dateSet.has(x.date));
+  const realized=perDaySeries.reduce((a,x)=>a+x.dailyRealized,0);
+  const tradeCounts={};trades.forEach(t=>{tradeCounts[t.date]=(tradeCounts[t.date]||0)+1});
+  return{dates,all,trades,buyVolume,sellVolume,symbols,bySymbol,perDaySeries,realized,tradeCounts};
+}
+function buildActivityCharts(){
+  charts.activityDaily=new Chart(document.querySelector('#activityDailyChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:c=>c.raw>=0?'rgba(167,239,110,.8)':'rgba(255,107,107,.8)',borderRadius:2}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`Realized: ${money(c.raw)}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>money(v,true)}}}}});
+  charts.activityComposition=new Chart(document.querySelector('#activityCompositionChart'),{type:'doughnut',data:{labels:['Buys','Sells'],datasets:[{data:[0,0],backgroundColor:[C.cyan,C.purple],borderWidth:0,spacing:3}]},options:{cutout:'78%',plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.label}: ${money(c.raw)}`}}}}});
+  charts.activitySymbol=new Chart(document.querySelector('#activitySymbolChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:[],borderRadius:2}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>money(c.raw)}}},scales:{x:{...baseScales.y,ticks:{callback:v=>money(v,true)}},y:{grid:{display:false}}}}});
+  charts.activityCount=new Chart(document.querySelector('#activityCountChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:C.orange,borderRadius:2}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.raw} trade${c.raw===1?'':'s'}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{precision:0}}}}});
+}
+function updateActivity(n){
+  activityWindow=n;const a=getActivityData(n);
+  set('#actTxCount',a.trades.length);set('#actTxWindow',`${a.dates.length} trading day${a.dates.length===1?'':'s'} · ${n}D window`);
+  set('#actSymbols',a.symbols.size);set('#actSymbolNote',a.symbols.size?`incl. ${[...a.symbols].slice(0,3).join(', ')}${a.symbols.size>3?'…':''}`:'No symbols traded');
+  set('#actVolume',money(a.buyVolume+a.sellVolume,true));set('#actVolumeNote',`${money(a.buyVolume,true)} bought · ${money(a.sellVolume,true)} sold`);
+  set('#actRealized',money(a.realized));document.querySelector('#actRealized').classList.toggle('negative',a.realized<0);set('#actRealizedNote',`Across ${a.dates.length} day${a.dates.length===1?'':'s'} in window`);
+  charts.activityDaily.data.labels=a.perDaySeries.map(x=>x.date);charts.activityDaily.data.datasets[0].data=a.perDaySeries.map(x=>x.dailyRealized);charts.activityDaily.update();
+  charts.activityComposition.data.datasets[0].data=[a.buyVolume,a.sellVolume];charts.activityComposition.update();
+  set('#actDonutNet',money(a.sellVolume-a.buyVolume,true));set('#actSplitBuy',money(a.buyVolume));set('#actSplitSell',money(a.sellVolume));
+  const symRows=Object.entries(a.bySymbol).sort((x,y)=>Math.abs(y[1])-Math.abs(x[1])).slice(0,16).sort((x,y)=>x[1]-y[1]);
+  charts.activitySymbol.data.labels=symRows.map(x=>x[0]);charts.activitySymbol.data.datasets[0].data=symRows.map(x=>x[1]);charts.activitySymbol.data.datasets[0].backgroundColor=symRows.map(x=>x[1]>=0?C.green:C.red);charts.activitySymbol.update();
+  charts.activityCount.data.labels=a.dates;charts.activityCount.data.datasets[0].data=a.dates.map(d=>a.tradeCounts[d]||0);charts.activityCount.update();
+  renderActivityTable();
+}
+function renderActivityTable(){
+  const dateSet=activityWindowDates(activityWindow),q=document.querySelector('#activitySearch')?.value.toUpperCase()||'';
+  let rows=D.transactions.filter(t=>dateSet.has(t.date)&&(t.symbol||'').toUpperCase().includes(q));
+  rows.sort((x,y)=>typeof x[activitySort.key]==='string'?x[activitySort.key].localeCompare(y[activitySort.key])*activitySort.dir:(x[activitySort.key]-y[activitySort.key])*activitySort.dir);
+  const body=document.querySelector('#activityRows');
+  if(!rows.length){body.innerHTML='<tr class="empty-row"><td colspan="6">No transactions in this window.</td></tr>';document.querySelector('#activityShowAll').style.display='none';return}
+  body.innerHTML=rows.slice(0,activityLimit).map(t=>{const kind=ACTION_CODES[t.code]||'other';return `<tr><td class="price-pair">${t.date}</td><td>${t.symbol||'—'}</td><td><span class="action-pill ${kind}">${t.code}</span></td><td>${t.quantity||'—'}</td><td>${t.price?money(t.price):'—'}</td><td class="${t.amount<0?'negative':'positive'}">${money(t.amount)}</td></tr>`}).join('');
+  document.querySelector('#activityShowAll').style.display=rows.length>activityLimit?'block':'none';
+}
 function bind(){
   document.querySelectorAll('[data-range]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-range]').forEach(x=>x.classList.remove('active'));b.classList.add('active');range(b.dataset.range)});
   document.querySelector('#positionSearch').oninput=renderTable;document.querySelector('#showAll').onclick=()=>{tableLimit=999;renderTable()};
   document.querySelectorAll('th[data-sort]').forEach(th=>th.onclick=()=>{sortState.dir=sortState.key===th.dataset.sort?-sortState.dir:-1;sortState.key=th.dataset.sort;renderTable()});
   document.querySelector('#downloadSnapshot').onclick=downloadSnapshot;
   document.querySelectorAll('.info').forEach(el=>{el.onmouseenter=e=>showTip(e,el.dataset.tip);el.onmouseleave=hideTip});
+  document.querySelectorAll('[data-activity-range]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-activity-range]').forEach(x=>x.classList.remove('active'));b.classList.add('active');activityLimit=12;updateActivity(+b.dataset.activityRange)});
+  document.querySelector('#activitySearch').oninput=renderActivityTable;
+  document.querySelector('#activityShowAll').onclick=()=>{activityLimit=999;renderActivityTable()};
+  document.querySelectorAll('th[data-asort]').forEach(th=>th.onclick=()=>{activitySort.dir=activitySort.key===th.dataset.asort?-activitySort.dir:-1;activitySort.key=th.dataset.asort;renderActivityTable()});
 }
 function range(value){const n=value==='all'?D.series.length:+value,start=Math.max(0,D.series.length-n),slice=D.series.slice(start);['equity','daily'].forEach(k=>{charts[k].data.labels=slice.map(x=>x.date)});charts.equity.data.datasets[0].data=slice.map(x=>x.equity);charts.equity.data.datasets[1].data=slice.map(x=>x.funding);charts.daily.data.datasets[0].data=slice.map(x=>x.dailyRealized);charts.equity.update();charts.daily.update()}
 function renderTable(){const q=document.querySelector('#positionSearch')?.value.toUpperCase()||'';let rows=D.positions.filter(x=>x.symbol.includes(q));rows.sort((a,b)=>typeof a[sortState.key]==='string'?a[sortState.key].localeCompare(b[sortState.key])*sortState.dir:(a[sortState.key]-b[sortState.key])*sortState.dir);document.querySelector('#positionRows').innerHTML=rows.slice(0,tableLimit).map(p=>`<tr><td>${p.symbol}</td><td>${money(p.marketValue)}</td><td class="${p.unrealized<0?'negative':'positive'}">${money(p.unrealized)}</td><td><span class="return-pill ${p.returnPct<0?'red':''}">${pct(p.returnPct)}</span></td><td><span class="price-pair">${money(p.avgCost)} / ${money(p.mark)}</span></td></tr>`).join('');document.querySelector('#showAll').style.display=rows.length>tableLimit?'block':'none'}
