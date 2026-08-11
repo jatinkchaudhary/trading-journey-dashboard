@@ -8,7 +8,16 @@ function Convert-Money([string]$value) {
     return $number
 }
 
-$source = Join-Path $PSScriptRoot 'Till August 10th, 2026.csv'
+# Auto-detect the most recently modified CSV export, so a fresh Robinhood
+# export can just be dropped in (root folder or a "Data" subfolder) without
+# editing this script each day.
+$searchFolders = @($PSScriptRoot, (Join-Path $PSScriptRoot 'Data')) | Where-Object { Test-Path -LiteralPath $_ }
+$csvCandidates = @($searchFolders | ForEach-Object { Get-ChildItem -LiteralPath $_ -Filter '*.csv' -File -ErrorAction SilentlyContinue } | Sort-Object LastWriteTime -Descending)
+if ($csvCandidates.Count -eq 0) {
+    throw "No CSV export found in $PSScriptRoot or its Data subfolder. Export your activity from Robinhood and place the .csv file there."
+}
+$source = $csvCandidates[0].FullName
+Write-Host "Using ledger export: $($csvCandidates[0].FullName)"
 $raw = @(Import-Csv -LiteralPath $source | Where-Object { -not [string]::IsNullOrWhiteSpace($_.'Activity Date') })
 $records = for ($i = 0; $i -lt $raw.Count; $i++) {
     $r = $raw[$i]
