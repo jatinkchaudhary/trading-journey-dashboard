@@ -2,6 +2,8 @@
 
 A privacy-conscious, visual-first dashboard generated from a brokerage activity export.
 
+Live dashboard: <https://jatinkchaudhary.github.io/trading-journey-dashboard/>
+
 ## Refresh the dashboard
 
 1. Replace the local CSV with the latest export and update its filename in `trading_analysis.ps1` if needed.
