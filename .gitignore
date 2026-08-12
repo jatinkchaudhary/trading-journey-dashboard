@@ -4,3 +4,11 @@ Till August 10th, 2026.csv
 Thumbs.db
 .edge-test/
 dashboard-preview.png
+
+# Local Netlify folder
+.netlify
+
+# Daily Robinhood fetch payload and local artifacts
+Data/rh_fetch.json
+webpage.zip
+.github-token
