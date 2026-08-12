@@ -17,7 +17,7 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Trading Journey home"><span class="brand-mark">TJ</span><span>TRADING JOURNEY</span></a>
     <nav aria-label="Dashboard sections">
-      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a>
+      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a><a href="#market">Market</a><a href="#calendar">Calendar</a>
     </nav>
     <div class="live-pill"><i></i><span id="asOf">Loading…</span></div>
   </header>
@@ -100,6 +100,40 @@
 
       <div class="section-head" style="margin-top:40px"><div><h3 style="margin:0;font-size:20px">Transaction log</h3><p style="margin:6px 0 0;color:var(--muted);font-size:12px">Every ledger row inside the selected window</p></div><div class="search"><span>⌕</span><input id="activitySearch" type="search" placeholder="Find a symbol…" aria-label="Find a symbol"></div></div>
       <article class="table-shell"><table><thead><tr><th data-asort="date">Date</th><th data-asort="symbol">Symbol</th><th data-asort="code">Action</th><th data-asort="quantity">Qty</th><th data-asort="price">Price</th><th data-asort="amount">Amount</th></tr></thead><tbody id="activityRows"></tbody></table><button id="activityShowAll" class="show-all">Show all transactions</button></article>
+    </section>
+
+    <section id="market" class="section reveal" hidden>
+      <div class="section-head"><div><p class="eyebrow">05 / MARKET PULSE</p><h2>Your stocks, in today's tape.</h2></div><div class="live-pill"><i></i><span id="marketAsOf">—</span></div></div>
+
+      <div class="stat-grid">
+        <article class="stat-card"><span>S&amp;P 500</span><strong id="mktSpx">—</strong><small id="mktSpxNote">index level</small></article>
+        <article class="stat-card"><span>NASDAQ 100</span><strong id="mktNdx">—</strong><small id="mktNdxNote">index level</small></article>
+        <article class="stat-card"><span>PORTFOLIO DAY MOVE</span><strong id="mktDayPnl">—</strong><small id="mktDayPnlNote">—</small></article>
+        <article class="stat-card"><span>BEST / WORST TODAY</span><strong id="mktBestWorst">—</strong><small id="mktBestWorstNote">—</small></article>
+      </div>
+
+      <div class="chart-grid">
+        <article class="panel wide"><div class="panel-head"><div><h3>Today's movers</h3><p>Day change of your holdings</p></div></div><div class="chart-wrap tall"><canvas id="moversChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Sector allocation</h3><p>Exposure by sector</p></div></div><div class="chart-wrap tall"><canvas id="sectorChart"></canvas></div></article>
+        <article class="panel wide"><div class="panel-head"><div><h3>52-week range position</h3><p>Where each big holding trades in its yearly range</p></div></div><div class="chart-wrap tall"><canvas id="rangeChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Unusual volume</h3><p>Today vs. 30-day average</p></div></div><div class="chart-wrap tall"><canvas id="volumeChart"></canvas></div></article>
+      </div>
+
+      <div class="section-head" style="margin-top:40px"><div><h3 style="margin:0;font-size:20px">Holdings intel</h3><p style="margin:6px 0 0;color:var(--muted);font-size:12px">Live quote, valuation and events per holding</p></div><div class="search"><span>⌕</span><input id="marketSearch" type="search" placeholder="Find a symbol…" aria-label="Find a symbol"></div></div>
+      <article class="table-shell"><table><thead><tr><th data-msort="symbol">Symbol</th><th data-msort="last">Last</th><th data-msort="changePct">Day</th><th data-msort="dayPnl">Day P&amp;L</th><th data-msort="peRatio">P/E</th><th data-msort="marketCap">Mkt Cap</th><th data-msort="rangePct">52W Range</th><th data-msort="earningsDate">Earnings</th></tr></thead><tbody id="marketRows"></tbody></table><button id="marketShowAll" class="show-all">Show all holdings</button></article>
+    </section>
+
+    <section id="calendar" class="section reveal" hidden>
+      <div class="section-head"><div><p class="eyebrow">06 / CALENDAR</p><h2>What's coming for your stocks.</h2></div></div>
+
+      <div class="stat-grid">
+        <article class="stat-card"><span>NEXT EARNINGS</span><strong id="calNextEarnings">—</strong><small id="calNextEarningsNote">—</small></article>
+        <article class="stat-card"><span>NEXT 7 DAYS</span><strong id="calWeekCount">—</strong><small>events across your holdings</small></article>
+        <article class="stat-card"><span>UPCOMING DIVIDENDS</span><strong id="calDivIncome">—</strong><small id="calDivIncomeNote">—</small></article>
+        <article class="stat-card"><span>EARNINGS THIS MONTH</span><strong id="calMonthEarnings">—</strong><small id="calMonthEarningsNote">—</small></article>
+      </div>
+
+      <div class="timeline" id="eventTimeline"></div>
     </section>
 
     <section class="action-section reveal">

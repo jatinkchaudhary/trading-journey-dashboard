@@ -31,6 +31,82 @@ FETCH = os.path.join(HERE, 'Data', 'rh_fetch.json')
 
 def r2(x): return round(x + 1e-9, 2)
 
+FUND = os.path.join(HERE, 'Data', 'fundamentals_fetch.json')
+MKTQ = os.path.join(HERE, 'Data', 'market_quotes_fetch.json')
+EARN = os.path.join(HERE, 'Data', 'earnings_fetch.json')
+
+def load(path):
+    try:
+        return json.load(open(path, encoding='utf-8-sig'))
+    except (OSError, ValueError):
+        return None
+
+def build_market(d):
+    """Build d['market'] and d['calendar'] from the optional fetch files.
+    Safe no-op when the fetch files are absent."""
+    fund, mktq = load(FUND), load(MKTQ)
+    earn = load(EARN) or []
+    if not fund or not mktq:
+        return False
+    today = d['sourceThrough']
+    prev_idx = {i['symbol']: i.get('value') for i in d.get('market', {}).get('indexes', [])}
+    idx_names = {'SPX': 'S&P 500', 'NDX': 'Nasdaq 100'}
+    indexes = []
+    for i in mktq.get('indexes', []):
+        prev = prev_idx.get(i['symbol'])
+        indexes.append({'symbol': i['symbol'], 'name': idx_names.get(i['symbol'], i['symbol']),
+                        'value': r2(float(i['value'])), 'prevValue': prev,
+                        'changePct': r2((float(i['value']) - prev) / prev * 100) if prev else None})
+    earn_by_sym = {}
+    for e in sorted(earn, key=lambda e: e['date']):
+        if e['date'] >= today and e['symbol'] not in earn_by_sym:
+            earn_by_sym[e['symbol']] = e
+    pos_by_sym = {p['symbol']: p for p in d['positions']}
+    quotes = mktq.get('quotes', {})
+    stocks = []
+    for sym, p in pos_by_sym.items():
+        fu, q = fund.get(sym, {}), quotes.get(sym, {})
+        last = q.get('last') or p.get('mark')
+        prev_close = q.get('prevClose')
+        hi, lo = fu.get('high52'), fu.get('low52')
+        rng = r2((last - lo) / (hi - lo) * 100) if hi and lo and hi != lo else None
+        av, tv = fu.get('avgVolume30d'), fu.get('todayVolume')
+        e = earn_by_sym.get(sym)
+        stocks.append({
+            'symbol': sym, 'name': fu.get('name'), 'sector': fu.get('sector'),
+            'industry': fu.get('industry'), 'last': r2(last) if last else None,
+            'prevClose': r2(prev_close) if prev_close else None,
+            'changePct': r2((last - prev_close) / prev_close * 100) if last and prev_close else None,
+            'dayPnl': r2((last - prev_close) * p['quantity']) if last and prev_close else None,
+            'marketValue': p['marketValue'],
+            'marketCap': fu.get('marketCap'), 'peRatio': fu.get('peRatio'),
+            'dividendYield': fu.get('dividendYield'),
+            'high52': hi, 'low52': lo, 'rangePct': rng,
+            'volumeRatio': r2(tv / av) if av and tv else None,
+            'earningsDate': e['date'] if e else None,
+            'earningsTiming': e.get('timing') if e else None,
+            'epsEstimate': e.get('epsEstimate') if e else None,
+        })
+    stocks.sort(key=lambda s: -(s['marketValue'] or 0))
+    cal = []
+    for sym, e in earn_by_sym.items():
+        cal.append({'date': e['date'], 'symbol': sym, 'type': 'earnings',
+                    'detail': (f"Q report {'before open' if e.get('timing')=='am' else 'after close' if e.get('timing')=='pm' else ''}"
+                               + (f" · est EPS {e['epsEstimate']:+.2f}" if e.get('epsEstimate') is not None else '')).strip()})
+    for sym, fu in fund.items():
+        if sym not in pos_by_sym:
+            continue
+        for key, typ, label in (('exDividendDate', 'ex-dividend', 'Ex-dividend'), ('payableDate', 'dividend-pay', 'Dividend paid')):
+            dt = fu.get(key)
+            if dt and dt >= today:
+                dps = fu.get('dividendPerShare')
+                cal.append({'date': dt, 'symbol': sym, 'type': typ,
+                            'detail': label + (f" · ${dps:.2f}/share" if dps else '')})
+    cal.sort(key=lambda e: (e['date'], e['symbol']))
+    d['market'] = {'asOf': today, 'indexes': indexes, 'stocks': stocks}
+    d['calendar'] = cal
+    return True
+
 def main():
     d = json.load(open(DASH, encoding='utf-8-sig'))
     f = json.load(open(FETCH, encoding='utf-8-sig'))
@@ -38,7 +114,12 @@ def main():
     cutoff = d['sourceThrough']
     as_of = f['asOfDate']
     if as_of <= cutoff:
-        print(f'Nothing to do: asOfDate {as_of} <= sourceThrough {cutoff}')
+        did_market = build_market(d)
+        if did_market:
+            with open(DASH, 'w', encoding='utf-8') as fh:
+                json.dump(d, fh, indent=2)
+        print(f'Core merge skipped (asOfDate {as_of} <= sourceThrough {cutoff}); '
+              f'market/calendar {"refreshed" if did_market else "unchanged"}')
         return 0
 
     fills = sorted((t for t in f['fills'] if t['date'] > cutoff), key=lambda t: t['date'])
@@ -136,6 +217,9 @@ def main():
         'top5Pct': r2(sum(mv_sorted[:5]) / exposure * 100) if exposure else 0,
         'top10Pct': r2(sum(mv_sorted[:10]) / exposure * 100) if exposure else 0,
     })
+
+    d['sourceThrough'] = as_of
+    build_market(d)
 
     pdt = timezone(timedelta(hours=-7))
     d['generatedAt'] = datetime.now(pdt).strftime('%Y-%m-%dT%H.%M.%S%z')

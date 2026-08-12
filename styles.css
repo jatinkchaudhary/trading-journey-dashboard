@@ -4,3 +4,25 @@
 @media(max-width:1000px){.hero{grid-template-columns:1fr}.hero-orbit{display:none}.pulse-grid{grid-template-columns:1fr 1fr}.chart-grid,.risk-charts,.position-layout{grid-template-columns:1fr}.risk-grid,.stat-grid{grid-template-columns:1fr 1fr}.action-grid{grid-template-columns:1fr}.focus-strip{grid-template-columns:auto 1fr}.focus-strip p{grid-column:2}.allocation-panel{display:none}footer{grid-template-columns:1fr}footer p{margin:0}.topbar nav{display:none}}
 @media(max-width:600px){main{width:94vw}.topbar{height:60px}.hero{min-height:380px;padding:55px 2vw 35px}.hero h1{font-size:50px}.pulse-grid,.risk-grid,.stat-grid{grid-template-columns:1fr}.metric{min-height:145px}.focus-strip{margin-bottom:80px}.section{padding-bottom:80px}.section-head{align-items:flex-start;gap:20px;flex-direction:column}.chart-wrap.tall{height:280px}.composition{flex-direction:column}.risk-card{min-height:255px}.action-grid article{padding:22px}.live-pill span{display:none}td:nth-child(2),th:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit{animation:none}.reveal{transition:none}}
+/* Market & Calendar sections */
+.sub{display:block;font:9px var(--mono);color:var(--muted);font-weight:400;margin-top:3px}
+.range-track{position:relative;display:inline-block;width:86px;height:5px;background:linear-gradient(90deg,rgba(255,107,107,.35),rgba(87,230,211,.35),rgba(255,179,92,.35));border-radius:3px;vertical-align:middle}
+.range-track i{position:absolute;top:-3px;width:3px;height:11px;background:var(--text);border-radius:1px;transform:translateX(-50%);box-shadow:0 0 6px rgba(244,247,242,.6)}
+.earnings-soon{color:var(--orange)}
+.timeline{display:flex;flex-direction:column;gap:14px}
+.timeline-day{display:grid;grid-template-columns:86px 1fr;gap:16px;align-items:start}
+.timeline-day.today .timeline-date{border-color:var(--cyan);box-shadow:0 0 18px rgba(87,230,211,.12)}
+.timeline-date{background:var(--panel);border:1px solid var(--line);padding:12px 8px;text-align:center}
+.timeline-date strong{display:block;font:700 22px var(--mono)}
+.timeline-date span{display:block;font:10px var(--mono);color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}
+.timeline-date small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.timeline-events{display:flex;flex-direction:column;gap:8px}
+.event-card{display:grid;grid-template-columns:auto auto 1fr;gap:14px;align-items:center;background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:14px 18px}
+.event-card b{font-size:14px}
+.event-card p{margin:0;color:var(--muted);font:11px var(--mono)}
+.event-pill{font:9px var(--mono);letter-spacing:.08em;border-radius:2px;padding:4px 8px;min-width:64px;text-align:center}
+.event-card.earnings .event-pill{background:rgba(255,179,92,.14);color:var(--orange)}
+.event-card.earnings{border-color:rgba(255,179,92,.3)}
+.event-card.ex-dividend .event-pill{background:rgba(87,230,211,.12);color:var(--cyan)}
+.event-card.dividend-pay .event-pill{background:rgba(167,239,110,.12);color:var(--green)}
+@media(max-width:600px){.timeline-day{grid-template-columns:64px 1fr}.event-card{grid-template-columns:auto 1fr;gap:8px}.event-card p{grid-column:1/3}}
