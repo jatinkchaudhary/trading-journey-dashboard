@@ -1,28 +1,26 @@
 # Trading Journey Dashboard
 
-A privacy-conscious, visual-first dashboard generated from a brokerage activity export.
+A privacy-conscious, visual-first dashboard of my Robinhood trading journey — hosted locally.
 
-Live dashboard: <https://jatinkchaudhary.github.io/trading-journey-dashboard/>
+## View the dashboard
 
-## Refresh the dashboard (one click)
+Double-click **start-dashboard.bat**, or open <http://localhost:4173> if the server is already running.
 
-Robinhood has no official read-only API, so this stays a manual, credential-free export — your login is never touched by anything in this repo.
+Optional: run **install-autostart.bat** once to have the server start automatically at login.
 
-1. In Robinhood: **Account → Statements & History → Export**, and save the CSV.
-2. Drop the CSV into this project folder (or the `Data/` subfolder) — the filename doesn't matter, the newest CSV present is always used.
-3. Double-click **update-dashboard.bat**. It will:
-   - Rebuild `dashboard-data.json` from the CSV
-   - Commit and push just that sanitized JSON file to GitHub
-   - Leave your raw CSV untouched on disk and **never upload it** (it's git-ignored)
-4. Give the live link a minute or two to redeploy, then refresh the page.
+## How it stays up to date
 
-### Manual/advanced refresh
+A scheduled Claude task ("trading-dashboard-daily-update") runs weekdays at 1 PM:
 
-If you'd rather run it yourself: `powershell -ExecutionPolicy Bypass -File .\build_dashboard_data.ps1`, review `dashboard-data.json`, then commit/push it.
+1. Pulls filled orders, realized P&L, positions, and portfolio value from the Robinhood connector (read-only) for all three accounts.
+2. Writes the day's raw fetch to `Data/rh_fetch.json` (git-ignored, never published).
+3. Runs `update_from_robinhood.py` to merge it into `dashboard-data.json`.
+4. Commits locally for history. Nothing is pushed anywhere — the data never leaves this machine.
 
-The raw brokerage CSV is deliberately excluded from Git. The public dashboard contains sanitized, derived figures only.
+Just refresh the browser tab after 1 PM to see the day's trades.
+
+Note: the task runs while the Claude desktop app is open; if the app is closed at 1 PM it catches up on next launch. Deposits/withdrawals aren't visible to the connector — if funding changes, ask Claude to adjust the `funding` figure.
 
 ## Methodology limitation
 
-Open positions are valued at the latest transaction price in the export. For exact account returns and drawdown, use official daily closing equity data from the broker.
-
+Open positions are valued at the latest available quote at update time. For exact account returns and drawdown, use official daily closing equity data from the broker.
