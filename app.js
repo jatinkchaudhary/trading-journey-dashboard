@@ -11,7 +11,7 @@ const tooltip={backgroundColor:'#ffffff',borderColor:C.line,borderWidth:1,titleC
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(28,43,54,.10)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderCalendar();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderCalendar();renderWatch();bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -61,7 +61,7 @@ function buildActivityCharts(){
   charts.activityDaily=new Chart(document.querySelector('#activityDailyChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:c=>c.raw>=0?'rgba(43,158,74,.8)':'rgba(217,72,72,.8)',borderRadius:2}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`Realized: ${money(c.raw)}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>money(v,true)}}}}});
   charts.activityComposition=new Chart(document.querySelector('#activityCompositionChart'),{type:'doughnut',data:{labels:['Buys','Sells'],datasets:[{data:[0,0],backgroundColor:[C.cyan,C.purple],borderWidth:0,spacing:3}]},options:{cutout:'78%',plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.label}: ${money(c.raw)}`}}}}});
   charts.activitySymbol=new Chart(document.querySelector('#activitySymbolChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:[],borderRadius:2}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>money(c.raw)}}},scales:{x:{...baseScales.y,ticks:{callback:v=>money(v,true)}},y:{grid:{display:false}}}}});
-  charts.activityCount=new Chart(document.querySelector('#activityCountChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:C.orange,borderRadius:2}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.raw} trade${c.raw===1?'':'s'}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{precision:0}}}}});
+  charts.activityCount=new Chart(document.querySelector('#activityCountChart'),{type:'bar',data:{labels:[],datasets:[{data:[],backgroundColor:[],borderRadius:2}]},options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>{const p=(c.dataset.pnl||{})[c.label]??0;return `${c.raw} trade${c.raw===1?'':'s'} · realized ${money(p)}`}}}},scales:{...baseScales,y:{...baseScales.y,ticks:{precision:0}}}}});
 }
 function updateActivity(n){
   activityWindow=n;const a=getActivityData(n);
@@ -74,7 +74,10 @@ function updateActivity(n){
   set('#actDonutNet',money(a.sellVolume-a.buyVolume,true));set('#actSplitBuy',money(a.buyVolume));set('#actSplitSell',money(a.sellVolume));
   const symRows=Object.entries(a.bySymbol).sort((x,y)=>Math.abs(y[1])-Math.abs(x[1])).slice(0,16).sort((x,y)=>x[1]-y[1]);
   charts.activitySymbol.data.labels=symRows.map(x=>x[0]);charts.activitySymbol.data.datasets[0].data=symRows.map(x=>x[1]);charts.activitySymbol.data.datasets[0].backgroundColor=symRows.map(x=>x[1]>=0?C.green:C.red);charts.activitySymbol.update();
-  charts.activityCount.data.labels=a.dates;charts.activityCount.data.datasets[0].data=a.dates.map(d=>a.tradeCounts[d]||0);charts.activityCount.update();
+  const pnlByDate=Object.fromEntries(a.perDaySeries.map(x=>[x.date,x.dailyRealized]));
+  charts.activityCount.data.labels=a.dates;charts.activityCount.data.datasets[0].data=a.dates.map(d=>a.tradeCounts[d]||0);
+  charts.activityCount.data.datasets[0].backgroundColor=a.dates.map(d=>(pnlByDate[d]??0)>=0?C.green:C.red);
+  charts.activityCount.data.datasets[0].pnl=pnlByDate;charts.activityCount.update();
   renderActivityTable();
 }
 function renderActivityTable(){
@@ -123,8 +126,9 @@ function renderMarket(){
   charts.sector=new Chart(document.querySelector('#sectorChart'),{type:'doughnut',data:{labels:secRows.map(x=>x[0]),datasets:[{data:secRows.map(x=>x[1]),backgroundColor:[C.cyan,C.purple,C.orange,C.green,'#64a7c2','#9484cf','#c9a06b','#6fb597','#90aab8','#b9cedb'],borderColor:css('--panel'),borderWidth:3}]},options:{cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:7,boxHeight:7,padding:10}},tooltip:{...tooltip,callbacks:{label:c=>`${c.label}: ${money(c.raw)}`}}}}});
   const rng=[...S].filter(s=>s.rangePct!=null).sort((a,b)=>b.marketValue-a.marketValue).slice(0,14);
   charts.range=new Chart(document.querySelector('#rangeChart'),{type:'bar',data:{labels:rng.map(s=>s.symbol),datasets:[{data:rng.map(s=>s.rangePct),backgroundColor:rng.map(s=>s.rangePct>=80?C.orange:s.rangePct>=40?C.cyan:C.red),borderRadius:2}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>{const s=rng[c.dataIndex];return `${c.raw}% of range · ${money(s.low52)} – ${money(s.high52)}`}}}},scales:{x:{...baseScales.y,min:0,max:100,ticks:{callback:v=>`${v}%`}},y:{grid:{display:false}}}}});
-  const vol=[...S].filter(s=>s.volumeRatio!=null).sort((a,b)=>b.volumeRatio-a.volumeRatio).slice(0,10).reverse();
-  charts.volume=new Chart(document.querySelector('#volumeChart'),{type:'bar',data:{labels:vol.map(s=>s.symbol),datasets:[{data:vol.map(s=>s.volumeRatio),backgroundColor:vol.map(s=>s.volumeRatio>=1.5?C.orange:C.purple),borderRadius:2}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`${c.raw}× average volume`}}},scales:{x:{...baseScales.y,ticks:{callback:v=>`${v}×`}},y:{grid:{display:false}}}}});
+  const vol=[...S].filter(s=>s.volumeRatio!=null&&s.changePct!=null).sort((a,b)=>b.volumeRatio-a.volumeRatio).slice(0,12)
+    .map(s=>({...s,signed:s.changePct<0?-s.volumeRatio:s.volumeRatio})).sort((a,b)=>a.signed-b.signed);
+  charts.volume=new Chart(document.querySelector('#volumeChart'),{type:'bar',data:{labels:vol.map(s=>s.symbol),datasets:[{data:vol.map(s=>s.signed),backgroundColor:vol.map(s=>s.signed<0?C.red:C.green),borderRadius:2}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>{const s=vol[c.dataIndex];return `${s.volumeRatio}× avg volume · price ${pct(s.changePct)} ${s.signed<0?'— selling pressure':'— buying interest'}`}}}},scales:{x:{...baseScales.y,ticks:{callback:v=>`${Math.abs(v)}×`}},y:{grid:{display:false}}}}});
   renderMarketTable();
   document.querySelector('#marketSearch').oninput=renderMarketTable;
   document.querySelector('#marketShowAll').onclick=()=>{marketLimit=999;renderMarketTable()};
@@ -158,6 +162,38 @@ function renderCalendar(){
   document.querySelector('#eventTimeline').innerHTML=Object.entries(byDate).map(([date,events])=>{
     const dt=new Date(date+'T12:00:00');
     return `<div class="timeline-day${date===today?' today':''}"><div class="timeline-date"><strong>${dt.toLocaleDateString('en-US',{day:'numeric'})}</strong><span>${dt.toLocaleDateString('en-US',{month:'short'})}</span><small>${dt.toLocaleDateString('en-US',{weekday:'short'})}</small></div><div class="timeline-events">${events.map(e=>`<div class="event-card ${e.type}"><span class="event-pill">${e.type==='gold'?'⬤ GOLD':e.type==='earnings'?'EARNINGS':e.type==='ex-dividend'?'EX-DIV':'PAYOUT'}</span><b>${e.symbol}</b><p>${e.detail}</p></div>`).join('')}</div></div>`}).join('');
+}
+function renderWatch(){
+  const M=D.market;if(!M||!M.stocks?.length)return;
+  document.querySelector('#watch').hidden=false;
+  const today=M.asOf,posBySym=Object.fromEntries(D.positions.map(p=>[p.symbol,p]));
+  const soon=d=>{if(!d)return 1e9;return Math.round((new Date(d+'T12:00:00')-new Date(today+'T12:00:00'))/864e5)};
+  const nextGold=(D.calendar||[]).find(e=>e.type==='gold'&&e.date>today&&soon(e.date)<=5);
+  if(nextGold){document.querySelector('#watchMacro').hidden=false;
+    set('#watchMacroTitle',`${nextGold.symbol} — ${new Date(nextGold.date+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}`);
+    set('#watchMacroDetail',nextGold.detail+' Expect volatility across the whole book, not just gold-linked names.')}
+  const rows=[];
+  M.stocks.forEach(s=>{
+    const sig=[];let score=0;
+    const days=soon(s.earningsDate);
+    if(days<=3){sig.push({t:`Earnings ${days===0?'today':days===1?'tomorrow':`in ${days}d`}${s.earningsTiming?` (${s.earningsTiming.toUpperCase()})`:''}`,c:'gold'});score+=days<=1?5:3}
+    if(s.volumeRatio>=1.5&&s.changePct<0){sig.push({t:`${s.volumeRatio}× volume on ${pct(s.changePct)} — sellers active, review exit`,c:'bear'});score+=4}
+    else if(s.volumeRatio>=1.8&&s.changePct>0){sig.push({t:`${s.volumeRatio}× volume on ${pct(s.changePct)} — strong buying interest`,c:'bull'});score+=2}
+    if(s.changePct<=-5){sig.push({t:`Fell ${pct(s.changePct)} today`,c:'bear'});score+=3}
+    else if(s.changePct>=7){sig.push({t:`Jumped ${pct(s.changePct)} today — extended`,c:'warn'});score+=2}
+    if(s.rangePct!=null&&s.rangePct>=94){sig.push({t:`At 52-week high zone (${s.rangePct}%)`,c:'warn'});score+=1}
+    if(s.rangePct!=null&&s.rangePct<=8){sig.push({t:`Near 52-week low (${s.rangePct}%)`,c:'bear'});score+=2}
+    const p=posBySym[s.symbol];
+    if(p&&p.returnPct<=-12){sig.push({t:`Open position ${pct(p.returnPct)} underwater`,c:'bear'});score+=2}
+    if(sig.length)rows.push({s,sig,score});
+  });
+  rows.sort((a,b)=>b.score-a.score);
+  document.querySelector('#watchGrid').innerHTML=rows.slice(0,9).map(({s,sig})=>`
+    <article class="watch-card${sig.some(x=>x.c==='bear')?' bearish':''}">
+      <div class="watch-head"><div><b>${s.symbol}</b><small class="sub">${s.name||s.sector||''}</small></div>
+      <div class="watch-quote"><strong>${s.last!=null?money(s.last):'—'}</strong><span class="return-pill ${s.changePct<0?'red':''}">${s.changePct!=null?pct(s.changePct):'—'}</span></div></div>
+      <div class="watch-signals">${sig.map(x=>`<span class="signal-chip ${x.c}">${x.t}</span>`).join('')}</div>
+    </article>`).join('')||'<p style="color:var(--muted)">No notable signals today — quiet book.</p>';
 }
 function reveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}
 function ring(sel,n){document.querySelector(sel).style.setProperty('--pct',n)}function set(sel,v){document.querySelector(sel).textContent=v}function showTip(e,t){const x=document.querySelector('#tooltip');x.textContent=t;x.style.display='block';x.style.left=`${e.clientX+12}px`;x.style.top=`${e.clientY+12}px`}function hideTip(){document.querySelector('#tooltip').style.display='none'}

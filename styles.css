@@ -37,3 +37,19 @@ footer{color:var(--text)}
 .event-card.gold .event-pill{background:#f0b932;color:#4a3505;font-weight:700}
 .event-card.gold b{color:#8a6410}
 .timeline-day:has(.event-card.gold) .timeline-date{border-color:#d9a521}
+/* Watchlist */
+.watch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.watch-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:14px}
+.watch-card.bearish{border-color:rgba(217,72,72,.45);background:linear-gradient(145deg,rgba(217,72,72,.06),var(--panel))}
+.watch-head{display:flex;justify-content:space-between;align-items:flex-start}
+.watch-head b{font-size:19px}
+.watch-quote{text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.watch-quote strong{font:600 15px var(--mono)}
+.watch-signals{display:flex;flex-wrap:wrap;gap:7px}
+.signal-chip{font:10px var(--mono);padding:6px 9px;border-radius:3px;line-height:1.4}
+.signal-chip.bear{background:rgba(217,72,72,.10);color:#b23030;border:1px solid rgba(217,72,72,.30)}
+.signal-chip.bull{background:rgba(43,158,74,.10);color:#217a39;border:1px solid rgba(43,158,74,.30)}
+.signal-chip.gold{background:rgba(240,185,50,.16);color:#8a6410;border:1px solid #d9a521}
+.signal-chip.warn{background:rgba(221,143,14,.10);color:#a5690a;border:1px solid rgba(221,143,14,.30)}
+@media(max-width:1000px){.watch-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.watch-grid{grid-template-columns:1fr}}
