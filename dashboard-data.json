@@ -13098,5 +13098,132 @@
       "type": "ex-dividend",
       "detail": "Ex-dividend"
     }
-  ]
+  ],
+  "macroBoard": {
+    "asOf": "2026-08-12",
+    "items": [
+      {
+        "symbol": "SPX",
+        "kind": "index",
+        "label": "S&P 500",
+        "desc": "Broad US market",
+        "value": 7748.5,
+        "changePct": null
+      },
+      {
+        "symbol": "NDX",
+        "kind": "index",
+        "label": "Nasdaq 100",
+        "desc": "Big tech",
+        "value": 29742.6,
+        "changePct": null
+      },
+      {
+        "symbol": "DJX",
+        "kind": "index",
+        "label": "Dow (1/100)",
+        "desc": "Blue-chip industrials",
+        "value": 537.7,
+        "changePct": null
+      },
+      {
+        "symbol": "VIX",
+        "kind": "index",
+        "label": "Volatility (VIX)",
+        "desc": "Fear gauge \u2014 cost of hedging S&P 500",
+        "value": 14.55,
+        "changePct": null
+      },
+      {
+        "symbol": "BRTI",
+        "kind": "index",
+        "label": "Bitcoin",
+        "desc": "Speculative risk appetite",
+        "value": 63356.81,
+        "changePct": null
+      },
+      {
+        "symbol": "GLD",
+        "kind": "proxy",
+        "label": "Gold",
+        "desc": "Safe-haven demand & inflation hedge",
+        "value": 404.91,
+        "changePct": 0.99
+      },
+      {
+        "symbol": "SLV",
+        "kind": "proxy",
+        "label": "Silver",
+        "desc": "Precious metal with industrial demand",
+        "value": 59.06,
+        "changePct": 0.88
+      },
+      {
+        "symbol": "USO",
+        "kind": "proxy",
+        "label": "Oil",
+        "desc": "Energy costs & growth expectations",
+        "value": 127.3,
+        "changePct": -0.24
+      },
+      {
+        "symbol": "UUP",
+        "kind": "proxy",
+        "label": "US Dollar",
+        "desc": "Strong dollar pressures gold & exporters",
+        "value": 28.21,
+        "changePct": 0.23
+      },
+      {
+        "symbol": "TLT",
+        "kind": "proxy",
+        "label": "20Y+ Treasuries",
+        "desc": "Price up = yields down (easier conditions)",
+        "value": 82.11,
+        "changePct": -0.1
+      },
+      {
+        "symbol": "HYG",
+        "kind": "proxy",
+        "label": "High-yield credit",
+        "desc": "Credit stress gauge \u2014 falling = risk-off",
+        "value": 79.61,
+        "changePct": 0.13
+      },
+      {
+        "symbol": "IWM",
+        "kind": "proxy",
+        "label": "Small caps",
+        "desc": "Domestic risk appetite",
+        "value": 302.71,
+        "changePct": 0.57
+      }
+    ],
+    "regime": {
+      "score": -0.02,
+      "label": "MIXED",
+      "vix": 14.55,
+      "vixBand": "calm",
+      "detail": "Risk assets vs. safe havens score -0.02. VIX at 14.55 (calm)."
+    },
+    "history": [
+      {
+        "date": "2026-08-12",
+        "values": {
+          "SPX": 7748.5,
+          "NDX": 29742.6,
+          "DJX": 537.7,
+          "VIX": 14.55,
+          "BRTI": 63356.81,
+          "GLD": 404.91,
+          "SLV": 59.06,
+          "USO": 127.3,
+          "UUP": 28.21,
+          "TLT": 82.11,
+          "HYG": 79.61,
+          "IWM": 302.71
+        }
+      }
+    ]
+  }
 }

@@ -53,3 +53,14 @@ footer{color:var(--text)}
 .signal-chip.warn{background:rgba(221,143,14,.10);color:#a5690a;border:1px solid rgba(221,143,14,.30)}
 @media(max-width:1000px){.watch-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.watch-grid{grid-template-columns:1fr}}
+/* Macro board */
+.macro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.macro-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 8px 26px rgba(70,120,160,.10)}
+.macro-card.gold-card{border-color:#d9a521;background:linear-gradient(135deg,rgba(240,185,50,.16),var(--panel))}
+.macro-label{color:var(--muted);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.macro-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.macro-row strong{font:700 21px var(--mono)}
+.macro-card small{color:var(--muted);font-size:10.5px;line-height:1.5}
+.macro-new{font:9px var(--mono);color:var(--muted);border:1px dashed var(--line);padding:3px 7px;border-radius:2px}
+@media(max-width:1000px){.macro-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.macro-grid{grid-template-columns:1fr}}

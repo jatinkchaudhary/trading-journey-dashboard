@@ -110,6 +110,67 @@ def build_market(d):
     cal.sort(key=lambda e: (e['date'], e['symbol']))
     d['market'] = {'asOf': today, 'indexes': indexes, 'stocks': stocks}
     d['calendar'] = cal
+    build_macro(d)
+    return True
+
+MACRO_META = {
+    'VIX':  ('Volatility (VIX)', 'Fear gauge — cost of hedging S&P 500'),
+    'SPX':  ('S&P 500', 'Broad US market'),
+    'NDX':  ('Nasdaq 100', 'Big tech'),
+    'DJX':  ('Dow (1/100)', 'Blue-chip industrials'),
+    'BRTI': ('Bitcoin', 'Speculative risk appetite'),
+    'GLD':  ('Gold', 'Safe-haven demand & inflation hedge'),
+    'SLV':  ('Silver', 'Precious metal with industrial demand'),
+    'USO':  ('Oil', 'Energy costs & growth expectations'),
+    'UUP':  ('US Dollar', 'Strong dollar pressures gold & exporters'),
+    'TLT':  ('20Y+ Treasuries', 'Price up = yields down (easier conditions)'),
+    'HYG':  ('High-yield credit', 'Credit stress gauge — falling = risk-off'),
+    'IWM':  ('Small caps', 'Domestic risk appetite'),
+}
+
+def build_macro(d):
+    """Build d['macroBoard'] from Data/macro_fetch.json. Keeps a rolling daily
+    history inside dashboard-data.json so trends accumulate run over run."""
+    mf = load(os.path.join(HERE, 'Data', 'macro_fetch.json'))
+    if not mf:
+        return False
+    today = d['sourceThrough']
+    prior = d.get('macroBoard', {})
+    hist = [h for h in prior.get('history', []) if h['date'] != today]
+    prev_idx = hist[-1]['values'] if hist else {}
+    items, changes = [], {}
+    for sym, val in mf.get('indexes', {}).items():
+        label, desc = MACRO_META.get(sym, (sym, ''))
+        prev = prev_idx.get(sym)
+        chg = r2((val - prev) / prev * 100) if prev else None
+        changes[sym] = chg
+        items.append({'symbol': sym, 'kind': 'index', 'label': label, 'desc': desc,
+                      'value': r2(val), 'changePct': chg})
+    for sym, q in mf.get('proxies', {}).items():
+        label, desc = MACRO_META.get(sym, (sym, ''))
+        chg = r2((q['last'] - q['prevClose']) / q['prevClose'] * 100) if q.get('prevClose') else None
+        changes[sym] = chg
+        items.append({'symbol': sym, 'kind': 'proxy', 'label': label, 'desc': desc,
+                      'value': r2(q['last']), 'changePct': chg})
+    # Risk regime: risk-on assets vs safe havens, tempered by VIX level.
+    risk_on = [changes.get(s) for s in ('IWM', 'HYG', 'BRTI', 'NDX') if changes.get(s) is not None]
+    havens = [changes.get(s) for s in ('GLD', 'UUP', 'TLT') if changes.get(s) is not None]
+    vix = mf.get('indexes', {}).get('VIX')
+    score = (sum(risk_on) / len(risk_on) if risk_on else 0) - (sum(havens) / len(havens) if havens else 0)
+    if vix is not None:
+        score -= max(0, (vix - 20) / 10)
+    label = 'RISK-ON' if score > 0.35 else 'RISK-OFF' if score < -0.35 else 'MIXED'
+    vix_band = (None if vix is None else
+                'calm' if vix < 15 else 'normal' if vix < 20 else 'nervous' if vix < 30 else 'panic')
+    detail = (f"Risk assets vs. safe havens score {score:+.2f}. "
+              f"VIX at {vix} ({vix_band})." if vix is not None else f"Score {score:+.2f}.")
+    values = {**{s: v for s, v in mf.get('indexes', {}).items()},
+              **{s: q['last'] for s, q in mf.get('proxies', {}).items()}}
+    hist.append({'date': today, 'values': {k: r2(v) for k, v in values.items()}})
+    d['macroBoard'] = {'asOf': today, 'items': items,
+                       'regime': {'score': r2(score), 'label': label, 'vix': vix,
+                                  'vixBand': vix_band, 'detail': detail},
+                       'history': hist[-90:]}
     return True
 
 def main():

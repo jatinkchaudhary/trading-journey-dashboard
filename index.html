@@ -17,7 +17,7 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Trading Journey home"><span class="brand-mark">TJ</span><span>TRADING JOURNEY</span></a>
     <nav aria-label="Dashboard sections">
-      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a><a href="#market">Market</a><a href="#calendar">Calendar</a><a href="#watch">Watch</a>
+      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a><a href="#market">Market</a><a href="#macro">Macro</a><a href="#calendar">Calendar</a><a href="#watch">Watch</a>
     </nav>
     <div class="live-pill"><i></i><span id="asOf">Loading…</span></div>
   </header>
@@ -123,8 +123,15 @@
       <article class="table-shell"><table><thead><tr><th data-msort="symbol">Symbol</th><th data-msort="last">Last</th><th data-msort="changePct">Day</th><th data-msort="dayPnl">Day P&amp;L</th><th data-msort="peRatio">P/E</th><th data-msort="marketCap">Mkt Cap</th><th data-msort="rangePct">52W Range</th><th data-msort="earningsDate">Earnings</th></tr></thead><tbody id="marketRows"></tbody></table><button id="marketShowAll" class="show-all">Show all holdings</button></article>
     </section>
 
+    <section id="macro" class="section reveal" hidden>
+      <div class="section-head"><div><p class="eyebrow">06 / MACRO CONDITIONS</p><h2>The weather over the market.</h2></div><div class="live-pill"><i></i><span id="macroAsOf">—</span></div></div>
+      <div id="regimeBanner" class="focus-strip" style="margin:0 0 22px"><div class="focus-icon" id="regimeIcon">◈</div><div><span>TODAY'S REGIME</span><strong id="regimeLabel">—</strong></div><p id="regimeDetail">—</p></div>
+      <div class="macro-grid" id="macroGrid"></div>
+      <article class="panel" style="margin-top:16px"><div class="panel-head"><div><h3>Macro trend</h3><p id="macroTrendNote">Cumulative % move since tracking began — builds a new point every trading day</p></div></div><div class="chart-wrap tall"><canvas id="macroTrendChart"></canvas></div></article>
+    </section>
+
     <section id="calendar" class="section reveal" hidden>
-      <div class="section-head"><div><p class="eyebrow">06 / CALENDAR</p><h2>What's coming for your stocks.</h2></div></div>
+      <div class="section-head"><div><p class="eyebrow">07 / CALENDAR</p><h2>What's coming for your stocks.</h2></div></div>
 
       <div class="stat-grid">
         <article class="stat-card"><span>NEXT EARNINGS</span><strong id="calNextEarnings">—</strong><small id="calNextEarningsNote">—</small></article>
@@ -137,7 +144,7 @@
     </section>
 
     <section id="watch" class="section reveal" hidden>
-      <div class="section-head"><div><p class="eyebrow">07 / WATCHLIST</p><h2>Eyes on, for the next session.</h2></div></div>
+      <div class="section-head"><div><p class="eyebrow">08 / WATCHLIST</p><h2>Eyes on, for the next session.</h2></div></div>
       <div id="watchMacro" class="focus-strip" style="margin:0 0 22px" hidden><div class="focus-icon">★</div><div><span>MACRO EVENT AHEAD</span><strong id="watchMacroTitle">—</strong></div><p id="watchMacroDetail">—</p></div>
       <div class="watch-grid" id="watchGrid"></div>
     </section>

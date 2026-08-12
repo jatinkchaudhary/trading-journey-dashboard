@@ -11,7 +11,7 @@ const tooltip={backgroundColor:'#ffffff',borderColor:C.line,borderWidth:1,titleC
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(28,43,54,.10)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderCalendar();renderWatch();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -162,6 +162,32 @@ function renderCalendar(){
   document.querySelector('#eventTimeline').innerHTML=Object.entries(byDate).map(([date,events])=>{
     const dt=new Date(date+'T12:00:00');
     return `<div class="timeline-day${date===today?' today':''}"><div class="timeline-date"><strong>${dt.toLocaleDateString('en-US',{day:'numeric'})}</strong><span>${dt.toLocaleDateString('en-US',{month:'short'})}</span><small>${dt.toLocaleDateString('en-US',{weekday:'short'})}</small></div><div class="timeline-events">${events.map(e=>`<div class="event-card ${e.type}"><span class="event-pill">${e.type==='gold'?'⬤ GOLD':e.type==='earnings'?'EARNINGS':e.type==='ex-dividend'?'EX-DIV':'PAYOUT'}</span><b>${e.symbol}</b><p>${e.detail}</p></div>`).join('')}</div></div>`}).join('');
+}
+function renderMacro(){
+  const B=D.macroBoard;if(!B||!B.items?.length)return;
+  document.querySelector('#macro').hidden=false;
+  set('#macroAsOf',`As of ${new Date(B.asOf+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'})}`);
+  const R=B.regime,banner=document.querySelector('#regimeBanner'),icon=document.querySelector('#regimeIcon');
+  set('#regimeLabel',R.label==='RISK-ON'?'Risk-on — money is chasing growth':R.label==='RISK-OFF'?'Risk-off — money is hiding':'Mixed — no clear direction');
+  set('#regimeDetail',R.detail+(R.vixBand?` A ${R.vixBand} VIX means ${{calm:'hedging is cheap and markets are relaxed',normal:'nothing unusual in hedging demand',nervous:'traders are paying up for protection',panic:'fear is elevated — expect wild swings'}[R.vixBand]}.`:''));
+  const col=R.label==='RISK-ON'?'var(--green)':R.label==='RISK-OFF'?'var(--red)':'var(--orange)';
+  icon.style.background=col;banner.style.borderColor=col;
+  const ORDER=['VIX','SPX','NDX','DJX','IWM','HYG','TLT','UUP','GLD','SLV','USO','BRTI'];
+  const items=[...B.items].sort((a,b)=>ORDER.indexOf(a.symbol)-ORDER.indexOf(b.symbol));
+  document.querySelector('#macroGrid').innerHTML=items.map(it=>{
+    const chg=it.changePct;
+    const fmt=it.symbol==='BRTI'?money(it.value):it.kind==='index'?it.value.toLocaleString():money(it.value);
+    return `<article class="macro-card${it.symbol==='GLD'||it.symbol==='SLV'?' gold-card':''}">
+      <span class="macro-label">${it.label}</span>
+      <div class="macro-row"><strong>${fmt}</strong>${chg!=null?`<span class="return-pill ${chg<0?'red':''}">${pct(chg)}</span>`:'<span class="macro-new">tracking</span>'}</div>
+      <small>${it.desc}</small></article>`}).join('');
+  const hist=B.history||[];
+  if(hist.length>=2){
+    const TRACK=[['SPX',C.cyan],['GLD','#d9a521'],['TLT',C.purple],['UUP','#5d7486'],['IWM',C.green],['USO',C.red]];
+    const labels=hist.map(h=>h.date);
+    const ds=TRACK.filter(([s])=>hist[0].values[s]!=null).map(([s,color])=>({label:(D.macroBoard.items.find(i=>i.symbol===s)||{}).label||s,data:hist.map(h=>h.values[s]!=null?+(((h.values[s]-hist[0].values[s])/hist[0].values[s])*100).toFixed(2):null),borderColor:color,borderWidth:2,pointRadius:0,tension:.3,fill:false}));
+    charts.macroTrend=new Chart(document.querySelector('#macroTrendChart'),{type:'line',data:{labels,datasets:ds},options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:8,boxHeight:8,padding:12}},tooltip:{...tooltip,callbacks:{label:c=>`${c.dataset.label}: ${pct(c.raw)}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>`${v}%`}}}}});
+  }else{set('#macroTrendNote','Tracking started today — the trend line appears from tomorrow\'s update onward.');document.querySelector('#macroTrendChart').parentElement.innerHTML='<p style="color:var(--muted);padding:30px 0">Day 1 of tracking. Each daily update adds a point; the trend takes shape over the coming sessions.</p>'}
 }
 function renderWatch(){
   const M=D.market;if(!M||!M.stocks?.length)return;
