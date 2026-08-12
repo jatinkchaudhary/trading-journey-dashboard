@@ -13,8 +13,11 @@ js = js.replace("await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Erro
 assert 'window.__DATA__' in js, 'fetch replacement failed - app.js changed?'
 payload = json.dumps(data).replace('</', '<\\/')
 html = html.replace('<link rel="stylesheet" href="styles.css">', '<style>\n' + css + '\n</style>')
+# Inline scripts ignore `defer`, so wait for window load (ensures the Chart.js
+# CDN script has executed) before running the app code.
+wrapped = "window.addEventListener('load',function(){\n" + js + "\n});"
 html = html.replace('<script src="app.js" defer></script>',
-                    '<script>window.__DATA__=' + payload + ';</script>\n<script defer>\n' + js + '\n</script>')
+                    '<script>window.__DATA__=' + payload + ';</script>\n<script>\n' + wrapped + '\n</script>')
 out_dir = os.path.join(HERE, 'Snapshots')
 os.makedirs(out_dir, exist_ok=True)
 out = os.path.join(out_dir, f"trading-journey-{data['sourceThrough']}.html")
