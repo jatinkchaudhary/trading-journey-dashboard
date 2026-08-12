@@ -102,6 +102,11 @@ def build_market(d):
                 dps = fu.get('dividendPerShare')
                 cal.append({'date': dt, 'symbol': sym, 'type': typ,
                             'detail': label + (f" · ${dps:.2f}/share" if dps else '')})
+    gold = load(os.path.join(HERE, 'Data', 'gold_events.json')) or {}
+    for g in gold.get('events', []):
+        if g['date'] >= today:
+            cal.append({'date': g['date'], 'symbol': g['kind'], 'type': 'gold',
+                        'detail': g['detail']})
     cal.sort(key=lambda e: (e['date'], e['symbol']))
     d['market'] = {'asOf': today, 'indexes': indexes, 'stocks': stocks}
     d['calendar'] = cal

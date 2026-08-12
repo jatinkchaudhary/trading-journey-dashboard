@@ -11775,15 +11775,15 @@
         "symbol": "SPX",
         "name": "S&P 500",
         "value": 7748.5,
-        "prevValue": null,
-        "changePct": null
+        "prevValue": 7748.5,
+        "changePct": 0.0
       },
       {
         "symbol": "NDX",
         "name": "Nasdaq 100",
         "value": 29742.6,
-        "prevValue": null,
-        "changePct": null
+        "prevValue": 29742.6,
+        "changePct": 0.0
       }
     ],
     "stocks": [
@@ -12991,6 +12991,12 @@
       "detail": "Ex-dividend \u00b7 $0.22/share"
     },
     {
+      "date": "2026-09-04",
+      "symbol": "JOBS",
+      "type": "gold",
+      "detail": "US Jobs Report (Aug) - 8:30 AM ET. Weak jobs = dovish Fed = gold up"
+    },
+    {
       "date": "2026-09-10",
       "symbol": "CVX",
       "type": "dividend-pay",
@@ -13009,10 +13015,22 @@
       "detail": "Dividend paid \u00b7 $1.03/share"
     },
     {
+      "date": "2026-09-11",
+      "symbol": "CPI",
+      "type": "gold",
+      "detail": "US CPI inflation (Aug) - 8:30 AM ET. Hot inflation moves gold sharply"
+    },
+    {
       "date": "2026-09-14",
       "symbol": "GOOGL",
       "type": "dividend-pay",
       "detail": "Dividend paid \u00b7 $0.22/share"
+    },
+    {
+      "date": "2026-09-16",
+      "symbol": "FOMC",
+      "type": "gold",
+      "detail": "Fed rate decision + dot plot - 2 PM ET. Biggest single gold mover"
     },
     {
       "date": "2026-09-16",
@@ -13021,10 +13039,58 @@
       "detail": "Ex-dividend \u00b7 $0.88/share"
     },
     {
+      "date": "2026-10-02",
+      "symbol": "JOBS",
+      "type": "gold",
+      "detail": "US Jobs Report (Sep) - 8:30 AM ET"
+    },
+    {
       "date": "2026-10-08",
       "symbol": "TSM",
       "type": "dividend-pay",
       "detail": "Dividend paid \u00b7 $0.88/share"
+    },
+    {
+      "date": "2026-10-14",
+      "symbol": "CPI",
+      "type": "gold",
+      "detail": "US CPI inflation (Sep) - 8:30 AM ET"
+    },
+    {
+      "date": "2026-10-28",
+      "symbol": "FOMC",
+      "type": "gold",
+      "detail": "Fed rate decision - 2 PM ET"
+    },
+    {
+      "date": "2026-11-06",
+      "symbol": "JOBS",
+      "type": "gold",
+      "detail": "US Jobs Report (Oct) - 8:30 AM ET"
+    },
+    {
+      "date": "2026-11-10",
+      "symbol": "CPI",
+      "type": "gold",
+      "detail": "US CPI inflation (Oct) - 8:30 AM ET"
+    },
+    {
+      "date": "2026-12-04",
+      "symbol": "JOBS",
+      "type": "gold",
+      "detail": "US Jobs Report (Nov) - 8:30 AM ET"
+    },
+    {
+      "date": "2026-12-09",
+      "symbol": "FOMC",
+      "type": "gold",
+      "detail": "Fed rate decision + dot plot - 2 PM ET"
+    },
+    {
+      "date": "2026-12-10",
+      "symbol": "CPI",
+      "type": "gold",
+      "detail": "US CPI inflation (Nov) - 8:30 AM ET"
     },
     {
       "date": "2026-12-30",

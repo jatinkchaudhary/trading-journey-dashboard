@@ -1,0 +1,16 @@
+{
+  "note": "Macro events with high gold-price impact. Sources: federalreserve.gov FOMC calendar, BLS CPI & Employment Situation schedules (fetched 2026-08-12).",
+  "events": [
+    {"date": "2026-09-04", "kind": "JOBS", "detail": "US Jobs Report (Aug) - 8:30 AM ET. Weak jobs = dovish Fed = gold up"},
+    {"date": "2026-09-11", "kind": "CPI", "detail": "US CPI inflation (Aug) - 8:30 AM ET. Hot inflation moves gold sharply"},
+    {"date": "2026-09-16", "kind": "FOMC", "detail": "Fed rate decision + dot plot - 2 PM ET. Biggest single gold mover"},
+    {"date": "2026-10-02", "kind": "JOBS", "detail": "US Jobs Report (Sep) - 8:30 AM ET"},
+    {"date": "2026-10-14", "kind": "CPI", "detail": "US CPI inflation (Sep) - 8:30 AM ET"},
+    {"date": "2026-10-28", "kind": "FOMC", "detail": "Fed rate decision - 2 PM ET"},
+    {"date": "2026-11-06", "kind": "JOBS", "detail": "US Jobs Report (Oct) - 8:30 AM ET"},
+    {"date": "2026-11-10", "kind": "CPI", "detail": "US CPI inflation (Oct) - 8:30 AM ET"},
+    {"date": "2026-12-04", "kind": "JOBS", "detail": "US Jobs Report (Nov) - 8:30 AM ET"},
+    {"date": "2026-12-09", "kind": "FOMC", "detail": "Fed rate decision + dot plot - 2 PM ET"},
+    {"date": "2026-12-10", "kind": "CPI", "detail": "US CPI inflation (Nov) - 8:30 AM ET"}
+  ]
+}
