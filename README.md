@@ -1,26 +1,30 @@
 # Trading Journey Dashboard
 
-A privacy-conscious, visual-first dashboard of my Robinhood trading journey — hosted locally.
+A privacy-conscious, visual-first dashboard of a personal trading journey.
+Auto-updated every weekday at ~1 PM Pacific from read-only brokerage data.
 
-## View the dashboard
+## View it (advisor / any Mac)
 
-Double-click **start-dashboard.bat**, or open <http://localhost:4173> if the server is already running.
+1. Get `advisor-dashboard.command` (in this repo) and run once in Terminal:
+   `chmod +x advisor-dashboard.command`
+2. From then on, just double-click it. It downloads the latest copy of this
+   repo and opens the dashboard at http://localhost:4173 — nothing is
+   installed, nothing leaves your machine.
 
-Optional: run **install-autostart.bat** once to have the server start automatically at login.
+## View it (owner, Windows)
 
-## How it stays up to date
+Double-click `start-dashboard.bat` — serves this folder at http://localhost:4173.
 
-A scheduled Claude task ("trading-dashboard-daily-update") runs weekdays at 1 PM:
+## How updates work
 
-1. Pulls filled orders, realized P&L, positions, and portfolio value from the Robinhood connector (read-only) for all three accounts.
-2. Writes the day's raw fetch to `Data/rh_fetch.json` (git-ignored, never published).
-3. Runs `update_from_robinhood.py` to merge it into `dashboard-data.json`.
-4. Commits locally for history. Nothing is pushed anywhere — the data never leaves this machine.
-
-Just refresh the browser tab after 1 PM to see the day's trades.
-
-Note: the task runs while the Claude desktop app is open; if the app is closed at 1 PM it catches up on next launch. Deposits/withdrawals aren't visible to the connector — if funding changes, ask Claude to adjust the `funding` figure.
+A scheduled Claude task pulls filled orders, realized P&L, positions, quotes,
+fundamentals, the earnings calendar, index levels, and gold/silver spot prices
+(read-only), merges them into `dashboard-data.json` via `update_from_robinhood.py`,
+commits, and pushes here. Raw brokerage exports and API payloads are git-ignored
+and never published — the public JSON contains sanitized, derived figures only.
 
 ## Methodology limitation
 
-Open positions are valued at the latest available quote at update time. For exact account returns and drawdown, use official daily closing equity data from the broker.
+Open positions are valued at the latest available quote at update time. For
+exact account returns and drawdown, use official daily closing equity data
+from the broker.
