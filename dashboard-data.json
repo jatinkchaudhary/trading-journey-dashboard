@@ -13106,107 +13106,209 @@
         "symbol": "SPX",
         "kind": "index",
         "label": "S&P 500",
-        "desc": "Broad US market",
+        "desc": "Broad US market index",
         "value": 7748.5,
-        "changePct": null
+        "changePct": 0.26
       },
       {
         "symbol": "NDX",
         "kind": "index",
         "label": "Nasdaq 100",
-        "desc": "Big tech",
+        "desc": "Big-tech index",
         "value": 29742.6,
-        "changePct": null
+        "changePct": 0.74
       },
       {
         "symbol": "DJX",
         "kind": "index",
-        "label": "Dow (1/100)",
-        "desc": "Blue-chip industrials",
+        "label": "Dow (1/100 scale)",
+        "desc": "Blue-chip industrials index, shown at 1/100 of the Dow",
         "value": 537.7,
-        "changePct": null
+        "changePct": -0.04
       },
       {
         "symbol": "VIX",
         "kind": "index",
         "label": "Volatility (VIX)",
-        "desc": "Fear gauge \u2014 cost of hedging S&P 500",
+        "desc": "Fear gauge \u2014 cost of hedging the S&P 500. Below 15 calm, above 20 nervous",
         "value": 14.55,
-        "changePct": null
+        "changePct": -4.78
       },
       {
         "symbol": "BRTI",
         "kind": "index",
         "label": "Bitcoin",
-        "desc": "Speculative risk appetite",
+        "desc": "Live BTC price \u2014 speculative risk appetite",
         "value": 63356.81,
-        "changePct": null
+        "changePct": -0.3
       },
       {
         "symbol": "GLD",
         "kind": "proxy",
-        "label": "Gold",
-        "desc": "Safe-haven demand & inflation hedge",
+        "label": "Gold \u2014 GLD ETF",
+        "desc": "ETF tracking the gold price. Rising = safe-haven demand / inflation hedge",
         "value": 404.91,
         "changePct": 0.99
       },
       {
         "symbol": "SLV",
         "kind": "proxy",
-        "label": "Silver",
-        "desc": "Precious metal with industrial demand",
+        "label": "Silver \u2014 SLV ETF",
+        "desc": "ETF tracking the silver price \u2014 part precious metal, part industrial",
         "value": 59.06,
         "changePct": 0.88
       },
       {
         "symbol": "USO",
         "kind": "proxy",
-        "label": "Oil",
-        "desc": "Energy costs & growth expectations",
+        "label": "Oil \u2014 USO ETF",
+        "desc": "ETF tracking crude oil \u2014 energy costs & growth expectations",
         "value": 127.3,
         "changePct": -0.24
       },
       {
         "symbol": "UUP",
         "kind": "proxy",
-        "label": "US Dollar",
-        "desc": "Strong dollar pressures gold & exporters",
+        "label": "US Dollar \u2014 UUP ETF",
+        "desc": "ETF that rises when the dollar strengthens vs other currencies. A stronger dollar is a headwind for gold & exporters",
         "value": 28.21,
         "changePct": 0.23
       },
       {
         "symbol": "TLT",
         "kind": "proxy",
-        "label": "20Y+ Treasuries",
-        "desc": "Price up = yields down (easier conditions)",
+        "label": "Long-term rates \u2014 TLT ETF",
+        "desc": "20yr+ Treasury bond ETF. Price UP = yields DOWN (easier conditions); price down = rates rising",
         "value": 82.11,
         "changePct": -0.1
       },
       {
         "symbol": "HYG",
         "kind": "proxy",
-        "label": "High-yield credit",
-        "desc": "Credit stress gauge \u2014 falling = risk-off",
+        "label": "Credit health \u2014 HYG ETF",
+        "desc": "Junk-bond ETF. Falling = lenders getting scared = risk-off warning",
         "value": 79.61,
         "changePct": 0.13
       },
       {
         "symbol": "IWM",
         "kind": "proxy",
-        "label": "Small caps",
-        "desc": "Domestic risk appetite",
+        "label": "Small caps \u2014 IWM ETF",
+        "desc": "Russell 2000 ETF \u2014 appetite for riskier domestic stocks",
         "value": 302.71,
         "changePct": 0.57
       }
     ],
     "regime": {
-      "score": -0.02,
+      "score": -0.09,
       "label": "MIXED",
       "vix": 14.55,
       "vixBand": "calm",
-      "detail": "Risk assets vs. safe havens score -0.02. VIX at 14.55 (calm)."
+      "detail": "Risk assets vs. safe havens score -0.09. VIX at 14.55 (calm)."
     },
     "history": [
+      {
+        "date": "2026-08-04",
+        "values": {
+          "SPX": 7736.52,
+          "NDX": 29733.16,
+          "DJX": 540.86,
+          "VIX": 16.5,
+          "BRTI": 64058.55,
+          "GLD": 374.16,
+          "SLV": 53.84,
+          "USO": 115.78,
+          "UUP": 28.16,
+          "TLT": 82.82,
+          "HYG": 79.55,
+          "IWM": 301.71
+        }
+      },
+      {
+        "date": "2026-08-05",
+        "values": {
+          "SPX": 7723.55,
+          "NDX": 29487.79,
+          "DJX": 543.49,
+          "VIX": 15.81,
+          "BRTI": 64602.61,
+          "GLD": 389.64,
+          "SLV": 56.07,
+          "USO": 114.88,
+          "UUP": 28.09,
+          "TLT": 83.0,
+          "HYG": 79.52,
+          "IWM": 299.77
+        }
+      },
+      {
+        "date": "2026-08-06",
+        "values": {
+          "SPX": 7709.96,
+          "NDX": 29373.33,
+          "DJX": 538.85,
+          "VIX": 15.15,
+          "BRTI": 64260.24,
+          "GLD": 389.67,
+          "SLV": 55.85,
+          "USO": 118.87,
+          "UUP": 28.19,
+          "TLT": 82.52,
+          "HYG": 79.46,
+          "IWM": 298.25
+        }
+      },
+      {
+        "date": "2026-08-07",
+        "values": {
+          "SPX": 7757.64,
+          "NDX": 29722.3,
+          "DJX": 540.37,
+          "VIX": 14.9,
+          "BRTI": 64886.67,
+          "GLD": 398.47,
+          "SLV": 57.5,
+          "USO": 117.98,
+          "UUP": 28.07,
+          "TLT": 82.76,
+          "HYG": 79.61,
+          "IWM": 301.56
+        }
+      },
+      {
+        "date": "2026-08-10",
+        "values": {
+          "SPX": 7753.11,
+          "NDX": 29621.8,
+          "DJX": 539.76,
+          "VIX": 15.46,
+          "BRTI": 63918.35,
+          "GLD": 402.54,
+          "SLV": 59.41,
+          "USO": 125.92,
+          "UUP": 28.14,
+          "TLT": 82.06,
+          "HYG": 79.48,
+          "IWM": 299.98
+        }
+      },
+      {
+        "date": "2026-08-11",
+        "values": {
+          "SPX": 7728.2,
+          "NDX": 29525.48,
+          "DJX": 537.92,
+          "VIX": 15.28,
+          "BRTI": 63544.84,
+          "GLD": 400.96,
+          "SLV": 58.55,
+          "USO": 127.61,
+          "UUP": 28.14,
+          "TLT": 82.19,
+          "HYG": 79.51,
+          "IWM": 300.99
+        }
+      },
       {
         "date": "2026-08-12",
         "values": {

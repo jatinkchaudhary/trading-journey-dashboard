@@ -177,9 +177,10 @@ function renderMacro(){
   document.querySelector('#macroGrid').innerHTML=items.map(it=>{
     const chg=it.changePct;
     const fmt=it.symbol==='BRTI'?money(it.value):it.kind==='index'?it.value.toLocaleString():money(it.value);
+    const cls=chg==null?'':chg<0?'negative':'positive';
     return `<article class="macro-card${it.symbol==='GLD'||it.symbol==='SLV'?' gold-card':''}">
       <span class="macro-label">${it.label}</span>
-      <div class="macro-row"><strong>${fmt}</strong>${chg!=null?`<span class="return-pill ${chg<0?'red':''}">${pct(chg)}</span>`:'<span class="macro-new">tracking</span>'}</div>
+      <div class="macro-row"><strong class="${cls}">${fmt} <em class="macro-chg">${chg!=null?`(${pct(chg)})`:''}</em></strong>${chg==null?'<span class="macro-new">day 1</span>':''}</div>
       <small>${it.desc}</small></article>`}).join('');
   const hist=B.history||[];
   if(hist.length>=2){

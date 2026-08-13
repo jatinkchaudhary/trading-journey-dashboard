@@ -64,3 +64,6 @@ footer{color:var(--text)}
 .macro-new{font:9px var(--mono);color:var(--muted);border:1px dashed var(--line);padding:3px 7px;border-radius:2px}
 @media(max-width:1000px){.macro-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.macro-grid{grid-template-columns:1fr}}
+.macro-chg{font:500 12px var(--mono);font-style:normal;opacity:.85}
+.macro-row strong.positive{color:var(--green)}
+.macro-row strong.negative{color:var(--red)}

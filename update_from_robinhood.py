@@ -114,18 +114,18 @@ def build_market(d):
     return True
 
 MACRO_META = {
-    'VIX':  ('Volatility (VIX)', 'Fear gauge — cost of hedging S&P 500'),
-    'SPX':  ('S&P 500', 'Broad US market'),
-    'NDX':  ('Nasdaq 100', 'Big tech'),
-    'DJX':  ('Dow (1/100)', 'Blue-chip industrials'),
-    'BRTI': ('Bitcoin', 'Speculative risk appetite'),
-    'GLD':  ('Gold', 'Safe-haven demand & inflation hedge'),
-    'SLV':  ('Silver', 'Precious metal with industrial demand'),
-    'USO':  ('Oil', 'Energy costs & growth expectations'),
-    'UUP':  ('US Dollar', 'Strong dollar pressures gold & exporters'),
-    'TLT':  ('20Y+ Treasuries', 'Price up = yields down (easier conditions)'),
-    'HYG':  ('High-yield credit', 'Credit stress gauge — falling = risk-off'),
-    'IWM':  ('Small caps', 'Domestic risk appetite'),
+    'VIX':  ('Volatility (VIX)', 'Fear gauge — cost of hedging the S&P 500. Below 15 calm, above 20 nervous'),
+    'SPX':  ('S&P 500', 'Broad US market index'),
+    'NDX':  ('Nasdaq 100', 'Big-tech index'),
+    'DJX':  ('Dow (1/100 scale)', 'Blue-chip industrials index, shown at 1/100 of the Dow'),
+    'BRTI': ('Bitcoin', 'Live BTC price — speculative risk appetite'),
+    'GLD':  ('Gold — GLD ETF', 'ETF tracking the gold price. Rising = safe-haven demand / inflation hedge'),
+    'SLV':  ('Silver — SLV ETF', 'ETF tracking the silver price — part precious metal, part industrial'),
+    'USO':  ('Oil — USO ETF', 'ETF tracking crude oil — energy costs & growth expectations'),
+    'UUP':  ('US Dollar — UUP ETF', 'ETF that rises when the dollar strengthens vs other currencies. A stronger dollar is a headwind for gold & exporters'),
+    'TLT':  ('Long-term rates — TLT ETF', '20yr+ Treasury bond ETF. Price UP = yields DOWN (easier conditions); price down = rates rising'),
+    'HYG':  ('Credit health — HYG ETF', 'Junk-bond ETF. Falling = lenders getting scared = risk-off warning'),
+    'IWM':  ('Small caps — IWM ETF', 'Russell 2000 ETF — appetite for riskier domestic stocks'),
 }
 
 def build_macro(d):
