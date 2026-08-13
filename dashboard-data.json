@@ -13143,20 +13143,20 @@
         "changePct": -0.3
       },
       {
-        "symbol": "GLD",
-        "kind": "proxy",
-        "label": "Gold \u2014 GLD ETF",
-        "desc": "ETF tracking the gold price. Rising = safe-haven demand / inflation hedge",
-        "value": 404.91,
+        "symbol": "XAU",
+        "kind": "spot",
+        "label": "Gold \u2014 XAU/USD spot",
+        "desc": "Spot gold, $ per troy ounce. Rising = safe-haven demand / inflation hedge",
+        "value": 4389.4,
         "changePct": 0.99
       },
       {
-        "symbol": "SLV",
-        "kind": "proxy",
-        "label": "Silver \u2014 SLV ETF",
-        "desc": "ETF tracking the silver price \u2014 part precious metal, part industrial",
-        "value": 59.06,
-        "changePct": 0.88
+        "symbol": "XAG",
+        "kind": "spot",
+        "label": "Silver \u2014 XAG/USD spot",
+        "desc": "Spot silver, $ per troy ounce \u2014 part precious metal, part industrial",
+        "value": 65.34,
+        "changePct": 0.87
       },
       {
         "symbol": "USO",
@@ -13221,7 +13221,9 @@
           "UUP": 28.16,
           "TLT": 82.82,
           "HYG": 79.55,
-          "IWM": 301.71
+          "IWM": 301.71,
+          "XAU": 4056.06,
+          "XAG": 59.56
         }
       },
       {
@@ -13238,7 +13240,9 @@
           "UUP": 28.09,
           "TLT": 83.0,
           "HYG": 79.52,
-          "IWM": 299.77
+          "IWM": 299.77,
+          "XAU": 4223.87,
+          "XAG": 62.03
         }
       },
       {
@@ -13255,7 +13259,9 @@
           "UUP": 28.19,
           "TLT": 82.52,
           "HYG": 79.46,
-          "IWM": 298.25
+          "IWM": 298.25,
+          "XAU": 4224.19,
+          "XAG": 61.79
         }
       },
       {
@@ -13272,7 +13278,9 @@
           "UUP": 28.07,
           "TLT": 82.76,
           "HYG": 79.61,
-          "IWM": 301.56
+          "IWM": 301.56,
+          "XAU": 4319.59,
+          "XAG": 63.61
         }
       },
       {
@@ -13289,7 +13297,9 @@
           "UUP": 28.14,
           "TLT": 82.06,
           "HYG": 79.48,
-          "IWM": 299.98
+          "IWM": 299.98,
+          "XAU": 4363.71,
+          "XAG": 65.73
         }
       },
       {
@@ -13306,7 +13316,9 @@
           "UUP": 28.14,
           "TLT": 82.19,
           "HYG": 79.51,
-          "IWM": 300.99
+          "IWM": 300.99,
+          "XAU": 4346.58,
+          "XAG": 64.78
         }
       },
       {
@@ -13317,6 +13329,8 @@
           "DJX": 537.7,
           "VIX": 14.55,
           "BRTI": 63356.81,
+          "XAU": 4389.4,
+          "XAG": 65.34,
           "GLD": 404.91,
           "SLV": 59.06,
           "USO": 127.3,

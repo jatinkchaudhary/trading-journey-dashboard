@@ -119,8 +119,8 @@ MACRO_META = {
     'NDX':  ('Nasdaq 100', 'Big-tech index'),
     'DJX':  ('Dow (1/100 scale)', 'Blue-chip industrials index, shown at 1/100 of the Dow'),
     'BRTI': ('Bitcoin', 'Live BTC price — speculative risk appetite'),
-    'GLD':  ('Gold — GLD ETF', 'ETF tracking the gold price. Rising = safe-haven demand / inflation hedge'),
-    'SLV':  ('Silver — SLV ETF', 'ETF tracking the silver price — part precious metal, part industrial'),
+    'XAU':  ('Gold — XAU/USD spot', 'Spot gold, $ per troy ounce. Rising = safe-haven demand / inflation hedge'),
+    'XAG':  ('Silver — XAG/USD spot', 'Spot silver, $ per troy ounce — part precious metal, part industrial'),
     'USO':  ('Oil — USO ETF', 'ETF tracking crude oil — energy costs & growth expectations'),
     'UUP':  ('US Dollar — UUP ETF', 'ETF that rises when the dollar strengthens vs other currencies. A stronger dollar is a headwind for gold & exporters'),
     'TLT':  ('Long-term rates — TLT ETF', '20yr+ Treasury bond ETF. Price UP = yields DOWN (easier conditions); price down = rates rising'),
@@ -146,7 +146,17 @@ def build_macro(d):
         changes[sym] = chg
         items.append({'symbol': sym, 'kind': 'index', 'label': label, 'desc': desc,
                       'value': r2(val), 'changePct': chg})
+    for sym, val in mf.get('spot', {}).items():
+        label, desc = MACRO_META.get(sym, (sym, ''))
+        val = val['last'] if isinstance(val, dict) else val
+        prev = prev_idx.get(sym)
+        chg = r2((val - prev) / prev * 100) if prev else None
+        changes[sym] = chg
+        items.append({'symbol': sym, 'kind': 'spot', 'label': label, 'desc': desc,
+                      'value': r2(val), 'changePct': chg})
     for sym, q in mf.get('proxies', {}).items():
+        if sym in ('GLD', 'SLV'):
+            continue  # replaced by XAU/XAG spot cards
         label, desc = MACRO_META.get(sym, (sym, ''))
         chg = r2((q['last'] - q['prevClose']) / q['prevClose'] * 100) if q.get('prevClose') else None
         changes[sym] = chg
@@ -154,7 +164,7 @@ def build_macro(d):
                       'value': r2(q['last']), 'changePct': chg})
     # Risk regime: risk-on assets vs safe havens, tempered by VIX level.
     risk_on = [changes.get(s) for s in ('IWM', 'HYG', 'BRTI', 'NDX') if changes.get(s) is not None]
-    havens = [changes.get(s) for s in ('GLD', 'UUP', 'TLT') if changes.get(s) is not None]
+    havens = [changes.get(s) for s in ('XAU', 'UUP', 'TLT') if changes.get(s) is not None]
     vix = mf.get('indexes', {}).get('VIX')
     score = (sum(risk_on) / len(risk_on) if risk_on else 0) - (sum(havens) / len(havens) if havens else 0)
     if vix is not None:
@@ -165,6 +175,7 @@ def build_macro(d):
     detail = (f"Risk assets vs. safe havens score {score:+.2f}. "
               f"VIX at {vix} ({vix_band})." if vix is not None else f"Score {score:+.2f}.")
     values = {**{s: v for s, v in mf.get('indexes', {}).items()},
+              **{s: (v['last'] if isinstance(v, dict) else v) for s, v in mf.get('spot', {}).items()},
               **{s: q['last'] for s, q in mf.get('proxies', {}).items()}}
     hist.append({'date': today, 'values': {k: r2(v) for k, v in values.items()}})
     d['macroBoard'] = {'asOf': today, 'items': items,

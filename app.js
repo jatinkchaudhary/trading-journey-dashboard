@@ -172,19 +172,19 @@ function renderMacro(){
   set('#regimeDetail',R.detail+(R.vixBand?` A ${R.vixBand} VIX means ${{calm:'hedging is cheap and markets are relaxed',normal:'nothing unusual in hedging demand',nervous:'traders are paying up for protection',panic:'fear is elevated — expect wild swings'}[R.vixBand]}.`:''));
   const col=R.label==='RISK-ON'?'var(--green)':R.label==='RISK-OFF'?'var(--red)':'var(--orange)';
   icon.style.background=col;banner.style.borderColor=col;
-  const ORDER=['VIX','SPX','NDX','DJX','IWM','HYG','TLT','UUP','GLD','SLV','USO','BRTI'];
+  const ORDER=['VIX','SPX','NDX','DJX','IWM','HYG','TLT','UUP','XAU','XAG','USO','BRTI'];
   const items=[...B.items].sort((a,b)=>ORDER.indexOf(a.symbol)-ORDER.indexOf(b.symbol));
   document.querySelector('#macroGrid').innerHTML=items.map(it=>{
     const chg=it.changePct;
     const fmt=it.symbol==='BRTI'?money(it.value):it.kind==='index'?it.value.toLocaleString():money(it.value);
     const cls=chg==null?'':chg<0?'negative':'positive';
-    return `<article class="macro-card${it.symbol==='GLD'||it.symbol==='SLV'?' gold-card':''}">
+    return `<article class="macro-card${it.symbol==='XAU'||it.symbol==='XAG'?' gold-card':''}">
       <span class="macro-label">${it.label}</span>
       <div class="macro-row"><strong class="${cls}">${fmt} <em class="macro-chg">${chg!=null?`(${pct(chg)})`:''}</em></strong>${chg==null?'<span class="macro-new">day 1</span>':''}</div>
       <small>${it.desc}</small></article>`}).join('');
   const hist=B.history||[];
   if(hist.length>=2){
-    const TRACK=[['SPX',C.cyan],['GLD','#d9a521'],['TLT',C.purple],['UUP','#5d7486'],['IWM',C.green],['USO',C.red]];
+    const TRACK=[['SPX',C.cyan],['XAU','#d9a521'],['XAG','#9a9a9a'],['TLT',C.purple],['UUP','#5d7486'],['IWM',C.green],['USO',C.red]];
     const labels=hist.map(h=>h.date);
     const ds=TRACK.filter(([s])=>hist[0].values[s]!=null).map(([s,color])=>({label:(D.macroBoard.items.find(i=>i.symbol===s)||{}).label||s,data:hist.map(h=>h.values[s]!=null?+(((h.values[s]-hist[0].values[s])/hist[0].values[s])*100).toFixed(2):null),borderColor:color,borderWidth:2,pointRadius:0,tension:.3,fill:false}));
     charts.macroTrend=new Chart(document.querySelector('#macroTrendChart'),{type:'line',data:{labels,datasets:ds},options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:8,boxHeight:8,padding:12}},tooltip:{...tooltip,callbacks:{label:c=>`${c.dataset.label}: ${pct(c.raw)}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>`${v}%`}}}}});
