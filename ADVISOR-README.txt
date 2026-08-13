@@ -1,21 +1,20 @@
-TRADING JOURNEY DASHBOARD — VIEWING INSTRUCTIONS (macOS)
+TRADING JOURNEY DASHBOARD — SETUP FOR YOUR MAC (one time, ~30 seconds)
 
-One-time setup:
-1. Save advisor-dashboard.command anywhere (e.g. your Desktop).
-2. Open Terminal once and run:
-     chmod +x ~/Desktop/advisor-dashboard.command
-   (adjust the path if you saved it elsewhere)
-3. If macOS asks to install "command line developer tools" the first
-   time, click Install — it provides python3, needed for the local server.
+1. Open Terminal (press Cmd+Space, type "Terminal", press Enter).
 
-Daily use:
-- Double-click advisor-dashboard.command.
-- It deletes the previous copy, downloads the latest dashboard
-  (updated every weekday at ~1 PM Pacific), and opens it at
-  http://localhost:4173 in your browser.
+2. Paste this single line and press Enter:
 
-Nothing is installed or sent anywhere — the dashboard runs entirely
-on your own machine and only you can see it.
+curl -fsSL https://raw.githubusercontent.com/jatinkchaudhary/trading-journey-dashboard/main/advisor-dashboard.command -o "$HOME/Desktop/Trading Journey.command" && chmod +x "$HOME/Desktop/Trading Journey.command" && "$HOME/Desktop/Trading Journey.command"
 
-If double-clicking is blocked by Gatekeeper the first time:
-right-click the file → Open → Open.
+   That downloads a "Trading Journey" icon to your Desktop and opens
+   the dashboard right away. If your Mac offers to install
+   "command line developer tools", click Install and run the line again.
+
+FROM THEN ON:
+Just double-click "Trading Journey.command" on your Desktop whenever
+you want to look. It always pulls the newest data (updated every
+weekday around 1 PM Pacific) and opens the dashboard in your browser
+at http://localhost:4173.
+
+Everything runs on your own machine — nothing is installed permanently
+and nothing you view is sent anywhere.
