@@ -146,9 +146,19 @@ def build_macro(d):
         changes[sym] = chg
         items.append({'symbol': sym, 'kind': 'index', 'label': label, 'desc': desc,
                       'value': r2(val), 'changePct': chg})
-    for sym, val in mf.get('spot', {}).items():
+    # Spot metals: primary = gold-api spot; fallback = apply the ETF's daily %
+    # move (GLD→XAU, SLV→XAG) to the last stored spot value, so a spot-API
+    # outage degrades gracefully instead of breaking the run.
+    spot = {s: (v['last'] if isinstance(v, dict) else v)
+            for s, v in (mf.get('spot') or {}).items()}
+    for sym, etf in (('XAU', 'GLD'), ('XAG', 'SLV')):
+        if sym not in spot or not spot[sym]:
+            q = (mf.get('proxies') or {}).get(etf)
+            prev = prev_idx.get(sym)
+            if q and q.get('prevClose') and prev:
+                spot[sym] = prev * (q['last'] / q['prevClose'])
+    for sym, val in spot.items():
         label, desc = MACRO_META.get(sym, (sym, ''))
-        val = val['last'] if isinstance(val, dict) else val
         prev = prev_idx.get(sym)
         chg = r2((val - prev) / prev * 100) if prev else None
         changes[sym] = chg
@@ -175,13 +185,19 @@ def build_macro(d):
     detail = (f"Risk assets vs. safe havens score {score:+.2f}. "
               f"VIX at {vix} ({vix_band})." if vix is not None else f"Score {score:+.2f}.")
     values = {**{s: v for s, v in mf.get('indexes', {}).items()},
-              **{s: (v['last'] if isinstance(v, dict) else v) for s, v in mf.get('spot', {}).items()},
+              **{s: v for s, v in spot.items() if v},
               **{s: q['last'] for s, q in mf.get('proxies', {}).items()}}
     hist.append({'date': today, 'values': {k: r2(v) for k, v in values.items()}})
     d['macroBoard'] = {'asOf': today, 'items': items,
                        'regime': {'score': r2(score), 'label': label, 'vix': vix,
                                   'vixBand': vix_band, 'detail': detail},
                        'history': hist[-90:]}
+    # Benchmark: keep a daily SPX series alongside the equity series.
+    spx = mf.get('indexes', {}).get('SPX')
+    if spx:
+        bench = [b for b in d.get('benchmark', []) if b['date'] != today]
+        bench.append({'date': today, 'spx': r2(spx)})
+        d['benchmark'] = sorted(bench, key=lambda b: b['date'])
     return True
 
 def main():

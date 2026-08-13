@@ -42,6 +42,11 @@
       <article class="metric"><div><span>GREEN DAYS</span></div><strong id="winRate">—</strong><small id="dayRecord">—</small><div class="dot-row" id="dayDots"></div></article>
     </section>
 
+    <section class="wrap-strip reveal" id="wrapStrip" hidden>
+      <div class="focus-icon" style="background:var(--cyan)">☀</div>
+      <div><span style="color:var(--cyan);font:9px var(--mono);letter-spacing:.15em">TODAY'S WRAP</span><p id="wrapText" style="margin:6px 0 0;font-size:14px;line-height:1.7"></p></div>
+    </section>
+
     <section class="focus-strip reveal" id="focusStrip">
       <div class="focus-icon">!</div><div><span>FOCUS NOW</span><strong id="focusHeadline">Loading your strongest improvement signal…</strong></div><p id="focusDetail"></p>
     </section>
@@ -53,6 +58,8 @@
         <article class="panel"><div class="panel-head"><div><h3>Profit composition</h3><p>Closed gains vs. open drag</p></div></div><div class="composition"><div class="donut-wrap"><canvas id="compositionChart"></canvas><div class="donut-center"><small>NET</small><strong id="donutNet">—</strong></div></div><div class="split-stats"><div><i class="good"></i><span>Realized</span><strong id="splitRealized">—</strong></div><div><i class="bad"></i><span>Open</span><strong id="splitOpen">—</strong></div></div></div></article>
         <article class="panel wide"><div class="panel-head"><div><h3>Daily realized P&amp;L</h3><p>Hover to inspect each active day</p></div><strong class="micro-stat" id="avgDay">—</strong></div><div class="chart-wrap"><canvas id="dailyChart"></canvas></div></article>
         <article class="panel"><div class="panel-head"><div><h3>Monthly momentum</h3><p>Realized result by month</p></div></div><div class="chart-wrap"><canvas id="monthlyChart"></canvas></div></article>
+        <article class="panel wide"><div class="panel-head"><div><h3>You vs. S&amp;P 500</h3><p>Cumulative return on contributed capital vs. the index, same window</p></div></div><div class="chart-wrap tall"><canvas id="benchChart"></canvas></div></article>
+        <article class="panel"><div class="panel-head"><div><h3>Trading habits</h3><p>Avg realized P&amp;L by weekday — spot your strong and weak days</p></div></div><div class="chart-wrap tall"><canvas id="weekdayChart"></canvas></div></article>
       </div>
     </section>
 
@@ -111,6 +118,7 @@
         <article class="stat-card"><span>PORTFOLIO DAY MOVE</span><strong id="mktDayPnl">—</strong><small id="mktDayPnlNote">—</small></article>
         <article class="stat-card"><span>BEST / WORST TODAY</span><strong id="mktBestWorst">—</strong><small id="mktBestWorstNote">—</small></article>
       </div>
+      <div class="drivers-strip" id="driversStrip" hidden><span class="drivers-label">TODAY'S P&amp;L DRIVERS</span><div id="driverChips"></div></div>
 
       <div class="chart-grid">
         <article class="panel wide"><div class="panel-head"><div><h3>Today's movers</h3><p>Day change of your holdings</p></div></div><div class="chart-wrap tall"><canvas id="moversChart"></canvas></div></article>

@@ -11,7 +11,7 @@ const tooltip={backgroundColor:'#ffffff',borderColor:C.line,borderWidth:1,titleC
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(28,43,54,.10)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();renderWrap();renderBench();renderWeekday();renderDrivers();bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -162,6 +162,50 @@ function renderCalendar(){
   document.querySelector('#eventTimeline').innerHTML=Object.entries(byDate).map(([date,events])=>{
     const dt=new Date(date+'T12:00:00');
     return `<div class="timeline-day${date===today?' today':''}"><div class="timeline-date"><strong>${dt.toLocaleDateString('en-US',{day:'numeric'})}</strong><span>${dt.toLocaleDateString('en-US',{month:'short'})}</span><small>${dt.toLocaleDateString('en-US',{weekday:'short'})}</small></div><div class="timeline-events">${events.map(e=>`<div class="event-card ${e.type}"><span class="event-pill">${e.type==='gold'?'⬤ GOLD':e.type==='earnings'?'EARNINGS':e.type==='ex-dividend'?'EX-DIV':'PAYOUT'}</span><b>${e.symbol}</b><p>${e.detail}</p></div>`).join('')}</div></div>`}).join('');
+}
+function renderWrap(){
+  const s=D.summary,last=D.series[D.series.length-1];if(!last)return;
+  const M=D.market,B=D.macroBoard;
+  const dayMove=M?M.stocks.reduce((a,x)=>a+(x.dayPnl||0),0):0;
+  const movers=M?M.stocks.filter(x=>x.dayPnl!=null):[];
+  const best=[...movers].sort((a,b)=>b.dayPnl-a.dayPnl)[0],worst=[...movers].sort((a,b)=>a.dayPnl-b.dayPnl)[0];
+  let t=`Locked in ${money(last.dailyRealized)} of realized P&L today while open positions moved ${money(dayMove)}, leaving the account at ${money(s.equity)} (${pct(s.returnPct)} on contributions).`;
+  if(best&&worst)t+=` ${best.symbol} was the day's engine (${money(best.dayPnl)}), while ${worst.symbol} dragged (${money(worst.dayPnl)}).`;
+  if(B){const g=B.items.find(i=>i.symbol==='XAU');t+=` The tape is ${B.regime.label==='RISK-ON'?'risk-on':B.regime.label==='RISK-OFF'?'risk-off':'mixed'} with VIX at ${B.regime.vix}${g&&g.changePct!=null?` and gold ${g.changePct>=0?'up':'down'} ${Math.abs(g.changePct).toFixed(1)}% at ${money(g.value)}/oz`:''}.`}
+  const today=M?.asOf||D.sourceThrough;
+  const nxt=(D.calendar||[]).find(e=>e.date>today);
+  if(nxt)t+=` Next on the calendar: ${nxt.symbol} (${nxt.type==='gold'?'macro':nxt.type}) on ${new Date(nxt.date+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}.`;
+  document.querySelector('#wrapStrip').hidden=false;set('#wrapText',t);
+}
+function renderBench(){
+  const bench=D.benchmark;if(!bench?.length)return;
+  const spxBy=Object.fromEntries(bench.map(b=>[b.date,b.spx]));
+  const common=D.series.filter(x=>spxBy[x.date]!=null);
+  if(common.length<2)return;
+  const spx0=spxBy[common[0].date];
+  const me=common.map(x=>+(x.netPnl/x.funding*100).toFixed(2));
+  const spx=common.map(x=>+((spxBy[x.date]-spx0)/spx0*100).toFixed(2));
+  charts.bench=new Chart(document.querySelector('#benchChart'),{type:'line',data:{labels:common.map(x=>x.date),datasets:[
+    {label:'Your return',data:me,borderColor:C.cyan,backgroundColor:'rgba(14,138,166,.06)',fill:true,borderWidth:2,pointRadius:0,tension:.25},
+    {label:'S&P 500',data:spx,borderColor:'#93aebd',borderDash:[5,5],borderWidth:1.8,pointRadius:0,tension:.25}]},
+    options:{maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:8,boxHeight:8,padding:12}},tooltip:{...tooltip,callbacks:{label:c=>`${c.dataset.label}: ${pct(c.raw)}`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>`${v}%`}}}}});
+}
+function renderWeekday(){
+  const days=['Mon','Tue','Wed','Thu','Fri'];
+  const agg={};D.series.forEach(x=>{const wd=new Date(x.date+'T12:00:00').getDay();if(wd<1||wd>5)return;const k=days[wd-1];(agg[k]=agg[k]||[]).push(x.dailyRealized)});
+  const avg=days.map(k=>{const a=agg[k]||[];return a.length?+(a.reduce((s,v)=>s+v,0)/a.length).toFixed(2):0});
+  const wins=days.map(k=>{const a=(agg[k]||[]).filter(v=>v!==0);return a.length?Math.round(a.filter(v=>v>0).length/a.length*100):0});
+  charts.weekday=new Chart(document.querySelector('#weekdayChart'),{type:'bar',data:{labels:days,datasets:[{data:avg,backgroundColor:avg.map(v=>v>=0?C.green:C.red),borderRadius:3}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>`Avg ${money(c.raw)} · win rate ${wins[c.dataIndex]}% (${(agg[days[c.dataIndex]]||[]).length} days)`}}},scales:{...baseScales,y:{...baseScales.y,ticks:{callback:v=>money(v,true)}}}}});
+}
+function renderDrivers(){
+  const M=D.market;if(!M)return;
+  const movers=M.stocks.filter(s=>s.dayPnl!=null&&Math.abs(s.dayPnl)>1);
+  if(!movers.length)return;
+  const up=[...movers].sort((a,b)=>b.dayPnl-a.dayPnl).slice(0,3).filter(s=>s.dayPnl>0);
+  const dn=[...movers].sort((a,b)=>a.dayPnl-b.dayPnl).slice(0,3).filter(s=>s.dayPnl<0);
+  document.querySelector('#driversStrip').hidden=false;
+  document.querySelector('#driverChips').innerHTML=[...up,...dn].map(s=>`<span class="driver-chip ${s.dayPnl>=0?'up':'down'}"><b>${s.symbol}</b> ${money(s.dayPnl)}</span>`).join('');
 }
 function renderMacro(){
   const B=D.macroBoard;if(!B||!B.items?.length)return;

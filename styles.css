@@ -67,3 +67,11 @@ footer{color:var(--text)}
 .macro-chg{font:500 12px var(--mono);font-style:normal;opacity:.85}
 .macro-row strong.positive{color:var(--green)}
 .macro-row strong.negative{color:var(--red)}
+/* Wrap strip + drivers */
+.wrap-strip{margin:22px 0 0;border:1px solid rgba(14,138,166,.35);background:linear-gradient(90deg,rgba(14,138,166,.08),rgba(14,138,166,.02));padding:20px 25px;display:grid;grid-template-columns:auto 1fr;align-items:start;gap:18px}
+.drivers-strip{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:14px 0 2px;padding:12px 16px;background:var(--panel);border:1px solid var(--line)}
+.drivers-label{color:var(--muted);font:9px var(--mono);letter-spacing:.14em}
+.drivers-strip>div{display:flex;gap:8px;flex-wrap:wrap}
+.driver-chip{font:11px var(--mono);padding:6px 10px;border-radius:3px}
+.driver-chip.up{background:rgba(43,158,74,.10);color:#217a39;border:1px solid rgba(43,158,74,.30)}
+.driver-chip.down{background:rgba(217,72,72,.10);color:#b23030;border:1px solid rgba(217,72,72,.30)}
