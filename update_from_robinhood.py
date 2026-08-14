@@ -111,6 +111,7 @@ def build_market(d):
     d['market'] = {'asOf': today, 'indexes': indexes, 'stocks': stocks}
     d['calendar'] = cal
     build_macro(d)
+    build_rrg(d)
     return True
 
 MACRO_META = {
@@ -198,6 +199,62 @@ def build_macro(d):
         bench = [b for b in d.get('benchmark', []) if b['date'] != today]
         bench.append({'date': today, 'spx': r2(spx)})
         d['benchmark'] = sorted(bench, key=lambda b: b['date'])
+    return True
+
+def build_rrg(d):
+    """Relative Rotation Graph vs QQQ. Reads Data/rrg_history.json; if
+    Data/rrg_quotes_fetch.json exists ({"asOfDate","quotes":{sym:last}}),
+    appends that day's closes to the history file first (self-maintaining).
+    RS-Ratio = 100 * (price/bench) / SMA50(price/bench)
+    RS-Momentum = 100 * RS-Ratio / RS-Ratio 10 sessions ago
+    Quadrants split at (100,100). Trail = 4 weekly steps."""
+    path = os.path.join(HERE, 'Data', 'rrg_history.json')
+    hist = load(path)
+    if not hist:
+        return False
+    closes = hist['closes']
+    rq = load(os.path.join(HERE, 'Data', 'rrg_quotes_fetch.json'))
+    if rq and rq.get('asOfDate') and rq.get('quotes'):
+        day = rq['asOfDate']
+        for sym, px in rq['quotes'].items():
+            if sym in closes and px:
+                closes[sym][day] = round(float(px), 4)
+        # trim to the most recent 130 dates per symbol
+        for sym in closes:
+            keep = sorted(closes[sym])[-130:]
+            closes[sym] = {k: closes[sym][k] for k in keep}
+        hist['updated'] = day
+        with open(path, 'w', encoding='utf-8') as fh:
+            json.dump(hist, fh)
+    bench = closes.get(hist.get('benchmark', 'QQQ'), {})
+    if len(bench) < 61:
+        return False
+    held = {p['symbol'] for p in d['positions']}
+    W, M, TRAIL_STEP, TRAIL_N = 50, 10, 5, 4
+    points = []
+    for sym, px in closes.items():
+        if sym == hist.get('benchmark', 'QQQ'):
+            continue
+        dates = sorted(set(px) & set(bench))
+        if len(dates) < W + M + 1:
+            continue
+        rs = [px[t] / bench[t] for t in dates]
+        def rsr(i):
+            window = rs[i - W + 1:i + 1]
+            return 100 * rs[i] / (sum(window) / W)
+        def point(i):
+            return [r2(rsr(i)), r2(100 * rsr(i) / rsr(i - M))]
+        last = len(dates) - 1
+        min_i = W + M - 1
+        steps = min(TRAIL_N, (last - min_i) // TRAIL_STEP)
+        trail = [point(last - TRAIL_STEP * k) for k in range(steps, 0, -1)]
+        x, y = point(last)
+        points.append({'symbol': sym, 'x': x, 'y': y,
+                       'held': sym in held, 'trail': trail})
+    if not points:
+        return False
+    d['rrg'] = {'asOf': d['sourceThrough'], 'benchmark': hist.get('benchmark', 'QQQ'),
+                'window': W, 'points': points}
     return True
 
 def main():

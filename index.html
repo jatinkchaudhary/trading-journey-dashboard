@@ -17,7 +17,7 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Trading Journey home"><span class="brand-mark">TJ</span><span>TRADING JOURNEY</span></a>
     <nav aria-label="Dashboard sections">
-      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a><a href="#market">Market</a><a href="#macro">Macro</a><a href="#calendar">Calendar</a><a href="#watch">Watch</a>
+      <a href="#performance">Performance</a><a href="#risk">Risk</a><a href="#positions">Positions</a><a href="#activity">Activity</a><a href="#market">Market</a><a href="#macro">Macro</a><a href="#calendar">Calendar</a><a href="#watch">Watch</a><a href="#rotation">RRG</a>
     </nav>
     <div class="live-pill"><i></i><span id="asOf">Loading…</span></div>
   </header>
@@ -155,6 +155,17 @@
       <div class="section-head"><div><p class="eyebrow">08 / WATCHLIST</p><h2>Eyes on, for the next session.</h2></div></div>
       <div id="watchMacro" class="focus-strip" style="margin:0 0 22px" hidden><div class="focus-icon">★</div><div><span>MACRO EVENT AHEAD</span><strong id="watchMacroTitle">—</strong></div><p id="watchMacroDetail">—</p></div>
       <div class="watch-grid" id="watchGrid"></div>
+    </section>
+
+    <section id="rotation" class="section reveal" hidden>
+      <div class="section-head"><div><p class="eyebrow">09 / RELATIVE ROTATION</p><h2>Your stocks vs. the Nasdaq-100 field.</h2></div><div class="range-control"><button id="rrgToggle" class="active">Nasdaq-100 backdrop: ON</button></div></div>
+      <div class="stat-grid">
+        <article class="stat-card"><span>LEADING</span><strong id="rrgLead" style="color:var(--green)">—</strong><small id="rrgLeadNote">strong &amp; getting stronger — let winners run</small></article>
+        <article class="stat-card"><span>IMPROVING</span><strong id="rrgImp" style="color:var(--cyan)">—</strong><small>weak but accelerating — tomorrow's leaders?</small></article>
+        <article class="stat-card"><span>WEAKENING</span><strong id="rrgWeak" style="color:var(--orange)">—</strong><small>strong but slowing — tighten stops</small></article>
+        <article class="stat-card"><span>LAGGING</span><strong id="rrgLag" style="color:var(--red)">—</strong><small id="rrgLagNote">weak &amp; falling behind — exit candidates</small></article>
+      </div>
+      <article class="panel"><div class="panel-head"><div><h3>Relative Rotation Graph — vs. QQQ</h3><p>X: relative strength (50-day) · Y: momentum of that strength (10-day) · bold = your holdings, with 4-week trails · grey dots = rest of the Nasdaq-100</p></div></div><div class="chart-wrap xl"><canvas id="rrgChart"></canvas></div></article>
     </section>
 
     <section class="action-section reveal">

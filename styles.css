@@ -75,3 +75,4 @@ footer{color:var(--text)}
 .driver-chip{font:11px var(--mono);padding:6px 10px;border-radius:3px}
 .driver-chip.up{background:rgba(43,158,74,.10);color:#217a39;border:1px solid rgba(43,158,74,.30)}
 .driver-chip.down{background:rgba(217,72,72,.10);color:#b23030;border:1px solid rgba(217,72,72,.30)}
+.chart-wrap.xl{height:560px}

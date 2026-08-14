@@ -11,7 +11,7 @@ const tooltip={backgroundColor:'#ffffff',borderColor:C.line,borderWidth:1,titleC
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(28,43,54,.10)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();renderWrap();renderBench();renderWeekday();renderDrivers();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();renderRRG();renderWrap();renderBench();renderWeekday();renderDrivers();bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -265,6 +265,50 @@ function renderWatch(){
       <div class="watch-quote"><strong>${s.last!=null?money(s.last):'—'}</strong><span class="return-pill ${s.changePct<0?'red':''}">${s.changePct!=null?pct(s.changePct):'—'}</span></div></div>
       <div class="watch-signals">${sig.map(x=>`<span class="signal-chip ${x.c}">${x.t}</span>`).join('')}</div>
     </article>`).join('')||'<p style="color:var(--muted)">No notable signals today — quiet book.</p>';
+}
+function renderRRG(){
+  const R=D.rrg;if(!R||!R.points?.length)return;
+  document.querySelector('#rotation').hidden=false;
+  const quad=p=>p.x>=100?(p.y>=100?'LEADING':'WEAKENING'):(p.y>=100?'IMPROVING':'LAGGING');
+  const QCOL={LEADING:C.green,IMPROVING:C.cyan,WEAKENING:C.orange,LAGGING:C.red};
+  const held=R.points.filter(p=>p.held),rest=R.points.filter(p=>!p.held);
+  ['LEADING','IMPROVING','WEAKENING','LAGGING'].forEach((q,i)=>{const n=held.filter(p=>quad(p)===q);
+    set(['#rrgLead','#rrgImp','#rrgWeak','#rrgLag'][i],n.length);
+    if(q==='LEADING'&&n.length)set('#rrgLeadNote',n.slice(0,5).map(p=>p.symbol).join(', ')+(n.length>5?'…':''));
+    if(q==='LAGGING'&&n.length)set('#rrgLagNote',n.slice(0,5).map(p=>p.symbol).join(', ')+(n.length>5?'…':''));});
+  const pctl=(arr,q)=>{const s=[...arr].sort((a,b)=>a-b);return s[Math.min(s.length-1,Math.max(0,Math.round(q*(s.length-1))))]};
+  const xs=R.points.map(p=>p.x),ys=R.points.map(p=>p.y);
+  const spanX=Math.max(100-pctl(xs,.03),pctl(xs,.97)-100)+3;
+  const spanY=Math.max(100-pctl(ys,.03),pctl(ys,.97)-100)+3;
+  // clamp outliers to the visible edge so they stay on the map
+  R.points.forEach(p=>{p.x=Math.max(100-spanX+.5,Math.min(100+spanX-.5,p.x));p.y=Math.max(100-spanY+.5,Math.min(100+spanY-.5,p.y));
+    (p.trail||[]).forEach(t=>{t[0]=Math.max(100-spanX+.5,Math.min(100+spanX-.5,t[0]));t[1]=Math.max(100-spanY+.5,Math.min(100+spanY-.5,t[1]))})});
+  const quadrantBg={id:'quadBg',beforeDraw(ch){const{ctx,chartArea:a,scales:{x,y}}=ch;if(!a)return;const cx=x.getPixelForValue(100),cy=y.getPixelForValue(100);
+    const paint=(x0,y0,x1,y1,col)=>{ctx.fillStyle=col;ctx.fillRect(x0,y0,x1-x0,y1-y0)};
+    paint(cx,a.top,a.right,cy,'rgba(43,158,74,.07)');paint(cx,cy,a.right,a.bottom,'rgba(221,143,14,.07)');
+    paint(a.left,cy,cx,a.bottom,'rgba(217,72,72,.07)');paint(a.left,a.top,cx,cy,'rgba(14,138,166,.07)');
+    ctx.strokeStyle='rgba(28,43,54,.25)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx,a.top);ctx.lineTo(cx,a.bottom);ctx.moveTo(a.left,cy);ctx.lineTo(a.right,cy);ctx.stroke();
+    ctx.font='700 10px "DM Mono"';ctx.fillStyle='rgba(28,43,54,.35)';
+    ctx.textAlign='right';ctx.fillText('LEADING',a.right-8,a.top+14);ctx.fillText('WEAKENING',a.right-8,a.bottom-8);
+    ctx.textAlign='left';ctx.fillText('IMPROVING',a.left+8,a.top+14);ctx.fillText('LAGGING',a.left+8,a.bottom-8);}};
+  const trailsAndLabels={id:'trails',afterDatasetsDraw(ch){const{ctx,scales:{x,y}}=ch;
+    held.forEach(p=>{const col=QCOL[quad(p)];
+      if(p.trail?.length){ctx.strokeStyle=col+'88';ctx.lineWidth=1.4;ctx.beginPath();
+        const pts=[...p.trail,[p.x,p.y]];pts.forEach(([tx,ty],i)=>{const px=x.getPixelForValue(tx),py=y.getPixelForValue(ty);i?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.stroke();
+        p.trail.forEach(([tx,ty])=>{ctx.fillStyle=col+'66';ctx.beginPath();ctx.arc(x.getPixelForValue(tx),y.getPixelForValue(ty),2,0,7);ctx.fill()})}
+      ctx.font='700 10px "DM Mono"';ctx.fillStyle='#1c2b36';ctx.textAlign='center';
+      ctx.fillText(p.symbol,x.getPixelForValue(p.x),y.getPixelForValue(p.y)-9);});}};
+  charts.rrg=new Chart(document.querySelector('#rrgChart'),{type:'scatter',
+    data:{datasets:[
+      {label:'Nasdaq-100',data:rest.map(p=>({x:p.x,y:p.y,symbol:p.symbol})),backgroundColor:'rgba(93,116,134,.35)',pointRadius:3.5,pointHoverRadius:6},
+      {label:'My holdings',data:held.map(p=>({x:p.x,y:p.y,symbol:p.symbol})),backgroundColor:held.map(p=>QCOL[quad(p)]),borderColor:'#1c2b36',borderWidth:1,pointRadius:6,pointHoverRadius:9}]},
+    options:{maintainAspectRatio:false,animation:false,
+      plugins:{legend:{display:false},tooltip:{...tooltip,callbacks:{label:c=>{const r=c.raw;return `${r.symbol} · RS ${r.x} · Mom ${r.y}`}}}},
+      scales:{x:{min:100-spanX,max:100+spanX,title:{display:true,text:'RELATIVE STRENGTH VS QQQ →'},grid:{display:false}},
+              y:{min:100-spanY,max:100+spanY,title:{display:true,text:'MOMENTUM →'},grid:{display:false}}}},
+    plugins:[quadrantBg,trailsAndLabels]});
+  document.querySelector('#rrgToggle').onclick=e=>{const ds=charts.rrg.data.datasets[0];ds.hidden=!ds.hidden;
+    e.target.textContent=`Nasdaq-100 backdrop: ${ds.hidden?'OFF':'ON'}`;e.target.classList.toggle('active',!ds.hidden);charts.rrg.update()};
 }
 function reveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}
 function ring(sel,n){document.querySelector(sel).style.setProperty('--pct',n)}function set(sel,v){document.querySelector(sel).textContent=v}function showTip(e,t){const x=document.querySelector('#tooltip');x.textContent=t;x.style.display='block';x.style.left=`${e.clientX+12}px`;x.style.top=`${e.clientY+12}px`}function hideTip(){document.querySelector('#tooltip').style.display='none'}
