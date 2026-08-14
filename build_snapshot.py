@@ -22,4 +22,7 @@ out_dir = os.path.join(HERE, 'Snapshots')
 os.makedirs(out_dir, exist_ok=True)
 out = os.path.join(out_dir, f"trading-journey-{data['sourceThrough']}.html")
 open(out, 'w', encoding='utf-8').write(html)
-print('Snapshot written:', out)
+# Also publish as advisor.html in the repo root — a single self-contained file
+# the advisor's script downloads and opens directly (no local server needed).
+open(os.path.join(HERE, 'advisor.html'), 'w', encoding='utf-8').write(html)
+print('Snapshot written:', out, '+ advisor.html')
