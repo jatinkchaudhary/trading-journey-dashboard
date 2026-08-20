@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-08-18T13.09.43-0700",
-  "sourceThrough": "2026-08-18",
+  "generatedAt": "2026-08-19T17.48.37-0700",
+  "sourceThrough": "2026-08-19",
   "methodology": "Average-cost reconstruction; refreshed daily from Robinhood realized-P&L and order-fill data. Open positions use latest available quotes.",
   "summary": {
     "funding": 31500,
-    "equity": 33297.07,
-    "netGain": 1797.07,
-    "returnPct": 5.7,
-    "realized": 7114.53,
-    "unrealized": -5540.72,
-    "cash": -22455.27,
-    "exposure": 55752.34,
-    "leverage": 1.67,
-    "winDays": 36,
+    "equity": 32596.81,
+    "netGain": 1096.81,
+    "returnPct": 3.48,
+    "realized": 7218.88,
+    "unrealized": -6547.76,
+    "cash": -25734.04,
+    "exposure": 58330.85,
+    "leverage": 1.79,
+    "winDays": 37,
     "lossDays": 14,
-    "winRate": 72.0,
-    "avgWinDay": 209.61,
+    "winRate": 72.55,
+    "avgWinDay": 206.76,
     "avgLossDay": -30.81,
     "maxEstimatedDrawdown": -6873.4,
-    "openPositions": 43,
-    "symbolsTraded": 146,
-    "tradeRows": 1221,
-    "turnover": 453964.64,
+    "openPositions": 48,
+    "symbolsTraded": 150,
+    "tradeRows": 1244,
+    "turnover": 461625.93,
     "costs": 47.47,
-    "top5Pct": 46.97,
-    "top10Pct": 65.27
+    "top5Pct": 43.79,
+    "top10Pct": 61.16
   },
   "series": [
     {
@@ -458,6 +458,14 @@
       "netPnl": 1797.07,
       "dailyRealized": -119.87,
       "cumulativeRealized": 7114.53
+    },
+    {
+      "date": "2026-08-19",
+      "equity": 32596.81,
+      "funding": 31500,
+      "netPnl": 1096.81,
+      "dailyRealized": 104.35,
+      "cumulativeRealized": 7218.88
     }
   ],
   "monthly": [
@@ -471,7 +479,7 @@
     },
     {
       "month": "2026-08",
-      "realized": 3690.89
+      "realized": 3795.24
     }
   ],
   "symbols": [
@@ -484,6 +492,11 @@
       "symbol": "NBIS",
       "realized": 793.16,
       "closingEvents": 21
+    },
+    {
+      "symbol": "MRVL",
+      "realized": 562.35,
+      "closingEvents": 10
     },
     {
       "symbol": "SNXX",
@@ -501,19 +514,14 @@
       "closingEvents": 38
     },
     {
-      "symbol": "MRVL",
-      "realized": 420.23,
-      "closingEvents": 9
-    },
-    {
-      "symbol": "RKLB",
-      "realized": 366.92,
-      "closingEvents": 11
-    },
-    {
       "symbol": "AAOI",
       "realized": 365.89,
       "closingEvents": 8
+    },
+    {
+      "symbol": "RKLB",
+      "realized": 363.37,
+      "closingEvents": 12
     },
     {
       "symbol": "AMD",
@@ -557,8 +565,8 @@
     },
     {
       "symbol": "RDW",
-      "realized": 123.0,
-      "closingEvents": 6
+      "realized": 108.9,
+      "closingEvents": 7
     },
     {
       "symbol": "WDC",
@@ -679,6 +687,11 @@
       "symbol": "AAPL",
       "realized": 22.94,
       "closingEvents": 4
+    },
+    {
+      "symbol": "CAST",
+      "realized": 22.52,
+      "closingEvents": 1
     },
     {
       "symbol": "NOW",
@@ -986,6 +999,11 @@
       "closingEvents": 1
     },
     {
+      "symbol": "UBER",
+      "realized": -7.26,
+      "closingEvents": 1
+    },
+    {
       "symbol": "AYI",
       "realized": -7.28,
       "closingEvents": 1
@@ -1029,6 +1047,11 @@
       "symbol": "BIO",
       "realized": -10.88,
       "closingEvents": 1
+    },
+    {
+      "symbol": "MRNA",
+      "realized": -10.88,
+      "closingEvents": 2
     },
     {
       "symbol": "AMA",
@@ -1096,6 +1119,11 @@
       "closingEvents": 1
     },
     {
+      "symbol": "TNON",
+      "realized": -24.5,
+      "closingEvents": 2
+    },
+    {
       "symbol": "SE",
       "realized": -26.19,
       "closingEvents": 2
@@ -1141,388 +1169,433 @@
       "symbol": "ALAB",
       "quantity": 30.0,
       "avgCost": 339.93,
-      "mark": 303.65,
-      "marketValue": 9109.5,
-      "unrealized": -1088.4,
-      "returnPct": -10.67
+      "mark": 289.8,
+      "marketValue": 8694.0,
+      "unrealized": -1503.9,
+      "returnPct": -14.75
     },
     {
       "symbol": "META",
       "quantity": 10.0,
       "avgCost": 602.03,
-      "mark": 543.67,
-      "marketValue": 5436.7,
-      "unrealized": -583.6,
-      "returnPct": -9.69
+      "mark": 546.19,
+      "marketValue": 5461.9,
+      "unrealized": -558.4,
+      "returnPct": -9.28
     },
     {
       "symbol": "BE",
       "quantity": 26.0,
       "avgCost": 247.5,
-      "mark": 208.96,
-      "marketValue": 5432.96,
-      "unrealized": -1002.04,
-      "returnPct": -15.57
+      "mark": 206.33,
+      "marketValue": 5364.58,
+      "unrealized": -1070.42,
+      "returnPct": -16.63
     },
     {
       "symbol": "INTC",
       "quantity": 38.004642,
       "avgCost": 107.36,
-      "mark": 96.68,
-      "marketValue": 3674.29,
-      "unrealized": -405.89,
-      "returnPct": -9.95
+      "mark": 92.85,
+      "marketValue": 3528.54,
+      "unrealized": -551.64,
+      "returnPct": -13.52
     },
     {
       "symbol": "ARM",
       "quantity": 10.0,
       "avgCost": 279.91,
-      "mark": 253.53,
-      "marketValue": 2535.3,
-      "unrealized": -263.8,
-      "returnPct": -9.42
-    },
-    {
-      "symbol": "APLD",
-      "quantity": 85.0,
-      "avgCost": 30.76,
-      "mark": 28.51,
-      "marketValue": 2422.93,
-      "unrealized": -191.67,
-      "returnPct": -7.33
+      "mark": 249.55,
+      "marketValue": 2495.5,
+      "unrealized": -303.6,
+      "returnPct": -10.85
     },
     {
       "symbol": "GOOGL",
       "quantity": 7.0,
       "avgCost": 350.3,
-      "mark": 344.07,
-      "marketValue": 2408.49,
-      "unrealized": -43.61,
-      "returnPct": -1.78
+      "mark": 344.79,
+      "marketValue": 2413.53,
+      "unrealized": -38.57,
+      "returnPct": -1.57
+    },
+    {
+      "symbol": "APLD",
+      "quantity": 85.0,
+      "avgCost": 30.76,
+      "mark": 28.24,
+      "marketValue": 2400.4,
+      "unrealized": -214.2,
+      "returnPct": -8.19
     },
     {
       "symbol": "AMAT",
       "quantity": 4.0,
       "avgCost": 522.78,
-      "mark": 514.33,
-      "marketValue": 2057.32,
-      "unrealized": -33.8,
-      "returnPct": -1.62
+      "mark": 496.32,
+      "marketValue": 1985.28,
+      "unrealized": -105.84,
+      "returnPct": -5.06
     },
     {
       "symbol": "NVDA",
       "quantity": 8.023128,
       "avgCost": 220.5,
-      "mark": 219.8,
-      "marketValue": 1763.48,
-      "unrealized": -5.62,
-      "returnPct": -0.32
+      "mark": 217.69,
+      "marketValue": 1746.55,
+      "unrealized": -22.54,
+      "returnPct": -1.27
     },
     {
       "symbol": "AAPL",
       "quantity": 5.0,
       "avgCost": 303.62,
-      "mark": 310.21,
-      "marketValue": 1551.05,
-      "unrealized": 32.95,
-      "returnPct": 2.17
-    },
-    {
-      "symbol": "CRDO",
-      "quantity": 6.0,
-      "avgCost": 264.91,
-      "mark": 245.98,
-      "marketValue": 1475.88,
-      "unrealized": -113.58,
-      "returnPct": -7.15
+      "mark": 316.9,
+      "marketValue": 1584.5,
+      "unrealized": 66.4,
+      "returnPct": 4.37
     },
     {
       "symbol": "MSFT",
       "quantity": 3.0,
       "avgCost": 487.59,
-      "mark": 481.93,
-      "marketValue": 1445.79,
-      "unrealized": -16.98,
-      "returnPct": -1.16
+      "mark": 484.52,
+      "marketValue": 1453.56,
+      "unrealized": -9.21,
+      "returnPct": -0.63
     },
     {
-      "symbol": "DELL",
-      "quantity": 3.0,
-      "avgCost": 479.48,
-      "mark": 468.52,
-      "marketValue": 1405.56,
-      "unrealized": -32.88,
-      "returnPct": -2.29
+      "symbol": "CRDO",
+      "quantity": 6.0,
+      "avgCost": 264.91,
+      "mark": 234.83,
+      "marketValue": 1408.98,
+      "unrealized": -180.48,
+      "returnPct": -11.35
     },
     {
       "symbol": "TSLA",
       "quantity": 4.0,
       "avgCost": 344.62,
-      "mark": 336.84,
-      "marketValue": 1347.36,
-      "unrealized": -31.12,
-      "returnPct": -2.26
+      "mark": 351.13,
+      "marketValue": 1404.52,
+      "unrealized": 26.04,
+      "returnPct": 1.89
+    },
+    {
+      "symbol": "DELL",
+      "quantity": 3.0,
+      "avgCost": 479.48,
+      "mark": 437.49,
+      "marketValue": 1312.46,
+      "unrealized": -125.98,
+      "returnPct": -8.76
+    },
+    {
+      "symbol": "MUU",
+      "quantity": 40.0,
+      "avgCost": 33.45,
+      "mark": 29.8,
+      "marketValue": 1192.0,
+      "unrealized": -146.0,
+      "returnPct": -10.91
     },
     {
       "symbol": "MRVL",
-      "quantity": 6.0,
-      "avgCost": 221.27,
-      "mark": 216.03,
-      "marketValue": 1296.18,
-      "unrealized": -31.44,
-      "returnPct": -2.37
+      "quantity": 5.0,
+      "avgCost": 242.4,
+      "mark": 237.35,
+      "marketValue": 1186.75,
+      "unrealized": -25.25,
+      "returnPct": -2.08
     },
     {
       "symbol": "NET",
       "quantity": 4.0,
       "avgCost": 311.07,
-      "mark": 301.29,
-      "marketValue": 1205.14,
-      "unrealized": -39.14,
-      "returnPct": -3.15
+      "mark": 291.94,
+      "marketValue": 1167.74,
+      "unrealized": -76.54,
+      "returnPct": -6.15
     },
     {
       "symbol": "CBRS",
       "quantity": 5.0,
       "avgCost": 234.08,
-      "mark": 219.92,
-      "marketValue": 1099.58,
-      "unrealized": -70.82,
-      "returnPct": -6.05
+      "mark": 215.65,
+      "marketValue": 1078.25,
+      "unrealized": -92.15,
+      "returnPct": -7.87
     },
     {
       "symbol": "HOOD",
       "quantity": 10.0,
       "avgCost": 101.97,
-      "mark": 91.56,
-      "marketValue": 915.6,
-      "unrealized": -104.1,
-      "returnPct": -10.21
+      "mark": 95.78,
+      "marketValue": 957.8,
+      "unrealized": -61.9,
+      "returnPct": -6.07
     },
     {
-      "symbol": "MUU",
-      "quantity": 30.0,
-      "avgCost": 34.27,
-      "mark": 30.1,
-      "marketValue": 903.0,
-      "unrealized": -125.1,
-      "returnPct": -12.17
+      "symbol": "SNXX",
+      "quantity": 60.0,
+      "avgCost": 16.17,
+      "mark": 14.51,
+      "marketValue": 870.3,
+      "unrealized": -99.9,
+      "returnPct": -10.3
+    },
+    {
+      "symbol": "TSM",
+      "quantity": 2.0,
+      "avgCost": 409.45,
+      "mark": 412.27,
+      "marketValue": 824.54,
+      "unrealized": 5.64,
+      "returnPct": 0.69
     },
     {
       "symbol": "V",
       "quantity": 2.0,
       "avgCost": 364.02,
-      "mark": 364.28,
-      "marketValue": 728.56,
-      "unrealized": 0.52,
-      "returnPct": 0.07
+      "mark": 365.76,
+      "marketValue": 731.52,
+      "unrealized": 3.48,
+      "returnPct": 0.48
+    },
+    {
+      "symbol": "NBIS",
+      "quantity": 3.0,
+      "avgCost": 223.91,
+      "mark": 223.67,
+      "marketValue": 671.01,
+      "unrealized": -0.72,
+      "returnPct": -0.11
+    },
+    {
+      "symbol": "SMCI",
+      "quantity": 17.0,
+      "avgCost": 37.62,
+      "mark": 36.58,
+      "marketValue": 621.78,
+      "unrealized": -17.76,
+      "returnPct": -2.78
     },
     {
       "symbol": "DLR",
       "quantity": 3.0,
       "avgCost": 198.07,
-      "mark": 195.26,
-      "marketValue": 585.78,
-      "unrealized": -8.43,
-      "returnPct": -1.42
+      "mark": 192.39,
+      "marketValue": 577.17,
+      "unrealized": -17.04,
+      "returnPct": -2.87
     },
     {
       "symbol": "ABNB",
       "quantity": 3.0,
       "avgCost": 182.57,
-      "mark": 183.22,
-      "marketValue": 549.66,
-      "unrealized": 1.95,
-      "returnPct": 0.36
+      "mark": 186.42,
+      "marketValue": 559.26,
+      "unrealized": 11.55,
+      "returnPct": 2.11
     },
     {
       "symbol": "AMZN",
       "quantity": 2.0,
       "avgCost": 271.86,
-      "mark": 259.48,
-      "marketValue": 518.96,
-      "unrealized": -24.76,
-      "returnPct": -4.55
+      "mark": 265.89,
+      "marketValue": 531.78,
+      "unrealized": -11.94,
+      "returnPct": -2.2
     },
     {
       "symbol": "BB",
       "quantity": 60.0,
       "avgCost": 12.37,
-      "mark": 8.59,
-      "marketValue": 515.1,
-      "unrealized": -227.1,
-      "returnPct": -30.6
+      "mark": 8.33,
+      "marketValue": 499.8,
+      "unrealized": -242.4,
+      "returnPct": -32.66
     },
     {
       "symbol": "XOM",
       "quantity": 3.0,
       "avgCost": 157.55,
-      "mark": 165.61,
-      "marketValue": 496.83,
-      "unrealized": 24.18,
-      "returnPct": 5.12
+      "mark": 164.82,
+      "marketValue": 494.46,
+      "unrealized": 21.81,
+      "returnPct": 4.61
+    },
+    {
+      "symbol": "AAOI",
+      "quantity": 4.0,
+      "avgCost": 123.24,
+      "mark": 122.24,
+      "marketValue": 488.94,
+      "unrealized": -4.02,
+      "returnPct": -0.82
+    },
+    {
+      "symbol": "SKHY",
+      "quantity": 3.0,
+      "avgCost": 164.66,
+      "mark": 156.22,
+      "marketValue": 468.66,
+      "unrealized": -25.32,
+      "returnPct": -5.13
     },
     {
       "symbol": "AMIX",
       "quantity": 75.0,
       "avgCost": 13.43,
-      "mark": 6.12,
-      "marketValue": 458.63,
-      "unrealized": -548.62,
-      "returnPct": -54.47
-    },
-    {
-      "symbol": "UBER",
-      "quantity": 6.0,
-      "avgCost": 76.55,
-      "mark": 74.69,
-      "marketValue": 448.14,
-      "unrealized": -11.16,
-      "returnPct": -2.43
+      "mark": 5.91,
+      "marketValue": 442.88,
+      "unrealized": -564.37,
+      "returnPct": -56.03
     },
     {
       "symbol": "BP",
       "quantity": 10.0,
       "avgCost": 42.57,
-      "mark": 43.42,
-      "marketValue": 434.2,
-      "unrealized": 8.5,
-      "returnPct": 2.0
-    },
-    {
-      "symbol": "RKLB",
-      "quantity": 5.0,
-      "avgCost": 79.75,
-      "mark": 79.14,
-      "marketValue": 395.7,
-      "unrealized": -3.05,
-      "returnPct": -0.76
-    },
-    {
-      "symbol": "SNXX",
-      "quantity": 25.0,
-      "avgCost": 17.41,
-      "mark": 15.6,
-      "marketValue": 389.88,
-      "unrealized": -45.37,
-      "returnPct": -10.43
+      "mark": 43.75,
+      "marketValue": 437.45,
+      "unrealized": 11.75,
+      "returnPct": 2.76
     },
     {
       "symbol": "QCOM",
       "quantity": 2.0,
       "avgCost": 164.8,
-      "mark": 160.28,
-      "marketValue": 320.56,
-      "unrealized": -9.04,
-      "returnPct": -2.74
+      "mark": 161.9,
+      "marketValue": 323.8,
+      "unrealized": -5.8,
+      "returnPct": -1.76
     },
     {
       "symbol": "WULF",
       "quantity": 20.0,
       "avgCost": 18.74,
-      "mark": 15.59,
-      "marketValue": 311.8,
-      "unrealized": -63.0,
-      "returnPct": -16.81
+      "mark": 15.49,
+      "marketValue": 309.7,
+      "unrealized": -65.1,
+      "returnPct": -17.37
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 4.0,
+      "avgCost": 80.05,
+      "mark": 75.85,
+      "marketValue": 303.4,
+      "unrealized": -16.8,
+      "returnPct": -5.25
     },
     {
       "symbol": "NAMI",
       "quantity": 105.0,
       "avgCost": 5.37,
       "mark": 2.86,
-      "marketValue": 299.78,
-      "unrealized": -264.07,
-      "returnPct": -46.83
+      "marketValue": 300.3,
+      "unrealized": -263.55,
+      "returnPct": -46.74
+    },
+    {
+      "symbol": "EL",
+      "quantity": 3.0,
+      "avgCost": 95.49,
+      "mark": 98.08,
+      "marketValue": 294.24,
+      "unrealized": 7.77,
+      "returnPct": 2.71
     },
     {
       "symbol": "RUN",
       "quantity": 30.0,
       "avgCost": 11.15,
-      "mark": 9.25,
-      "marketValue": 277.5,
-      "unrealized": -57.0,
-      "returnPct": -17.04
+      "mark": 9.8,
+      "marketValue": 293.85,
+      "unrealized": -40.65,
+      "returnPct": -12.15
     },
     {
-      "symbol": "SMCI",
-      "quantity": 7.0,
-      "avgCost": 39.94,
-      "mark": 37.41,
-      "marketValue": 261.87,
-      "unrealized": -17.71,
-      "returnPct": -6.33
-    },
-    {
-      "symbol": "RDW",
-      "quantity": 20.0,
-      "avgCost": 13.2,
-      "mark": 12.94,
-      "marketValue": 258.8,
-      "unrealized": -5.2,
-      "returnPct": -1.97
+      "symbol": "LITX",
+      "quantity": 10.0,
+      "avgCost": 30.45,
+      "mark": 26.63,
+      "marketValue": 266.3,
+      "unrealized": -38.2,
+      "returnPct": -12.55
     },
     {
       "symbol": "SNAP",
       "quantity": 50.0,
       "avgCost": 5.79,
-      "mark": 5.11,
-      "marketValue": 255.25,
-      "unrealized": -34.25,
-      "returnPct": -11.83
+      "mark": 5.24,
+      "marketValue": 261.75,
+      "unrealized": -27.75,
+      "returnPct": -9.59
     },
     {
-      "symbol": "WETO",
-      "quantity": 6.0,
-      "avgCost": 49.09,
-      "mark": 33.75,
-      "marketValue": 202.5,
-      "unrealized": -92.04,
-      "returnPct": -31.25
-    },
-    {
-      "symbol": "ASTS",
+      "symbol": "UBER",
       "quantity": 3.0,
-      "avgCost": 70.35,
-      "mark": 67.0,
-      "marketValue": 201.0,
-      "unrealized": -10.05,
-      "returnPct": -4.76
+      "avgCost": 76.56,
+      "mark": 78.04,
+      "marketValue": 234.12,
+      "unrealized": 4.44,
+      "returnPct": 1.93
     },
     {
       "symbol": "SOFI",
       "quantity": 11.0,
       "avgCost": 18.19,
-      "mark": 17.66,
-      "marketValue": 194.26,
-      "unrealized": -5.83,
-      "returnPct": -2.91
+      "mark": 18.44,
+      "marketValue": 202.79,
+      "unrealized": 2.7,
+      "returnPct": 1.35
+    },
+    {
+      "symbol": "ASTS",
+      "quantity": 3.0,
+      "avgCost": 70.35,
+      "mark": 66.44,
+      "marketValue": 199.32,
+      "unrealized": -11.73,
+      "returnPct": -5.56
+    },
+    {
+      "symbol": "WETO",
+      "quantity": 6.0,
+      "avgCost": 49.09,
+      "mark": 20.93,
+      "marketValue": 125.58,
+      "unrealized": -168.96,
+      "returnPct": -57.36
     },
     {
       "symbol": "USAR",
       "quantity": 5.0,
       "avgCost": 18.28,
-      "mark": 18.52,
-      "marketValue": 92.6,
-      "unrealized": 1.2,
-      "returnPct": 1.31
+      "mark": 18.08,
+      "marketValue": 90.38,
+      "unrealized": -1.02,
+      "returnPct": -1.12
     },
     {
       "symbol": "ARX",
       "quantity": 3.0,
       "avgCost": 19.54,
-      "mark": 19.55,
-      "marketValue": 58.65,
-      "unrealized": 0.03,
-      "returnPct": 0.05
+      "mark": 19.56,
+      "marketValue": 58.68,
+      "unrealized": 0.06,
+      "returnPct": 0.1
     },
     {
       "symbol": "VOO",
       "quantity": 0.014495,
       "avgCost": 689.89,
-      "mark": 705.39,
-      "marketValue": 10.22,
-      "unrealized": 0.22,
-      "returnPct": 2.25
+      "mark": 706.91,
+      "marketValue": 10.25,
+      "unrealized": 0.25,
+      "returnPct": 2.47
     }
   ],
   "activity": [
@@ -1737,9 +1810,197 @@
     {
       "date": "2026-08-18",
       "trades": 28
+    },
+    {
+      "date": "2026-08-19",
+      "trades": 23
     }
   ],
   "transactions": [
+    {
+      "date": "2026-08-19",
+      "symbol": "AAOI",
+      "code": "Buy",
+      "quantity": 4,
+      "price": 123.235,
+      "amount": -492.94
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "SNXX",
+      "code": "Buy",
+      "quantity": 15,
+      "price": 14.385,
+      "amount": -215.775
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRNA",
+      "code": "Sell",
+      "quantity": 4,
+      "price": 138.1201,
+      "amount": 552.4604
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRNA",
+      "code": "Buy",
+      "quantity": 2,
+      "price": 147.425,
+      "amount": -294.85
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "NBIS",
+      "code": "Buy",
+      "quantity": 3,
+      "price": 223.905,
+      "amount": -671.715
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "SKHY",
+      "code": "Buy",
+      "quantity": 3,
+      "price": 164.66,
+      "amount": -493.98
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "EL",
+      "code": "Buy",
+      "quantity": 3,
+      "price": 95.49,
+      "amount": -286.47
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRVL",
+      "code": "Buy",
+      "quantity": 5,
+      "price": 242.4,
+      "amount": -1212.0
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRVL",
+      "code": "Sell",
+      "quantity": 15,
+      "price": 238.838,
+      "amount": 3582.49
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRVL",
+      "code": "Buy",
+      "quantity": 5,
+      "price": 241.37,
+      "amount": -1206.85
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MUU",
+      "code": "Buy",
+      "quantity": 10,
+      "price": 30.97,
+      "amount": -309.7
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRNA",
+      "code": "Buy",
+      "quantity": 2,
+      "price": 117.3661,
+      "amount": -234.7322
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "LITX",
+      "code": "Buy",
+      "quantity": 10,
+      "price": 30.45,
+      "amount": -304.5
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRVL",
+      "code": "Buy",
+      "quantity": 4,
+      "price": 226.5,
+      "amount": -906.0
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "TNON",
+      "code": "Sell",
+      "quantity": 30,
+      "price": 11.01,
+      "amount": 330.3
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "TNON",
+      "code": "Buy",
+      "quantity": 20,
+      "price": 12.19,
+      "amount": -243.8
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "TNON",
+      "code": "Sell",
+      "quantity": 20,
+      "price": 11.55,
+      "amount": 231.0
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "TNON",
+      "code": "Buy",
+      "quantity": 20,
+      "price": 12.25,
+      "amount": -245.0
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRNA",
+      "code": "Sell",
+      "quantity": 2,
+      "price": 95.0,
+      "amount": 190.0
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "SNXX",
+      "code": "Buy",
+      "quantity": 20,
+      "price": 15.96,
+      "amount": -319.2
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "CAST",
+      "code": "Sell",
+      "quantity": 100,
+      "price": 2.52,
+      "amount": 251.98
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MRNA",
+      "code": "Buy",
+      "quantity": 2,
+      "price": 111.89,
+      "amount": -223.78
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "RDW",
+      "code": "Sell",
+      "quantity": 20,
+      "price": 12.5001,
+      "amount": 250.002
+    },
     {
       "date": "2026-08-18",
       "symbol": "MRVL",
@@ -13006,21 +13267,21 @@
     }
   ],
   "market": {
-    "asOf": "2026-08-18",
+    "asOf": "2026-08-19",
     "indexes": [
       {
         "symbol": "SPX",
         "name": "S&P 500",
-        "value": 7691.76,
-        "prevValue": 7745.37,
-        "changePct": -0.69
+        "value": 7707.98,
+        "prevValue": 7691.76,
+        "changePct": 0.21
       },
       {
         "symbol": "NDX",
         "name": "Nasdaq 100",
-        "value": 29490.96,
-        "prevValue": 29995.38,
-        "changePct": -1.68
+        "value": 29426.02,
+        "prevValue": 29490.96,
+        "changePct": -0.22
       }
     ],
     "stocks": [
@@ -13029,17 +13290,17 @@
         "name": "Astera Labs, Inc.",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 303.65,
-        "prevClose": 320.17,
-        "changePct": -5.16,
-        "dayPnl": -495.6,
-        "marketValue": 9109.5,
+        "last": 289.8,
+        "prevClose": 289.02,
+        "changePct": 0.27,
+        "dayPnl": 23.4,
+        "marketValue": 8694.0,
         "marketCap": 55527375957,
         "peRatio": 158.350566,
         "dividendYield": null,
         "high52": 499.4762,
         "low52": 97.89,
-        "rangePct": 51.24,
+        "rangePct": 47.79,
         "volumeRatio": 1.2,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13050,17 +13311,17 @@
         "name": "Meta Platforms, Inc.",
         "sector": "Technology Services",
         "industry": "Internet Software/Services",
-        "last": 543.67,
-        "prevClose": 568.97,
-        "changePct": -4.45,
-        "dayPnl": -253.0,
-        "marketValue": 5436.7,
+        "last": 546.19,
+        "prevClose": 546.03,
+        "changePct": 0.03,
+        "dayPnl": 1.6,
+        "marketValue": 5461.9,
         "marketCap": 1449429990095.36,
         "peRatio": 22.218497,
         "dividendYield": 0.356023,
         "high52": 796.25,
         "low52": 520.26,
-        "rangePct": 8.48,
+        "rangePct": 9.4,
         "volumeRatio": 1.04,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13071,17 +13332,17 @@
         "name": "Bloom Energy Corp.",
         "sector": "Electronic Technology",
         "industry": "Electronic Production Equipment",
-        "last": 208.96,
-        "prevClose": 232.16,
-        "changePct": -9.99,
-        "dayPnl": -603.2,
-        "marketValue": 5432.96,
+        "last": 206.33,
+        "prevClose": 206.63,
+        "changePct": -0.15,
+        "dayPnl": -7.8,
+        "marketValue": 5364.58,
         "marketCap": 68383359398.00542,
         "peRatio": 313.31244,
         "dividendYield": null,
         "high52": 351.28,
         "low52": 40.56,
-        "rangePct": 54.2,
+        "rangePct": 53.35,
         "volumeRatio": 0.6,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13092,17 +13353,17 @@
         "name": "Intel Corp.",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 96.68,
-        "prevClose": 103.49,
-        "changePct": -6.58,
-        "dayPnl": -258.81,
-        "marketValue": 3674.29,
+        "last": 92.85,
+        "prevClose": 92.8,
+        "changePct": 0.05,
+        "dayPnl": 1.71,
+        "marketValue": 3528.54,
         "marketCap": 521953120000,
         "peRatio": -48.35,
         "dividendYield": null,
         "high52": 142.35,
         "low52": 22.775,
-        "rangePct": 61.81,
+        "rangePct": 58.6,
         "volumeRatio": 0.72,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13113,39 +13374,18 @@
         "name": "Arm Holdings Plc",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 253.53,
-        "prevClose": 271.43,
-        "changePct": -6.59,
-        "dayPnl": -179.0,
-        "marketValue": 2535.3,
+        "last": 249.55,
+        "prevClose": 249.34,
+        "changePct": 0.08,
+        "dayPnl": 2.1,
+        "marketValue": 2495.5,
         "marketCap": 289865882532.08514,
         "peRatio": 286.663931,
         "dividendYield": null,
         "high52": 452.7,
         "low52": 100.02,
-        "rangePct": 43.53,
+        "rangePct": 42.4,
         "volumeRatio": 0.63,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "APLD",
-        "name": "Applied Digital Corp.",
-        "sector": "Technology Services",
-        "industry": "Data Processing Services",
-        "last": 28.51,
-        "prevClose": 31.18,
-        "changePct": -8.58,
-        "dayPnl": -227.37,
-        "marketValue": 2422.93,
-        "marketCap": 9083635228.683323,
-        "peRatio": -35.08,
-        "dividendYield": null,
-        "high52": 50.725,
-        "low52": 13.16,
-        "rangePct": 40.85,
-        "volumeRatio": 0.64,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13155,18 +13395,39 @@
         "name": "Alphabet, Inc.",
         "sector": "Technology Services",
         "industry": "Internet Software/Services",
-        "last": 344.07,
-        "prevClose": 344.0,
+        "last": 344.79,
+        "prevClose": 344.72,
         "changePct": 0.02,
         "dayPnl": 0.49,
-        "marketValue": 2408.49,
+        "marketValue": 2413.53,
         "marketCap": 4208220699999.9995,
         "peRatio": 17.377281,
         "dividendYield": 0.245736,
         "high52": 408.61,
         "low52": 196.595,
-        "rangePct": 69.56,
+        "rangePct": 69.9,
         "volumeRatio": 0.57,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "APLD",
+        "name": "Applied Digital Corp.",
+        "sector": "Technology Services",
+        "industry": "Data Processing Services",
+        "last": 28.24,
+        "prevClose": 28.23,
+        "changePct": 0.04,
+        "dayPnl": 0.85,
+        "marketValue": 2400.4,
+        "marketCap": 9083635228.683323,
+        "peRatio": -35.08,
+        "dividendYield": null,
+        "high52": 50.725,
+        "low52": 13.16,
+        "rangePct": 40.14,
+        "volumeRatio": 0.64,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13176,17 +13437,17 @@
         "name": "Applied Materials, Inc.",
         "sector": "Producer Manufacturing",
         "industry": "Industrial Machinery",
-        "last": 514.33,
-        "prevClose": 535.31,
-        "changePct": -3.92,
-        "dayPnl": -83.92,
-        "marketValue": 2057.32,
+        "last": 496.32,
+        "prevClose": 496.17,
+        "changePct": 0.03,
+        "dayPnl": 0.6,
+        "marketValue": 1985.28,
         "marketCap": 425085862843.3955,
         "peRatio": 43.742022,
         "dividendYield": 0.376592,
         "high52": 739.67,
         "low52": 154.465,
-        "rangePct": 61.49,
+        "rangePct": 58.42,
         "volumeRatio": 1.07,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13197,17 +13458,17 @@
         "name": "NVIDIA Corp.",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 219.8,
-        "prevClose": 225.01,
-        "changePct": -2.32,
-        "dayPnl": -41.8,
-        "marketValue": 1763.48,
+        "last": 217.69,
+        "prevClose": 217.56,
+        "changePct": 0.06,
+        "dayPnl": 1.04,
+        "marketValue": 1746.55,
         "marketCap": 5535601432000,
         "peRatio": 34.481914,
         "dividendYield": 0.124356,
         "high52": 236.54,
         "low52": 164.07,
-        "rangePct": 76.9,
+        "rangePct": 73.99,
         "volumeRatio": 0.74,
         "earningsDate": "2026-08-26",
         "earningsTiming": "pm",
@@ -13218,18 +13479,39 @@
         "name": "Apple, Inc.",
         "sector": "Electronic Technology",
         "industry": "Telecommunications Equipment",
-        "last": 310.21,
-        "prevClose": 305.59,
-        "changePct": 1.51,
-        "dayPnl": 23.1,
-        "marketValue": 1551.05,
+        "last": 316.9,
+        "prevClose": 316.83,
+        "changePct": 0.02,
+        "dayPnl": 0.35,
+        "marketValue": 1584.5,
         "marketCap": 4461300998000,
         "peRatio": 35.070444,
         "dividendYield": 0.343216,
         "high52": 344.5699,
         "low52": 223.7804,
-        "rangePct": 71.55,
+        "rangePct": 77.09,
         "volumeRatio": 0.68,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corp.",
+        "sector": "Technology Services",
+        "industry": "Packaged Software",
+        "last": 484.52,
+        "prevClose": 484.31,
+        "changePct": 0.04,
+        "dayPnl": 0.63,
+        "marketValue": 1453.56,
+        "marketCap": 3568199541500,
+        "peRatio": 27.605499,
+        "dividendYield": 0.718611,
+        "high52": 553.72,
+        "low52": 349.2,
+        "rangePct": 66.16,
+        "volumeRatio": 0.75,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13239,39 +13521,39 @@
         "name": "Credo Technology Group Holding Ltd.",
         "sector": "Technology Services",
         "industry": "Information Technology Services",
-        "last": 245.98,
-        "prevClose": 282.82,
-        "changePct": -13.03,
-        "dayPnl": -221.04,
-        "marketValue": 1475.88,
+        "last": 234.83,
+        "prevClose": 234.82,
+        "changePct": 0.0,
+        "dayPnl": 0.06,
+        "marketValue": 1408.98,
         "marketCap": 52709843214.00001,
         "peRatio": 103.587086,
         "dividendYield": null,
         "high52": 308.6699,
         "low52": 86.485,
-        "rangePct": 71.78,
+        "rangePct": 66.77,
         "volumeRatio": 1.08,
         "earningsDate": "2026-09-01",
         "earningsTiming": "pm",
         "epsEstimate": 1.11
       },
       {
-        "symbol": "MSFT",
-        "name": "Microsoft Corp.",
-        "sector": "Technology Services",
-        "industry": "Packaged Software",
-        "last": 481.93,
-        "prevClose": 480.35,
-        "changePct": 0.33,
-        "dayPnl": 4.74,
-        "marketValue": 1445.79,
-        "marketCap": 3568199541500,
-        "peRatio": 27.605499,
-        "dividendYield": 0.718611,
-        "high52": 553.72,
-        "low52": 349.2,
-        "rangePct": 64.9,
-        "volumeRatio": 0.75,
+        "symbol": "TSLA",
+        "name": "Tesla, Inc.",
+        "sector": "Consumer Durables",
+        "industry": "Motor Vehicles",
+        "last": 351.13,
+        "prevClose": 351.12,
+        "changePct": 0.0,
+        "dayPnl": 0.04,
+        "marketValue": 1404.52,
+        "marketCap": 1340072836080,
+        "peRatio": 318.006132,
+        "dividendYield": null,
+        "high52": 498.83,
+        "low52": 297.38,
+        "rangePct": 26.68,
+        "volumeRatio": 0.66,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13281,39 +13563,39 @@
         "name": "Dell Technologies, Inc.",
         "sector": "Electronic Technology",
         "industry": "Computer Processing Hardware",
-        "last": 468.52,
-        "prevClose": 479.81,
-        "changePct": -2.35,
-        "dayPnl": -33.87,
-        "marketValue": 1405.56,
+        "last": 437.49,
+        "prevClose": 437.55,
+        "changePct": -0.01,
+        "dayPnl": -0.19,
+        "marketValue": 1312.46,
         "marketCap": 310961115634.17,
         "peRatio": 39.002392,
         "dividendYield": 0.470651,
         "high52": 514.0,
         "low52": 110.22,
-        "rangePct": 88.74,
+        "rangePct": 81.05,
         "volumeRatio": 0.75,
         "earningsDate": "2026-09-03",
         "earningsTiming": "pm",
         "epsEstimate": 4.84
       },
       {
-        "symbol": "TSLA",
-        "name": "Tesla, Inc.",
-        "sector": "Consumer Durables",
-        "industry": "Motor Vehicles",
-        "last": 336.84,
-        "prevClose": 339.3,
-        "changePct": -0.73,
-        "dayPnl": -9.84,
-        "marketValue": 1347.36,
-        "marketCap": 1340072836080,
-        "peRatio": 318.006132,
+        "symbol": "MUU",
+        "name": "MUU",
+        "sector": "Miscellaneous",
+        "industry": "Investment Trusts Or Mutual Funds",
+        "last": 29.8,
+        "prevClose": 29.82,
+        "changePct": -0.07,
+        "dayPnl": -0.8,
+        "marketValue": 1192.0,
+        "marketCap": 4739000700,
+        "peRatio": null,
         "dividendYield": null,
-        "high52": 498.83,
-        "low52": 297.38,
-        "rangePct": 19.59,
-        "volumeRatio": 0.66,
+        "high52": 62.64,
+        "low52": 0.98925,
+        "rangePct": 46.73,
+        "volumeRatio": 0.81,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13323,11 +13605,11 @@
         "name": null,
         "sector": null,
         "industry": null,
-        "last": 216.03,
-        "prevClose": 234.33,
-        "changePct": -7.81,
-        "dayPnl": -109.8,
-        "marketValue": 1296.18,
+        "last": 237.35,
+        "prevClose": 237.27,
+        "changePct": 0.03,
+        "dayPnl": 0.4,
+        "marketValue": 1186.75,
         "marketCap": null,
         "peRatio": null,
         "dividendYield": null,
@@ -13344,17 +13626,17 @@
         "name": "Cloudflare, Inc.",
         "sector": "Technology Services",
         "industry": "Information Technology Services",
-        "last": 301.29,
-        "prevClose": 307.01,
-        "changePct": -1.86,
-        "dayPnl": -22.9,
-        "marketValue": 1205.14,
+        "last": 291.94,
+        "prevClose": 291.88,
+        "changePct": 0.02,
+        "dayPnl": 0.22,
+        "marketValue": 1167.74,
         "marketCap": 109336125976.7,
         "peRatio": -541.83,
         "dividendYield": null,
         "high52": 332.22,
         "low52": 158.83,
-        "rangePct": 82.16,
+        "rangePct": 76.77,
         "volumeRatio": 0.84,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13365,11 +13647,11 @@
         "name": null,
         "sector": null,
         "industry": null,
-        "last": 219.92,
-        "prevClose": 251.98,
-        "changePct": -12.73,
-        "dayPnl": -160.32,
-        "marketValue": 1099.58,
+        "last": 215.65,
+        "prevClose": 215.69,
+        "changePct": -0.02,
+        "dayPnl": -0.2,
+        "marketValue": 1078.25,
         "marketCap": null,
         "peRatio": null,
         "dividendYield": null,
@@ -13386,249 +13668,18 @@
         "name": "Robinhood Markets, Inc",
         "sector": "Finance",
         "industry": "Investment Banks/Brokers",
-        "last": 91.56,
-        "prevClose": 96.25,
-        "changePct": -4.87,
-        "dayPnl": -46.9,
-        "marketValue": 915.6,
+        "last": 95.78,
+        "prevClose": 95.77,
+        "changePct": 0.01,
+        "dayPnl": 0.1,
+        "marketValue": 957.8,
         "marketCap": 86536668010.88318,
         "peRatio": 42.31689,
         "dividendYield": null,
         "high52": 153.8599,
         "low52": 63.515,
-        "rangePct": 31.04,
+        "rangePct": 35.71,
         "volumeRatio": 0.55,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "MUU",
-        "name": "MUU",
-        "sector": "Miscellaneous",
-        "industry": "Investment Trusts Or Mutual Funds",
-        "last": 30.1,
-        "prevClose": 35.01,
-        "changePct": -14.02,
-        "dayPnl": -147.3,
-        "marketValue": 903.0,
-        "marketCap": 4739000700,
-        "peRatio": null,
-        "dividendYield": null,
-        "high52": 62.64,
-        "low52": 0.98925,
-        "rangePct": 47.22,
-        "volumeRatio": 0.81,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "V",
-        "name": "Visa, Inc.",
-        "sector": "Finance",
-        "industry": "Finance/Rental/Leasing",
-        "last": 364.28,
-        "prevClose": 358.84,
-        "changePct": 1.52,
-        "dayPnl": 10.88,
-        "marketValue": 728.56,
-        "marketCap": 670176638099.5441,
-        "peRatio": 31.251341,
-        "dividendYield": 0.713991,
-        "high52": 373.97,
-        "low52": 293.89,
-        "rangePct": 87.9,
-        "volumeRatio": 2.25,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "DLR",
-        "name": "Digital Realty Trust, Inc.",
-        "sector": "Finance",
-        "industry": "Real Estate Investment Trusts",
-        "last": 195.26,
-        "prevClose": 197.91,
-        "changePct": -1.34,
-        "dayPnl": -7.95,
-        "marketValue": 585.78,
-        "marketCap": 73250512519.27411,
-        "peRatio": 97.358692,
-        "dividendYield": 2.438171,
-        "high52": 208.14,
-        "low52": 146.23,
-        "rangePct": 79.2,
-        "volumeRatio": 0.66,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "ABNB",
-        "name": "Airbnb, Inc.",
-        "sector": "Consumer Services",
-        "industry": "Hotels/Resorts/Cruise lines",
-        "last": 183.22,
-        "prevClose": 179.29,
-        "changePct": 2.19,
-        "dayPnl": 11.79,
-        "marketValue": 549.66,
-        "marketCap": 107350298429.75813,
-        "peRatio": 41.836572,
-        "dividendYield": null,
-        "high52": 187.12,
-        "low52": 110.81,
-        "rangePct": 94.89,
-        "volumeRatio": 0.81,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "AMZN",
-        "name": "Amazon.com, Inc.",
-        "sector": "Retail Trade",
-        "industry": "Internet Retail",
-        "last": 259.48,
-        "prevClose": 261.31,
-        "changePct": -0.7,
-        "dayPnl": -3.66,
-        "marketValue": 518.96,
-        "marketCap": 2818787490531.7383,
-        "peRatio": 21.125911,
-        "dividendYield": null,
-        "high52": 287.2,
-        "low52": 196.0,
-        "rangePct": 69.61,
-        "volumeRatio": 0.9,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "BB",
-        "name": "BlackBerry Ltd.",
-        "sector": "Technology Services",
-        "industry": "Packaged Software",
-        "last": 8.59,
-        "prevClose": 8.73,
-        "changePct": -1.66,
-        "dayPnl": -8.7,
-        "marketValue": 515.1,
-        "marketCap": 5111378100,
-        "peRatio": 91.469681,
-        "dividendYield": null,
-        "high52": 13.59,
-        "low52": 3.1201,
-        "rangePct": 52.2,
-        "volumeRatio": 0.68,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "XOM",
-        "name": "ExxonMobil Holdings Corp.",
-        "sector": "Energy Minerals",
-        "industry": "Integrated Oil",
-        "last": 165.61,
-        "prevClose": 161.46,
-        "changePct": 2.57,
-        "dayPnl": 12.45,
-        "marketValue": 496.83,
-        "marketCap": 664114950103.2485,
-        "peRatio": 20.602769,
-        "dividendYield": 2.548407,
-        "high52": 176.41,
-        "low52": 105.67,
-        "rangePct": 84.73,
-        "volumeRatio": 0.91,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "AMIX",
-        "name": "Autonomix Medical, Inc.",
-        "sector": "Health Technology",
-        "industry": "Medical Specialties",
-        "last": 6.12,
-        "prevClose": 6.4,
-        "changePct": -4.45,
-        "dayPnl": -21.37,
-        "marketValue": 458.63,
-        "marketCap": 6156413.036494,
-        "peRatio": -0.15,
-        "dividendYield": null,
-        "high52": 32.55,
-        "low52": 2.44,
-        "rangePct": 12.21,
-        "volumeRatio": 0.01,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "UBER",
-        "name": "Uber Technologies, Inc.",
-        "sector": "Transportation",
-        "industry": "Other Transportation",
-        "last": 74.69,
-        "prevClose": 74.99,
-        "changePct": -0.4,
-        "dayPnl": -1.8,
-        "marketValue": 448.14,
-        "marketCap": 153202220194.8313,
-        "peRatio": 16.694142,
-        "dividendYield": null,
-        "high52": 101.99,
-        "low52": 65.41,
-        "rangePct": 25.37,
-        "volumeRatio": 0.89,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "BP",
-        "name": "BP Plc",
-        "sector": "Energy Minerals",
-        "industry": "Integrated Oil",
-        "last": 43.42,
-        "prevClose": 42.85,
-        "changePct": 1.33,
-        "dayPnl": 5.7,
-        "marketValue": 434.2,
-        "marketCap": 112106559173.2597,
-        "peRatio": 20.1116,
-        "dividendYield": 4.648013,
-        "high52": 48.27,
-        "low52": 32.72,
-        "rangePct": 68.81,
-        "volumeRatio": 1.2,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "RKLB",
-        "name": "Rocket Lab Corp.",
-        "sector": "Electronic Technology",
-        "industry": "Aerospace & Defense",
-        "last": 79.14,
-        "prevClose": 82.08,
-        "changePct": -3.58,
-        "dayPnl": -14.7,
-        "marketValue": 395.7,
-        "marketCap": 49124578094.05979,
-        "peRatio": -287.02,
-        "dividendYield": null,
-        "high52": 150.9999,
-        "low52": 37.57,
-        "rangePct": 36.65,
-        "volumeRatio": 0.9,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13638,11 +13689,11 @@
         "name": null,
         "sector": null,
         "industry": null,
-        "last": 15.6,
-        "prevClose": 19.06,
-        "changePct": -18.18,
-        "dayPnl": -86.62,
-        "marketValue": 389.88,
+        "last": 14.51,
+        "prevClose": 14.58,
+        "changePct": -0.51,
+        "dayPnl": -4.5,
+        "marketValue": 870.3,
         "marketCap": null,
         "peRatio": null,
         "dividendYield": null,
@@ -13655,21 +13706,294 @@
         "epsEstimate": null
       },
       {
+        "symbol": "TSM",
+        "name": null,
+        "sector": null,
+        "industry": null,
+        "last": 412.27,
+        "prevClose": 412.09,
+        "changePct": 0.04,
+        "dayPnl": 0.36,
+        "marketValue": 824.54,
+        "marketCap": null,
+        "peRatio": null,
+        "dividendYield": null,
+        "high52": null,
+        "low52": null,
+        "rangePct": null,
+        "volumeRatio": null,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "V",
+        "name": "Visa, Inc.",
+        "sector": "Finance",
+        "industry": "Finance/Rental/Leasing",
+        "last": 365.76,
+        "prevClose": 365.54,
+        "changePct": 0.06,
+        "dayPnl": 0.44,
+        "marketValue": 731.52,
+        "marketCap": 670176638099.5441,
+        "peRatio": 31.251341,
+        "dividendYield": 0.713991,
+        "high52": 373.97,
+        "low52": 293.89,
+        "rangePct": 89.75,
+        "volumeRatio": 2.25,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "NBIS",
+        "name": "Nebius Group NV",
+        "sector": "Technology Services",
+        "industry": "Packaged Software",
+        "last": 223.67,
+        "prevClose": 223.9,
+        "changePct": -0.1,
+        "dayPnl": -0.69,
+        "marketValue": 671.01,
+        "marketCap": 73096432315.0781,
+        "peRatio": 1050.226929,
+        "dividendYield": null,
+        "high52": 299.86,
+        "low52": 62.01,
+        "rangePct": 67.97,
+        "volumeRatio": 0.73,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "SMCI",
+        "name": "Super Micro Computer, Inc.",
+        "sector": "Electronic Technology",
+        "industry": "Computer Processing Hardware",
+        "last": 36.58,
+        "prevClose": 36.58,
+        "changePct": -0.01,
+        "dayPnl": -0.08,
+        "marketValue": 621.78,
+        "marketCap": 24759064075,
+        "peRatio": 12.220859,
+        "dividendYield": null,
+        "high52": 58.78,
+        "low52": 19.48,
+        "rangePct": 43.5,
+        "volumeRatio": 0.94,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "DLR",
+        "name": "Digital Realty Trust, Inc.",
+        "sector": "Finance",
+        "industry": "Real Estate Investment Trusts",
+        "last": 192.39,
+        "prevClose": 192.35,
+        "changePct": 0.02,
+        "dayPnl": 0.12,
+        "marketValue": 577.17,
+        "marketCap": 73250512519.27411,
+        "peRatio": 97.358692,
+        "dividendYield": 2.438171,
+        "high52": 208.14,
+        "low52": 146.23,
+        "rangePct": 74.56,
+        "volumeRatio": 0.66,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "ABNB",
+        "name": "Airbnb, Inc.",
+        "sector": "Consumer Services",
+        "industry": "Hotels/Resorts/Cruise lines",
+        "last": 186.42,
+        "prevClose": 186.39,
+        "changePct": 0.02,
+        "dayPnl": 0.09,
+        "marketValue": 559.26,
+        "marketCap": 107350298429.75813,
+        "peRatio": 41.836572,
+        "dividendYield": null,
+        "high52": 187.12,
+        "low52": 110.81,
+        "rangePct": 99.08,
+        "volumeRatio": 0.81,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon.com, Inc.",
+        "sector": "Retail Trade",
+        "industry": "Internet Retail",
+        "last": 265.89,
+        "prevClose": 265.84,
+        "changePct": 0.02,
+        "dayPnl": 0.1,
+        "marketValue": 531.78,
+        "marketCap": 2818787490531.7383,
+        "peRatio": 21.125911,
+        "dividendYield": null,
+        "high52": 287.2,
+        "low52": 196.0,
+        "rangePct": 76.63,
+        "volumeRatio": 0.9,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "BB",
+        "name": "BlackBerry Ltd.",
+        "sector": "Technology Services",
+        "industry": "Packaged Software",
+        "last": 8.33,
+        "prevClose": 8.34,
+        "changePct": -0.12,
+        "dayPnl": -0.6,
+        "marketValue": 499.8,
+        "marketCap": 5111378100,
+        "peRatio": 91.469681,
+        "dividendYield": null,
+        "high52": 13.59,
+        "low52": 3.1201,
+        "rangePct": 49.76,
+        "volumeRatio": 0.68,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "XOM",
+        "name": "ExxonMobil Holdings Corp.",
+        "sector": "Energy Minerals",
+        "industry": "Integrated Oil",
+        "last": 164.82,
+        "prevClose": 164.77,
+        "changePct": 0.03,
+        "dayPnl": 0.15,
+        "marketValue": 494.46,
+        "marketCap": 664114950103.2485,
+        "peRatio": 20.602769,
+        "dividendYield": 2.548407,
+        "high52": 176.41,
+        "low52": 105.67,
+        "rangePct": 83.62,
+        "volumeRatio": 0.91,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "AAOI",
+        "name": "Applied Optoelectronics, Inc.",
+        "sector": "Electronic Technology",
+        "industry": "Semiconductors",
+        "last": 122.24,
+        "prevClose": 122.19,
+        "changePct": 0.04,
+        "dayPnl": 0.18,
+        "marketValue": 488.94,
+        "marketCap": 13092163435.379007,
+        "peRatio": -192.86,
+        "dividendYield": null,
+        "high52": 233.67,
+        "low52": 18.5,
+        "rangePct": 48.21,
+        "volumeRatio": 1.07,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "SKHY",
+        "name": null,
+        "sector": null,
+        "industry": null,
+        "last": 156.22,
+        "prevClose": 156.16,
+        "changePct": 0.04,
+        "dayPnl": 0.18,
+        "marketValue": 468.66,
+        "marketCap": null,
+        "peRatio": null,
+        "dividendYield": null,
+        "high52": null,
+        "low52": null,
+        "rangePct": null,
+        "volumeRatio": null,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "AMIX",
+        "name": "Autonomix Medical, Inc.",
+        "sector": "Health Technology",
+        "industry": "Medical Specialties",
+        "last": 5.91,
+        "prevClose": 5.91,
+        "changePct": -0.08,
+        "dayPnl": -0.37,
+        "marketValue": 442.88,
+        "marketCap": 6156413.036494,
+        "peRatio": -0.15,
+        "dividendYield": null,
+        "high52": 32.55,
+        "low52": 2.44,
+        "rangePct": 11.51,
+        "volumeRatio": 0.01,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "BP",
+        "name": "BP Plc",
+        "sector": "Energy Minerals",
+        "industry": "Integrated Oil",
+        "last": 43.75,
+        "prevClose": 43.73,
+        "changePct": 0.03,
+        "dayPnl": 0.15,
+        "marketValue": 437.45,
+        "marketCap": 112106559173.2597,
+        "peRatio": 20.1116,
+        "dividendYield": 4.648013,
+        "high52": 48.27,
+        "low52": 32.72,
+        "rangePct": 70.9,
+        "volumeRatio": 1.2,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
         "symbol": "QCOM",
         "name": "QUALCOMM, Inc.",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 160.28,
-        "prevClose": 162.18,
-        "changePct": -1.17,
-        "dayPnl": -3.8,
-        "marketValue": 320.56,
+        "last": 161.9,
+        "prevClose": 161.91,
+        "changePct": -0.01,
+        "dayPnl": -0.02,
+        "marketValue": 323.8,
         "marketCap": 170305920173.59598,
         "peRatio": 19.187769,
         "dividendYield": 2.16539,
         "high52": 259.92,
         "low52": 121.99,
-        "rangePct": 27.76,
+        "rangePct": 28.93,
         "volumeRatio": 0.73,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13680,18 +14004,39 @@
         "name": "TeraWulf, Inc.",
         "sector": "Technology Services",
         "industry": "Data Processing Services",
-        "last": 15.59,
-        "prevClose": 17.6,
-        "changePct": -11.42,
-        "dayPnl": -40.2,
-        "marketValue": 311.8,
+        "last": 15.49,
+        "prevClose": 15.5,
+        "changePct": -0.1,
+        "dayPnl": -0.3,
+        "marketValue": 309.7,
         "marketCap": 8784349245,
         "peRatio": -3.95,
         "dividendYield": null,
         "high52": 29.84,
         "low52": 8.141,
-        "rangePct": 34.33,
+        "rangePct": 33.84,
         "volumeRatio": 0.72,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "RKLB",
+        "name": "Rocket Lab Corp.",
+        "sector": "Electronic Technology",
+        "industry": "Aerospace & Defense",
+        "last": 75.85,
+        "prevClose": 75.84,
+        "changePct": 0.01,
+        "dayPnl": 0.04,
+        "marketValue": 303.4,
+        "marketCap": 49124578094.05979,
+        "peRatio": -287.02,
+        "dividendYield": null,
+        "high52": 150.9999,
+        "low52": 37.57,
+        "rangePct": 33.75,
+        "volumeRatio": 0.9,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13702,17 +14047,38 @@
         "sector": "Technology Services",
         "industry": "Packaged Software",
         "last": 2.86,
-        "prevClose": 3.08,
-        "changePct": -7.31,
-        "dayPnl": -23.62,
-        "marketValue": 299.78,
+        "prevClose": 2.86,
+        "changePct": 0.0,
+        "dayPnl": 0.0,
+        "marketValue": 300.3,
         "marketCap": 9804855.047319,
         "peRatio": -0.67,
         "dividendYield": null,
         "high52": 51.25,
         "low52": 2.39,
-        "rangePct": 0.95,
+        "rangePct": 0.96,
         "volumeRatio": 0.02,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "EL",
+        "name": null,
+        "sector": null,
+        "industry": null,
+        "last": 98.08,
+        "prevClose": 98.01,
+        "changePct": 0.07,
+        "dayPnl": 0.21,
+        "marketValue": 294.24,
+        "marketCap": null,
+        "peRatio": null,
+        "dividendYield": null,
+        "high52": null,
+        "low52": null,
+        "rangePct": null,
+        "volumeRatio": null,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13722,53 +14088,32 @@
         "name": "Sunrun, Inc.",
         "sector": "Electronic Technology",
         "industry": "Semiconductors",
-        "last": 9.25,
-        "prevClose": 9.83,
-        "changePct": -5.9,
-        "dayPnl": -17.4,
-        "marketValue": 277.5,
+        "last": 9.8,
+        "prevClose": 9.8,
+        "changePct": -0.05,
+        "dayPnl": -0.15,
+        "marketValue": 293.85,
         "marketCap": 2367526010,
         "peRatio": 6.851802,
         "dividendYield": null,
         "high52": 22.44,
         "low52": 8.6101,
-        "rangePct": 4.63,
+        "rangePct": 8.57,
         "volumeRatio": 0.76,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
       },
       {
-        "symbol": "SMCI",
-        "name": "Super Micro Computer, Inc.",
-        "sector": "Electronic Technology",
-        "industry": "Computer Processing Hardware",
-        "last": 37.41,
-        "prevClose": 38.28,
-        "changePct": -2.27,
-        "dayPnl": -6.09,
-        "marketValue": 261.87,
-        "marketCap": 24759064075,
-        "peRatio": 12.220859,
-        "dividendYield": null,
-        "high52": 58.78,
-        "low52": 19.48,
-        "rangePct": 45.62,
-        "volumeRatio": 0.94,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "RDW",
+        "symbol": "LITX",
         "name": null,
         "sector": null,
         "industry": null,
-        "last": 12.94,
-        "prevClose": 13.41,
-        "changePct": -3.5,
-        "dayPnl": -9.4,
-        "marketValue": 258.8,
+        "last": 26.63,
+        "prevClose": 26.71,
+        "changePct": -0.3,
+        "dayPnl": -0.8,
+        "marketValue": 266.3,
         "marketCap": null,
         "peRatio": null,
         "dividendYield": null,
@@ -13785,18 +14130,81 @@
         "name": "Snap, Inc.",
         "sector": "Technology Services",
         "industry": "Packaged Software",
-        "last": 5.11,
-        "prevClose": 5.18,
-        "changePct": -1.45,
-        "dayPnl": -3.75,
-        "marketValue": 255.25,
+        "last": 5.24,
+        "prevClose": 5.24,
+        "changePct": -0.1,
+        "dayPnl": -0.25,
+        "marketValue": 261.75,
         "marketCap": 8777329209.27,
         "peRatio": -29.09,
         "dividendYield": null,
         "high52": 9.28,
         "low52": 3.81,
-        "rangePct": 23.67,
+        "rangePct": 26.05,
         "volumeRatio": 1.68,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "UBER",
+        "name": "Uber Technologies, Inc.",
+        "sector": "Transportation",
+        "industry": "Other Transportation",
+        "last": 78.04,
+        "prevClose": 78.04,
+        "changePct": 0.0,
+        "dayPnl": 0.0,
+        "marketValue": 234.12,
+        "marketCap": 153202220194.8313,
+        "peRatio": 16.694142,
+        "dividendYield": null,
+        "high52": 101.99,
+        "low52": 65.41,
+        "rangePct": 34.53,
+        "volumeRatio": 0.89,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "SOFI",
+        "name": "SoFi Technologies, Inc.",
+        "sector": "Finance",
+        "industry": "Finance/Rental/Leasing",
+        "last": 18.44,
+        "prevClose": 18.42,
+        "changePct": 0.08,
+        "dayPnl": 0.17,
+        "marketValue": 202.79,
+        "marketCap": 23661571545.977047,
+        "peRatio": 38.562092,
+        "dividendYield": null,
+        "high52": 32.73,
+        "low52": 14.88,
+        "rangePct": 19.92,
+        "volumeRatio": 0.96,
+        "earningsDate": null,
+        "earningsTiming": null,
+        "epsEstimate": null
+      },
+      {
+        "symbol": "ASTS",
+        "name": "AST SpaceMobile, Inc.",
+        "sector": "Communications",
+        "industry": "Specialty Telecommunications",
+        "last": 66.44,
+        "prevClose": 66.43,
+        "changePct": 0.02,
+        "dayPnl": 0.03,
+        "marketValue": 199.32,
+        "marketCap": 27613161755.459274,
+        "peRatio": -33.17,
+        "dividendYield": null,
+        "high52": 133.8599,
+        "low52": 36.08,
+        "rangePct": 31.05,
+        "volumeRatio": 0.63,
         "earningsDate": null,
         "earningsTiming": null,
         "epsEstimate": null
@@ -13806,11 +14214,11 @@
         "name": null,
         "sector": null,
         "industry": null,
-        "last": 33.75,
-        "prevClose": 24.59,
-        "changePct": 37.25,
-        "dayPnl": 54.96,
-        "marketValue": 202.5,
+        "last": 20.93,
+        "prevClose": 20.76,
+        "changePct": 0.82,
+        "dayPnl": 1.02,
+        "marketValue": 125.58,
         "marketCap": null,
         "peRatio": null,
         "dividendYield": null,
@@ -13823,63 +14231,21 @@
         "epsEstimate": null
       },
       {
-        "symbol": "ASTS",
-        "name": "AST SpaceMobile, Inc.",
-        "sector": "Communications",
-        "industry": "Specialty Telecommunications",
-        "last": 67.0,
-        "prevClose": 71.14,
-        "changePct": -5.82,
-        "dayPnl": -12.42,
-        "marketValue": 201.0,
-        "marketCap": 27613161755.459274,
-        "peRatio": -33.17,
-        "dividendYield": null,
-        "high52": 133.8599,
-        "low52": 36.08,
-        "rangePct": 31.62,
-        "volumeRatio": 0.63,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
-        "symbol": "SOFI",
-        "name": "SoFi Technologies, Inc.",
-        "sector": "Finance",
-        "industry": "Finance/Rental/Leasing",
-        "last": 17.66,
-        "prevClose": 18.31,
-        "changePct": -3.55,
-        "dayPnl": -7.15,
-        "marketValue": 194.26,
-        "marketCap": 23661571545.977047,
-        "peRatio": 38.562092,
-        "dividendYield": null,
-        "high52": 32.73,
-        "low52": 14.88,
-        "rangePct": 15.57,
-        "volumeRatio": 0.96,
-        "earningsDate": null,
-        "earningsTiming": null,
-        "epsEstimate": null
-      },
-      {
         "symbol": "USAR",
         "name": "USA Rare Earth, Inc.",
         "sector": "Producer Manufacturing",
         "industry": "Metal Fabrication",
-        "last": 18.52,
-        "prevClose": 19.29,
-        "changePct": -3.99,
-        "dayPnl": -3.85,
-        "marketValue": 92.6,
+        "last": 18.08,
+        "prevClose": 18.09,
+        "changePct": -0.08,
+        "dayPnl": -0.07,
+        "marketValue": 90.38,
         "marketCap": 4791917330.400001,
         "peRatio": -8.35,
         "dividendYield": null,
         "high52": 43.98,
         "low52": 11.45,
-        "rangePct": 21.73,
+        "rangePct": 20.37,
         "volumeRatio": 1.01,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13890,17 +14256,17 @@
         "name": "Accelerant Holdings",
         "sector": "Finance",
         "industry": "Property/Casualty Insurance",
-        "last": 19.55,
-        "prevClose": 19.54,
+        "last": 19.56,
+        "prevClose": 19.55,
         "changePct": 0.05,
         "dayPnl": 0.03,
-        "marketValue": 58.65,
+        "marketValue": 58.68,
         "marketCap": 4264745180.118228,
         "peRatio": -2.81,
         "dividendYield": null,
         "high52": 30.475,
         "low52": 9.18,
-        "rangePct": 48.7,
+        "rangePct": 48.74,
         "volumeRatio": 0.93,
         "earningsDate": null,
         "earningsTiming": null,
@@ -13911,17 +14277,17 @@
         "name": "Vanguard S&P 500 ETF",
         "sector": "Miscellaneous",
         "industry": "Investment Trusts Or Mutual Funds",
-        "last": 705.39,
-        "prevClose": 710.27,
-        "changePct": -0.69,
-        "dayPnl": -0.07,
-        "marketValue": 10.22,
+        "last": 706.91,
+        "prevClose": 706.91,
+        "changePct": 0.0,
+        "dayPnl": 0.0,
+        "marketValue": 10.25,
         "marketCap": 1040335794302.6622,
         "peRatio": 27.82493,
         "dividendYield": 1.03,
         "high52": 716.39,
         "low52": 578.46,
-        "rangePct": 92.02,
+        "rangePct": 93.13,
         "volumeRatio": 1.05,
         "earningsDate": null,
         "earningsTiming": null,
@@ -14100,55 +14466,55 @@
     }
   ],
   "macroBoard": {
-    "asOf": "2026-08-18",
+    "asOf": "2026-08-19",
     "items": [
       {
         "symbol": "SPX",
         "kind": "index",
         "label": "S&P 500",
         "desc": "Broad US market index",
-        "value": 7691.76,
-        "changePct": -0.69
+        "value": 7707.98,
+        "changePct": 0.21
       },
       {
         "symbol": "NDX",
         "kind": "index",
         "label": "Nasdaq 100",
         "desc": "Big-tech index",
-        "value": 29490.96,
-        "changePct": -1.68
+        "value": 29426.02,
+        "changePct": -0.22
       },
       {
         "symbol": "DJX",
         "kind": "index",
         "label": "Dow (1/100 scale)",
         "desc": "Blue-chip industrials index, shown at 1/100 of the Dow",
-        "value": 533.43,
-        "changePct": -0.22
+        "value": 534.63,
+        "changePct": 0.22
       },
       {
         "symbol": "VIX",
         "kind": "index",
         "label": "Volatility (VIX)",
         "desc": "Fear gauge \u2014 cost of hedging the S&P 500. Below 15 calm, above 20 nervous",
-        "value": 15.83,
-        "changePct": 4.21
+        "value": 14.89,
+        "changePct": -5.94
       },
       {
         "symbol": "BRTI",
         "kind": "index",
         "label": "Bitcoin",
         "desc": "Live BTC price \u2014 speculative risk appetite",
-        "value": 64559.75,
-        "changePct": 0.51
+        "value": 69533.39,
+        "changePct": 7.7
       },
       {
         "symbol": "XAU",
         "kind": "spot",
         "label": "Gold \u2014 XAU/USD spot",
         "desc": "Spot gold, $ per troy ounce. Rising = safe-haven demand / inflation hedge",
-        "value": 4400.2,
-        "changePct": 0.01
+        "value": 4400.09,
+        "changePct": -0.0
       },
       {
         "symbol": "XAG",
@@ -14156,55 +14522,55 @@
         "label": "Silver \u2014 XAG/USD spot",
         "desc": "Spot silver, $ per troy ounce \u2014 part precious metal, part industrial",
         "value": 65.23,
-        "changePct": -1.28
+        "changePct": 0.0
       },
       {
         "symbol": "USO",
         "kind": "proxy",
         "label": "Oil \u2014 USO ETF",
         "desc": "ETF tracking crude oil \u2014 energy costs & growth expectations",
-        "value": 130.67,
-        "changePct": 0.29
+        "value": 130.93,
+        "changePct": 0.02
       },
       {
         "symbol": "UUP",
         "kind": "proxy",
         "label": "US Dollar \u2014 UUP ETF",
         "desc": "ETF that rises when the dollar strengthens vs other currencies. A stronger dollar is a headwind for gold & exporters",
-        "value": 28.13,
-        "changePct": 0.11
+        "value": 27.88,
+        "changePct": 0.0
       },
       {
         "symbol": "TLT",
         "kind": "proxy",
         "label": "Long-term rates \u2014 TLT ETF",
         "desc": "20yr+ Treasury bond ETF. Price UP = yields DOWN (easier conditions); price down = rates rising",
-        "value": 81.64,
-        "changePct": 0.36
+        "value": 83.02,
+        "changePct": 0.0
       },
       {
         "symbol": "HYG",
         "kind": "proxy",
         "label": "Credit health \u2014 HYG ETF",
         "desc": "Junk-bond ETF. Falling = lenders getting scared = risk-off warning",
-        "value": 79.54,
-        "changePct": -0.09
+        "value": 79.71,
+        "changePct": 0.0
       },
       {
         "symbol": "IWM",
         "kind": "proxy",
         "label": "Small caps \u2014 IWM ETF",
         "desc": "Russell 2000 ETF \u2014 appetite for riskier domestic stocks",
-        "value": 300.26,
-        "changePct": -1.25
+        "value": 301.72,
+        "changePct": 0.0
       }
     ],
     "regime": {
-      "score": -0.79,
-      "label": "RISK-OFF",
-      "vix": 15.83,
-      "vixBand": "normal",
-      "detail": "Risk assets vs. safe havens score -0.79. VIX at 15.83 (normal)."
+      "score": 1.87,
+      "label": "RISK-ON",
+      "vix": 14.89,
+      "vixBand": "calm",
+      "detail": "Risk assets vs. safe havens score +1.87. VIX at 14.89 (calm)."
     },
     "history": [
       {
@@ -14414,6 +14780,25 @@
           "IWM": 300.26,
           "GLD": 398.55,
           "SLV": 57.43
+        }
+      },
+      {
+        "date": "2026-08-19",
+        "values": {
+          "SPX": 7707.98,
+          "NDX": 29426.02,
+          "DJX": 534.63,
+          "VIX": 14.89,
+          "BRTI": 69533.39,
+          "XAU": 4400.09,
+          "XAG": 65.23,
+          "USO": 130.93,
+          "UUP": 27.88,
+          "TLT": 83.02,
+          "HYG": 79.71,
+          "IWM": 301.72,
+          "GLD": 413.83,
+          "SLV": 60.01
         }
       }
     ]
@@ -14638,2289 +15023,2898 @@
     {
       "date": "2026-08-18",
       "spx": 7691.76
+    },
+    {
+      "date": "2026-08-19",
+      "spx": 7707.98
     }
   ],
   "rrg": {
-    "asOf": "2026-08-18",
+    "asOf": "2026-08-19",
     "benchmark": "QQQ",
     "window": 50,
     "points": [
       {
         "symbol": "AAPL",
-        "x": 99.49,
-        "y": 99.54,
+        "x": 101.81,
+        "y": 103.3,
         "held": true,
         "trail": [
           [
-            99.95,
-            89.93
+            117.11,
+            111.82
           ],
           [
-            98.48,
-            85.37
+            98.56,
+            90.22
+          ],
+          [
+            97.73,
+            83.46
           ]
         ]
       },
       {
         "symbol": "ABNB",
-        "x": 121.81,
-        "y": 112.2,
+        "x": 123.35,
+        "y": 118.28,
         "held": true,
         "trail": [
           [
-            108.56,
-            100.97
+            115.93,
+            110.14
           ],
           [
-            126.5,
-            114.4
+            104.29,
+            99.39
+          ],
+          [
+            126.16,
+            108.83
           ]
         ]
       },
       {
         "symbol": "ADBE",
-        "x": 113.23,
-        "y": 100.84,
+        "x": 117.36,
+        "y": 105.58,
         "held": false,
         "trail": [
           [
-            112.28,
-            106.68
+            115.76,
+            122.11
           ],
           [
-            117.25,
-            106.93
+            111.15,
+            110.82
+          ],
+          [
+            113.55,
+            98.09
           ]
         ]
       },
       {
         "symbol": "ADI",
-        "x": 95.82,
-        "y": 102.86,
+        "x": 95.31,
+        "y": 100.63,
         "held": false,
         "trail": [
           [
-            93.15,
-            98.34
+            96.86,
+            101.02
           ],
           [
-            96.51,
-            99.16
+            94.72,
+            98.92
+          ],
+          [
+            97.27,
+            100.42
           ]
         ]
       },
       {
         "symbol": "ADP",
-        "x": 108.68,
-        "y": 93.48,
+        "x": 111.72,
+        "y": 99.45,
         "held": false,
         "trail": [
           [
-            116.25,
-            100.56
+            120.37,
+            110.07
           ],
           [
-            112.03,
-            96.76
+            112.34,
+            102.85
+          ],
+          [
+            110.84,
+            92.08
           ]
         ]
       },
       {
         "symbol": "ADSK",
-        "x": 112.47,
-        "y": 101.34,
+        "x": 114.59,
+        "y": 105.58,
         "held": false,
         "trail": [
           [
-            110.98,
-            108.02
+            116.49,
+            125.79
           ],
           [
-            117.19,
-            106.56
+            108.53,
+            110.52
+          ],
+          [
+            115.25,
+            98.93
           ]
         ]
       },
       {
         "symbol": "AEP",
-        "x": 95.63,
-        "y": 96.15,
+        "x": 95.85,
+        "y": 99.58,
         "held": false,
         "trail": [
           [
-            99.46,
-            96.42
+            107.2,
+            104.85
           ],
           [
-            92.69,
-            86.77
+            96.25,
+            95.41
+          ],
+          [
+            93.55,
+            87.27
           ]
         ]
       },
       {
         "symbol": "ALAB",
-        "x": 85.34,
-        "y": 92.49,
+        "x": 81.76,
+        "y": 81.6,
         "held": true,
         "trail": [
           [
-            92.27,
-            98.34
+            78.59,
+            72.12
           ],
           [
-            88.16,
-            104.05
+            100.19,
+            105.88
+          ],
+          [
+            87.1,
+            110.82
           ]
         ]
       },
       {
         "symbol": "ALNY",
-        "x": 83.54,
-        "y": 106.39,
+        "x": 89.28,
+        "y": 117.57,
         "held": false,
         "trail": [
           [
-            78.52,
-            81.9
+            104.95,
+            110.75
           ],
           [
-            77.15,
-            76.82
+            75.93,
+            80.88
+          ],
+          [
+            79.32,
+            75.58
           ]
         ]
       },
       {
         "symbol": "AMAT",
-        "x": 91.32,
-        "y": 94.13,
+        "x": 88.19,
+        "y": 89.47,
         "held": true,
         "trail": [
           [
-            97.02,
-            94.22
+            93.65,
+            81.31
           ],
           [
-            93.32,
-            92.52
+            98.57,
+            91.3
+          ],
+          [
+            93.96,
+            100.33
           ]
         ]
       },
       {
         "symbol": "AMD",
-        "x": 94.48,
-        "y": 97.91,
+        "x": 91.2,
+        "y": 91.55,
         "held": false,
         "trail": [
           [
-            96.49,
-            92.83
+            94.69,
+            84.75
           ],
           [
-            90.7,
-            88.73
+            99.62,
+            90.76
+          ],
+          [
+            92.02,
+            97.19
           ]
         ]
       },
       {
         "symbol": "AMGN",
-        "x": 113.47,
-        "y": 104.79,
+        "x": 117.71,
+        "y": 109.48,
         "held": false,
         "trail": [
           [
-            108.28,
-            99.97
+            118.32,
+            115.09
           ],
           [
-            113.53,
-            100.76
+            107.52,
+            100.72
+          ],
+          [
+            112.59,
+            95.16
           ]
         ]
       },
       {
         "symbol": "AMIX",
-        "x": 89.82,
-        "y": 156.29,
+        "x": 87.65,
+        "y": 30.51,
         "held": true,
         "trail": [
           [
-            57.47,
-            94.59
+            43.44,
+            62.64
           ],
           [
-            133.71,
-            309.87
+            287.32,
+            469.67
+          ],
+          [
+            131.35,
+            302.38
           ]
         ]
       },
       {
         "symbol": "AMZN",
-        "x": 103.76,
-        "y": 88.39,
+        "x": 106.4,
+        "y": 96.0,
         "held": true,
         "trail": [
           [
-            117.38,
-            114.42
+            98.87,
+            101.66
           ],
           [
-            111.26,
-            113.57
+            110.84,
+            110.87
+          ],
+          [
+            109.22,
+            110.47
           ]
         ]
       },
       {
         "symbol": "APLD",
-        "x": 83.91,
-        "y": 103.28,
+        "x": 83.89,
+        "y": 99.76,
         "held": true,
         "trail": [
           [
-            81.24,
-            113.0
+            74.14,
+            106.92
           ],
           [
-            81.57,
-            113.21
+            84.09,
+            109.72
+          ],
+          [
+            84.4,
+            113.84
           ]
         ]
       },
       {
         "symbol": "APP",
-        "x": 68.54,
-        "y": 80.69,
+        "x": 70.29,
+        "y": 82.54,
         "held": false,
         "trail": [
           [
-            84.95,
-            97.61
+            89.58,
+            101.49
           ],
           [
-            71.08,
-            81.32
+            85.15,
+            98.38
+          ],
+          [
+            67.84,
+            75.73
           ]
         ]
       },
       {
         "symbol": "ARM",
-        "x": 81.8,
-        "y": 108.34,
+        "x": 81.2,
+        "y": 94.63,
         "held": true,
         "trail": [
           [
-            75.5,
-            85.7
+            80.48,
+            89.47
           ],
           [
-            82.96,
-            95.47
+            85.81,
+            92.74
+          ],
+          [
+            83.97,
+            104.33
           ]
         ]
       },
       {
         "symbol": "ARX",
-        "x": 143.54,
-        "y": 161.53,
+        "x": 142.99,
+        "y": 163.14,
         "held": true,
         "trail": [
           [
-            88.86,
-            89.22
+            110.3,
+            122.76
           ],
           [
-            89.26,
-            82.21
+            87.65,
+            89.99
+          ],
+          [
+            93.55,
+            84.81
           ]
         ]
       },
       {
         "symbol": "ASML",
-        "x": 100.75,
-        "y": 105.32,
+        "x": 97.93,
+        "y": 101.67,
         "held": false,
         "trail": [
           [
-            95.66,
-            91.71
+            96.34,
+            92.32
           ],
           [
-            97.42,
-            97.53
+            96.32,
+            91.06
+          ],
+          [
+            101.2,
+            105.04
           ]
         ]
       },
       {
         "symbol": "ASTS",
-        "x": 92.1,
-        "y": 114.6,
+        "x": 92.25,
+        "y": 106.5,
         "held": true,
         "trail": [
           [
-            80.37,
-            115.34
+            72.23,
+            90.43
           ],
           [
-            89.62,
-            122.21
+            86.62,
+            114.68
+          ],
+          [
+            94.64,
+            131.01
           ]
         ]
       },
       {
         "symbol": "AVGO",
-        "x": 96.8,
-        "y": 95.4,
+        "x": 92.67,
+        "y": 88.57,
         "held": false,
         "trail": [
           [
-            101.47,
-            104.4
+            101.71,
+            106.38
           ],
           [
-            106.0,
-            104.78
+            104.64,
+            107.1
+          ],
+          [
+            104.86,
+            103.1
           ]
         ]
       },
       {
         "symbol": "AXON",
-        "x": 116.6,
-        "y": 98.52,
+        "x": 121.01,
+        "y": 101.11,
         "held": false,
         "trail": [
           [
-            118.35,
-            102.27
+            119.83,
+            100.93
           ],
           [
-            114.75,
-            99.97
+            119.68,
+            109.05
+          ],
+          [
+            121.92,
+            101.74
           ]
         ]
       },
       {
         "symbol": "BB",
-        "x": 89.53,
-        "y": 98.34,
+        "x": 87.27,
+        "y": 95.62,
         "held": true,
         "trail": [
           [
-            91.04,
-            90.82
+            91.42,
+            73.2
           ],
           [
-            90.86,
-            95.93
+            91.27,
+            91.65
+          ],
+          [
+            92.67,
+            101.37
           ]
         ]
       },
       {
         "symbol": "BE",
-        "x": 84.64,
-        "y": 98.22,
+        "x": 84.17,
+        "y": 96.03,
         "held": true,
         "trail": [
           [
-            86.18,
-            116.17
+            66.91,
+            77.42
           ],
           [
-            83.07,
-            112.19
+            87.65,
+            104.52
+          ],
+          [
+            84.02,
+            125.56
           ]
         ]
       },
       {
         "symbol": "BKNG",
-        "x": 112.16,
-        "y": 100.28,
+        "x": 114.41,
+        "y": 105.3,
         "held": false,
         "trail": [
           [
-            111.85,
-            102.53
+            122.53,
+            118.69
           ],
           [
-            117.08,
-            102.27
+            108.65,
+            101.54
+          ],
+          [
+            116.82,
+            95.35
           ]
         ]
       },
       {
         "symbol": "BKR",
-        "x": 107.72,
-        "y": 103.53,
+        "x": 107.97,
+        "y": 105.52,
         "held": false,
         "trail": [
           [
-            104.05,
-            111.35
+            103.17,
+            111.05
           ],
           [
-            106.9,
-            101.03
+            102.32,
+            108.79
+          ],
+          [
+            108.4,
+            105.07
           ]
         ]
       },
       {
         "symbol": "BP",
-        "x": 104.45,
-        "y": 95.65,
+        "x": 105.44,
+        "y": 103.96,
         "held": true,
         "trail": [
           [
-            109.2,
-            104.63
+            106.66,
+            108.48
           ],
           [
-            102.9,
-            95.94
+            101.42,
+            97.13
+          ],
+          [
+            103.8,
+            97.32
           ]
         ]
       },
       {
         "symbol": "CCEP",
-        "x": 102.56,
-        "y": 93.97,
+        "x": 101.77,
+        "y": 98.49,
         "held": false,
         "trail": [
           [
-            109.15,
-            97.5
+            118.64,
+            109.46
           ],
           [
-            102.43,
-            88.89
+            103.33,
+            95.07
+          ],
+          [
+            102.88,
+            86.71
           ]
         ]
       },
       {
         "symbol": "CDNS",
-        "x": 87.5,
-        "y": 94.52,
+        "x": 87.57,
+        "y": 96.42,
         "held": false,
         "trail": [
           [
-            92.57,
-            101.66
+            98.42,
+            98.12
           ],
           [
-            89.53,
-            93.45
+            90.83,
+            97.16
+          ],
+          [
+            88.83,
+            90.25
           ]
         ]
       },
       {
         "symbol": "CEG",
-        "x": 101.44,
-        "y": 95.52,
+        "x": 104.32,
+        "y": 103.85,
         "held": false,
         "trail": [
           [
-            106.2,
-            107.96
+            104.67,
+            111.25
           ],
           [
-            102.76,
-            95.39
+            100.45,
+            100.13
+          ],
+          [
+            106.15,
+            101.41
           ]
         ]
       },
       {
         "symbol": "CHTR",
-        "x": 106.38,
-        "y": 98.57,
+        "x": 109.37,
+        "y": 98.67,
         "held": false,
         "trail": [
           [
-            107.93,
-            112.14
+            109.11,
+            120.95
           ],
           [
-            110.81,
-            109.06
+            110.85,
+            117.94
+          ],
+          [
+            114.09,
+            104.57
           ]
         ]
       },
       {
         "symbol": "CMCSA",
-        "x": 108.76,
-        "y": 103.15,
+        "x": 110.41,
+        "y": 106.62,
         "held": false,
         "trail": [
           [
-            105.44,
-            103.43
+            107.71,
+            113.5
           ],
           [
-            105.02,
-            104.41
+            103.55,
+            103.07
+          ],
+          [
+            107.12,
+            99.45
           ]
         ]
       },
       {
         "symbol": "COST",
-        "x": 100.39,
-        "y": 98.73,
+        "x": 100.19,
+        "y": 102.3,
         "held": false,
         "trail": [
           [
-            101.68,
-            102.75
+            106.04,
+            113.5
           ],
           [
-            99.24,
-            96.01
+            97.94,
+            101.29
+          ],
+          [
+            98.66,
+            93.04
           ]
         ]
       },
       {
         "symbol": "CPRT",
-        "x": 106.57,
-        "y": 106.31,
+        "x": 114.55,
+        "y": 117.52,
         "held": false,
         "trail": [
           [
-            100.25,
-            108.6
+            108.0,
+            122.99
           ],
           [
-            99.46,
-            95.8
+            97.47,
+            108.29
+          ],
+          [
+            99.32,
+            91.96
           ]
         ]
       },
       {
         "symbol": "CRWD",
-        "x": 111.12,
-        "y": 97.98,
+        "x": 105.08,
+        "y": 92.34,
         "held": false,
         "trail": [
           [
-            113.4,
-            96.0
+            107.45,
+            85.15
           ],
           [
-            119.19,
-            112.46
+            113.8,
+            102.62
+          ],
+          [
+            117.31,
+            109.18
           ]
         ]
       },
       {
         "symbol": "CSCO",
-        "x": 94.64,
-        "y": 94.16,
+        "x": 94.15,
+        "y": 92.21,
         "held": false,
         "trail": [
           [
-            100.5,
-            102.21
+            104.04,
+            102.32
           ],
           [
-            102.95,
-            100.68
+            102.1,
+            104.7
+          ],
+          [
+            101.44,
+            97.51
           ]
         ]
       },
       {
         "symbol": "CSGP",
-        "x": 103.28,
-        "y": 103.16,
+        "x": 111.29,
+        "y": 115.43,
         "held": false,
         "trail": [
           [
-            100.11,
-            102.84
+            104.01,
+            120.4
           ],
           [
-            102.75,
-            103.7
+            96.41,
+            104.56
+          ],
+          [
+            101.93,
+            98.0
           ]
         ]
       },
       {
         "symbol": "CSX",
-        "x": 101.51,
-        "y": 96.34,
+        "x": 102.51,
+        "y": 98.41,
         "held": false,
         "trail": [
           [
-            105.37,
-            95.87
+            112.57,
+            105.62
           ],
           [
-            101.92,
-            89.42
+            104.17,
+            97.15
+          ],
+          [
+            101.65,
+            90.3
           ]
         ]
       },
       {
         "symbol": "CTAS",
-        "x": 104.41,
-        "y": 92.25,
+        "x": 106.3,
+        "y": 97.58,
         "held": false,
         "trail": [
           [
-            113.18,
-            95.56
+            125.99,
+            118.91
           ],
           [
-            107.36,
-            87.04
+            108.93,
+            94.62
+          ],
+          [
+            108.64,
+            86.23
           ]
         ]
       },
       {
         "symbol": "CTSH",
-        "x": 118.46,
-        "y": 100.28,
+        "x": 124.9,
+        "y": 107.59,
         "held": false,
         "trail": [
           [
-            118.13,
-            122.09
+            112.96,
+            127.23
           ],
           [
-            120.11,
-            114.44
+            116.09,
+            124.53
+          ],
+          [
+            120.89,
+            107.02
           ]
         ]
       },
       {
         "symbol": "DASH",
-        "x": 115.31,
-        "y": 99.02,
+        "x": 116.85,
+        "y": 103.27,
         "held": false,
         "trail": [
           [
-            116.45,
-            101.28
+            120.15,
+            108.18
           ],
           [
-            114.9,
-            101.76
+            113.15,
+            100.92
+          ],
+          [
+            115.74,
+            96.33
           ]
         ]
       },
       {
         "symbol": "DDOG",
-        "x": 98.12,
-        "y": 86.53,
+        "x": 93.31,
+        "y": 81.23,
         "held": false,
         "trail": [
           [
-            113.38,
-            98.24
+            110.17,
+            92.19
           ],
           [
-            103.35,
-            93.86
+            114.87,
+            105.28
+          ],
+          [
+            98.08,
+            89.02
           ]
         ]
       },
       {
         "symbol": "DELL",
-        "x": 110.02,
-        "y": 101.21,
+        "x": 102.77,
+        "y": 90.67,
         "held": true,
         "trail": [
           [
-            108.71,
-            101.36
+            106.75,
+            82.67
           ],
           [
-            108.32,
-            93.29
+            113.34,
+            102.66
+          ],
+          [
+            104.52,
+            97.91
           ]
         ]
       },
       {
         "symbol": "DLR",
-        "x": 104.08,
-        "y": 98.8,
+        "x": 102.73,
+        "y": 99.42,
         "held": true,
         "trail": [
           [
-            105.34,
-            107.6
+            110.7,
+            120.64
           ],
           [
-            102.23,
-            91.89
+            103.33,
+            105.45
+          ],
+          [
+            102.24,
+            92.36
           ]
         ]
       },
       {
         "symbol": "DRAM",
-        "x": 91.19,
-        "y": 107.86,
+        "x": 91.51,
+        "y": 104.23,
         "held": false,
         "trail": [
           [
-            84.55,
-            94.97
+            81.97,
+            81.62
           ],
           [
-            80.39,
-            90.31
+            87.79,
+            90.89
+          ],
+          [
+            83.04,
+            101.3
           ]
         ]
       },
       {
         "symbol": "DXCM",
-        "x": 116.36,
-        "y": 95.98,
+        "x": 116.46,
+        "y": 100.13,
         "held": false,
         "trail": [
           [
-            121.24,
-            109.77
+            109.72,
+            103.26
           ],
           [
-            116.03,
-            108.29
+            116.32,
+            109.01
+          ],
+          [
+            118.36,
+            107.88
           ]
         ]
       },
       {
         "symbol": "EXC",
-        "x": 97.23,
-        "y": 96.63,
+        "x": 97.46,
+        "y": 99.68,
         "held": false,
         "trail": [
           [
-            100.62,
-            97.11
+            108.78,
+            106.6
           ],
           [
-            95.32,
-            88.56
+            97.77,
+            96.28
+          ],
+          [
+            96.42,
+            88.64
           ]
         ]
       },
       {
         "symbol": "FANG",
-        "x": 108.88,
-        "y": 102.94,
+        "x": 108.18,
+        "y": 109.41,
         "held": false,
         "trail": [
           [
-            105.77,
-            100.45
+            105.05,
+            106.59
           ],
           [
-            103.06,
-            96.27
+            98.87,
+            93.58
+          ],
+          [
+            104.67,
+            99.64
           ]
         ]
       },
       {
         "symbol": "FAST",
-        "x": 107.03,
-        "y": 100.87,
+        "x": 107.46,
+        "y": 101.58,
         "held": false,
         "trail": [
           [
-            106.11,
-            104.7
+            111.04,
+            110.98
           ],
           [
-            110.06,
-            100.74
+            105.78,
+            105.71
+          ],
+          [
+            110.48,
+            99.5
           ]
         ]
       },
       {
         "symbol": "FER",
-        "x": 95.46,
-        "y": 93.93,
+        "x": 97.62,
+        "y": 98.58,
         "held": false,
         "trail": [
           [
-            101.63,
-            104.33
+            98.5,
+            105.13
           ],
           [
-            98.02,
-            98.81
+            99.03,
+            103.13
+          ],
+          [
+            98.73,
+            100.23
           ]
         ]
       },
       {
         "symbol": "FTNT",
-        "x": 101.13,
-        "y": 91.34,
+        "x": 97.97,
+        "y": 89.16,
         "held": false,
         "trail": [
           [
-            110.72,
-            95.75
+            107.58,
+            88.77
           ],
           [
-            105.86,
-            97.3
+            109.88,
+            98.84
+          ],
+          [
+            104.34,
+            96.99
           ]
         ]
       },
       {
         "symbol": "GEHC",
-        "x": 109.38,
-        "y": 98.67,
+        "x": 112.35,
+        "y": 104.16,
         "held": false,
         "trail": [
           [
-            110.86,
-            108.62
+            107.03,
+            110.42
           ],
           [
-            111.29,
-            109.95
+            107.86,
+            109.0
+          ],
+          [
+            110.97,
+            103.68
           ]
         ]
       },
       {
         "symbol": "GILD",
-        "x": 109.06,
-        "y": 105.76,
+        "x": 112.22,
+        "y": 109.16,
         "held": false,
         "trail": [
           [
-            103.12,
-            97.4
+            109.86,
+            110.19
           ],
           [
-            101.59,
-            95.94
+            102.8,
+            101.03
+          ],
+          [
+            103.93,
+            94.6
           ]
         ]
       },
       {
         "symbol": "GOOG",
-        "x": 96.36,
-        "y": 90.31,
+        "x": 96.83,
+        "y": 93.05,
         "held": false,
         "trail": [
           [
-            106.7,
-            107.96
+            98.14,
+            101.92
           ],
           [
-            99.56,
-            104.59
+            104.07,
+            108.51
+          ],
+          [
+            96.42,
+            98.25
           ]
         ]
       },
       {
         "symbol": "GOOGL",
-        "x": 96.69,
-        "y": 90.86,
+        "x": 97.25,
+        "y": 93.38,
         "held": true,
         "trail": [
           [
-            106.41,
-            108.23
+            97.86,
+            101.78
           ],
           [
-            99.55,
-            105.23
+            104.15,
+            109.04
+          ],
+          [
+            96.19,
+            98.29
           ]
         ]
       },
       {
         "symbol": "HON",
-        "x": 96.25,
-        "y": 89.93,
+        "x": 93.97,
+        "y": 90.14,
         "held": false,
         "trail": [
           [
-            107.02,
-            106.43
+            112.01,
+            117.16
           ],
           [
-            102.03,
-            92.2
+            104.25,
+            103.9
+          ],
+          [
+            97.08,
+            86.67
           ]
         ]
       },
       {
         "symbol": "HOOD",
-        "x": 91.68,
-        "y": 96.4,
+        "x": 95.87,
+        "y": 101.03,
         "held": true,
         "trail": [
           [
-            95.11,
-            86.65
+            102.53,
+            82.59
           ],
           [
-            95.02,
-            90.42
+            94.89,
+            82.7
+          ],
+          [
+            95.15,
+            92.8
           ]
         ]
       },
       {
         "symbol": "IDXX",
-        "x": 97.94,
-        "y": 94.23,
+        "x": 99.7,
+        "y": 95.86,
         "held": false,
         "trail": [
           [
-            103.94,
-            99.06
+            108.68,
+            112.01
           ],
           [
-            105.24,
-            99.86
+            104.01,
+            102.92
+          ],
+          [
+            103.84,
+            95.54
           ]
         ]
       },
       {
         "symbol": "INSM",
-        "x": 117.77,
-        "y": 122.74,
+        "x": 119.34,
+        "y": 127.91,
         "held": false,
         "trail": [
           [
-            95.95,
-            91.81
+            104.87,
+            103.47
           ],
           [
-            126.09,
-            120.83
+            93.3,
+            89.61
+          ],
+          [
+            123.8,
+            118.06
           ]
         ]
       },
       {
         "symbol": "INTC",
-        "x": 88.11,
-        "y": 106.25,
+        "x": 84.91,
+        "y": 95.2,
         "held": true,
         "trail": [
           [
-            82.93,
-            96.69
+            80.34,
+            87.82
           ],
           [
-            87.84,
-            104.38
+            89.19,
+            97.39
+          ],
+          [
+            88.53,
+            110.19
           ]
         ]
       },
       {
         "symbol": "INTU",
-        "x": 118.1,
-        "y": 105.71,
+        "x": 121.97,
+        "y": 111.16,
         "held": false,
         "trail": [
           [
-            111.72,
-            113.46
+            111.88,
+            126.16
           ],
           [
-            113.25,
-            105.59
+            109.73,
+            114.09
+          ],
+          [
+            114.21,
+            102.08
           ]
         ]
       },
       {
         "symbol": "ISRG",
-        "x": 99.38,
-        "y": 103.11,
+        "x": 101.42,
+        "y": 110.47,
         "held": false,
         "trail": [
           [
-            96.39,
-            109.69
+            94.99,
+            105.98
           ],
           [
-            99.33,
-            107.3
+            91.8,
+            106.76
+          ],
+          [
+            101.72,
+            107.09
           ]
         ]
       },
       {
         "symbol": "KDP",
-        "x": 98.34,
-        "y": 96.7,
+        "x": 99.35,
+        "y": 100.52,
         "held": false,
         "trail": [
           [
-            101.69,
-            99.26
+            106.92,
+            108.28
           ],
           [
-            93.31,
-            90.7
+            98.83,
+            99.08
+          ],
+          [
+            93.24,
+            87.21
           ]
         ]
       },
       {
         "symbol": "KHC",
-        "x": 99.12,
-        "y": 90.23,
+        "x": 102.6,
+        "y": 95.99,
         "held": false,
         "trail": [
           [
-            109.85,
-            98.5
+            119.31,
+            113.09
           ],
           [
-            99.98,
-            87.69
+            106.88,
+            98.02
+          ],
+          [
+            99.09,
+            83.05
           ]
         ]
       },
       {
         "symbol": "KLAC",
-        "x": 87.45,
-        "y": 103.6,
+        "x": 84.33,
+        "y": 96.67,
         "held": false,
         "trail": [
           [
-            84.41,
-            85.81
+            91.57,
+            85.59
           ],
           [
-            86.32,
-            89.2
+            87.24,
+            86.5
+          ],
+          [
+            89.98,
+            98.26
           ]
         ]
       },
       {
         "symbol": "LIN",
-        "x": 93.18,
-        "y": 97.69,
+        "x": 93.99,
+        "y": 100.86,
         "held": false,
         "trail": [
           [
-            95.39,
-            92.8
+            105.26,
+            103.8
           ],
           [
-            95.28,
-            92.03
+            93.19,
+            93.63
+          ],
+          [
+            95.2,
+            90.44
           ]
         ]
       },
       {
         "symbol": "LITX",
-        "x": 98.82,
-        "y": 124.79,
-        "held": false,
+        "x": 89.43,
+        "y": 97.49,
+        "held": true,
         "trail": [
           [
-            79.19,
-            109.79
+            56.51,
+            75.02
           ],
           [
-            85.99,
-            129.88
+            91.73,
+            108.4
+          ],
+          [
+            88.2,
+            156.09
           ]
         ]
       },
       {
         "symbol": "LRCX",
-        "x": 96.66,
-        "y": 108.47,
+        "x": 90.68,
+        "y": 97.62,
         "held": false,
         "trail": [
           [
-            89.11,
-            94.55
+            84.76,
+            81.66
           ],
           [
-            90.04,
-            99.24
+            92.89,
+            95.81
+          ],
+          [
+            91.81,
+            108.31
           ]
         ]
       },
       {
         "symbol": "MAR",
-        "x": 94.88,
-        "y": 101.46,
+        "x": 95.97,
+        "y": 106.44,
         "held": false,
         "trail": [
           [
-            93.52,
-            92.57
+            107.69,
+            111.28
           ],
           [
-            91.73,
-            85.87
+            90.16,
+            90.73
+          ],
+          [
+            92.4,
+            85.8
           ]
         ]
       },
       {
         "symbol": "MCHP",
-        "x": 90.99,
-        "y": 104.72,
+        "x": 90.15,
+        "y": 99.77,
         "held": false,
         "trail": [
           [
-            86.89,
-            96.33
+            89.28,
+            96.15
           ],
           [
-            92.82,
-            102.4
+            90.35,
+            98.09
+          ],
+          [
+            92.95,
+            104.1
           ]
         ]
       },
       {
         "symbol": "MDLZ",
-        "x": 101.55,
-        "y": 98.42,
+        "x": 104.17,
+        "y": 103.8,
         "held": false,
         "trail": [
           [
-            103.17,
-            101.09
+            108.8,
+            113.47
           ],
           [
-            99.72,
-            95.14
+            100.36,
+            100.75
+          ],
+          [
+            100.39,
+            92.26
           ]
         ]
       },
       {
         "symbol": "MELI",
-        "x": 99.91,
-        "y": 89.41,
+        "x": 107.11,
+        "y": 99.86,
         "held": false,
         "trail": [
           [
-            111.75,
-            99.67
+            115.51,
+            104.44
           ],
           [
-            103.13,
-            91.87
+            107.26,
+            97.86
+          ],
+          [
+            109.68,
+            94.95
           ]
         ]
       },
       {
         "symbol": "META",
-        "x": 90.66,
-        "y": 90.59,
+        "x": 91.44,
+        "y": 94.75,
         "held": true,
         "trail": [
           [
-            100.08,
-            90.82
+            104.0,
+            94.96
           ],
           [
-            98.36,
-            95.39
+            96.5,
+            89.53
+          ],
+          [
+            99.44,
+            95.62
           ]
         ]
       },
       {
         "symbol": "MNST",
-        "x": 99.49,
-        "y": 97.62,
+        "x": 99.72,
+        "y": 100.63,
         "held": false,
         "trail": [
           [
-            101.92,
-            94.73
+            111.55,
+            102.67
           ],
           [
-            96.12,
-            88.86
+            99.09,
+            95.15
+          ],
+          [
+            95.95,
+            86.01
           ]
         ]
       },
       {
         "symbol": "MPWR",
-        "x": 95.01,
-        "y": 99.7,
+        "x": 93.11,
+        "y": 101.38,
         "held": false,
         "trail": [
           [
-            95.3,
-            103.24
+            93.48,
+            102.91
           ],
           [
-            96.66,
-            100.3
+            91.84,
+            97.05
+          ],
+          [
+            98.63,
+            105.5
           ]
         ]
       },
       {
         "symbol": "MRAM",
-        "x": 95.88,
-        "y": 131.89,
+        "x": 91.52,
+        "y": 113.82,
         "held": false,
         "trail": [
           [
-            72.7,
-            125.36
+            63.83,
+            95.65
           ],
           [
-            78.32,
-            118.34
+            80.4,
+            126.54
+          ],
+          [
+            81.85,
+            128.23
           ]
         ]
       },
       {
         "symbol": "MRVL",
-        "x": 90.95,
-        "y": 109.87,
+        "x": 100.39,
+        "y": 111.39,
         "held": true,
         "trail": [
           [
-            82.78,
-            96.87
+            77.54,
+            81.6
           ],
           [
-            85.98,
-            103.25
+            90.13,
+            101.08
+          ],
+          [
+            87.73,
+            113.15
           ]
         ]
       },
       {
         "symbol": "MSFT",
-        "x": 115.66,
-        "y": 93.14,
+        "x": 116.18,
+        "y": 96.05,
         "held": true,
         "trail": [
           [
-            124.17,
-            119.93
+            104.71,
+            109.92
           ],
           [
-            122.66,
-            119.53
+            120.96,
+            120.16
+          ],
+          [
+            122.14,
+            116.65
           ]
         ]
       },
       {
         "symbol": "MSTR",
-        "x": 91.17,
-        "y": 104.51,
+        "x": 103.24,
+        "y": 117.41,
         "held": false,
         "trail": [
           [
-            87.23,
-            110.37
+            87.18,
+            121.17
           ],
           [
-            91.76,
-            105.1
+            87.93,
+            107.32
+          ],
+          [
+            91.91,
+            105.44
           ]
         ]
       },
       {
         "symbol": "MU",
-        "x": 97.43,
-        "y": 111.09,
+        "x": 97.07,
+        "y": 106.6,
         "held": false,
         "trail": [
           [
-            87.71,
-            91.87
+            90.95,
+            84.88
           ],
           [
-            88.08,
-            88.96
+            91.06,
+            87.19
+          ],
+          [
+            89.29,
+            98.18
           ]
         ]
       },
       {
         "symbol": "NAMI",
-        "x": 70.67,
-        "y": 123.69,
+        "x": 72.36,
+        "y": 125.6,
         "held": true,
         "trail": [
           [
-            57.14,
-            106.95
+            54.41,
+            111.25
           ],
           [
-            71.45,
-            135.65
+            57.61,
+            108.14
+          ],
+          [
+            71.37,
+            131.16
           ]
         ]
       },
       {
         "symbol": "NBIS",
-        "x": 111.43,
-        "y": 114.79,
-        "held": false,
+        "x": 100.58,
+        "y": 100.92,
+        "held": true,
         "trail": [
           [
-            97.07,
-            115.4
+            79.98,
+            92.44
           ],
           [
-            82.1,
-            93.96
+            99.67,
+            101.87
+          ],
+          [
+            86.7,
+            108.41
           ]
         ]
       },
       {
         "symbol": "NFLX",
-        "x": 103.36,
-        "y": 106.0,
+        "x": 106.9,
+        "y": 112.5,
         "held": false,
         "trail": [
           [
-            97.51,
-            111.95
+            98.42,
+            109.79
           ],
           [
-            100.18,
-            105.96
+            95.03,
+            108.8
+          ],
+          [
+            98.77,
+            100.36
           ]
         ]
       },
       {
         "symbol": "NKE",
-        "x": 93.03,
-        "y": 93.0,
+        "x": 95.62,
+        "y": 101.31,
         "held": false,
         "trail": [
           [
-            100.04,
-            97.2
+            104.91,
+            107.18
           ],
           [
-            96.64,
-            94.86
+            94.38,
+            94.41
+          ],
+          [
+            95.31,
+            90.84
           ]
         ]
       },
       {
         "symbol": "NOW",
-        "x": 110.26,
-        "y": 100.13,
+        "x": 117.34,
+        "y": 106.84,
         "held": false,
         "trail": [
           [
-            110.11,
-            105.5
+            111.91,
+            109.83
           ],
           [
-            117.23,
-            110.27
+            109.83,
+            110.09
+          ],
+          [
+            117.57,
+            105.06
           ]
         ]
       },
       {
         "symbol": "NVDA",
-        "x": 105.65,
-        "y": 103.08,
+        "x": 104.76,
+        "y": 102.93,
         "held": true,
         "trail": [
           [
-            102.49,
-            102.44
+            100.57,
+            99.76
           ],
           [
-            104.56,
-            105.52
+            101.77,
+            101.51
+          ],
+          [
+            104.76,
+            104.17
           ]
         ]
       },
       {
         "symbol": "NXPI",
-        "x": 83.56,
-        "y": 105.47,
+        "x": 83.2,
+        "y": 101.98,
         "held": false,
         "trail": [
           [
-            79.23,
-            85.3
+            93.51,
+            98.91
           ],
           [
-            82.51,
-            86.36
+            81.58,
+            87.37
+          ],
+          [
+            84.29,
+            90.14
           ]
         ]
       },
       {
         "symbol": "ODFL",
-        "x": 92.03,
-        "y": 96.53,
+        "x": 91.25,
+        "y": 95.51,
         "held": false,
         "trail": [
           [
-            95.34,
-            88.16
+            106.35,
+            102.07
           ],
           [
-            92.97,
-            87.76
+            95.53,
+            89.09
+          ],
+          [
+            92.0,
+            86.5
           ]
         ]
       },
       {
         "symbol": "ORLY",
-        "x": 101.23,
-        "y": 97.58,
+        "x": 101.94,
+        "y": 99.27,
         "held": false,
         "trail": [
           [
-            103.74,
-            105.59
+            109.34,
+            114.82
           ],
           [
-            103.16,
-            95.72
+            102.69,
+            102.09
+          ],
+          [
+            103.7,
+            94.84
           ]
         ]
       },
       {
         "symbol": "PANW",
-        "x": 113.19,
-        "y": 98.29,
+        "x": 108.56,
+        "y": 93.02,
         "held": false,
         "trail": [
           [
-            115.15,
-            91.83
+            112.54,
+            87.38
           ],
           [
-            119.64,
-            107.2
+            116.71,
+            97.56
+          ],
+          [
+            118.85,
+            105.6
           ]
         ]
       },
       {
         "symbol": "PAYX",
-        "x": 108.93,
-        "y": 95.02,
+        "x": 111.07,
+        "y": 99.77,
         "held": false,
         "trail": [
           [
-            114.64,
-            96.48
+            122.73,
+            110.67
           ],
           [
-            111.98,
-            94.14
+            111.32,
+            98.5
+          ],
+          [
+            111.91,
+            91.18
           ]
         ]
       },
       {
         "symbol": "PCAR",
-        "x": 101.22,
-        "y": 91.36,
+        "x": 100.84,
+        "y": 91.78,
         "held": false,
         "trail": [
           [
-            110.8,
-            101.34
+            122.38,
+            115.6
           ],
           [
-            104.96,
-            89.19
+            109.87,
+            100.98
+          ],
+          [
+            105.93,
+            86.56
           ]
         ]
       },
       {
         "symbol": "PDD",
-        "x": 102.94,
-        "y": 94.0,
+        "x": 106.55,
+        "y": 99.44,
         "held": false,
         "trail": [
           [
-            109.51,
-            106.42
+            107.4,
+            112.43
           ],
           [
-            109.65,
-            104.24
+            107.14,
+            107.11
+          ],
+          [
+            106.85,
+            99.49
           ]
         ]
       },
       {
         "symbol": "PEP",
-        "x": 99.27,
-        "y": 98.45,
+        "x": 101.24,
+        "y": 104.04,
         "held": false,
         "trail": [
           [
-            100.83,
-            103.62
+            106.69,
+            114.92
           ],
           [
-            97.15,
-            93.92
+            97.31,
+            101.84
+          ],
+          [
+            97.98,
+            91.83
           ]
         ]
       },
       {
         "symbol": "PLTR",
-        "x": 125.74,
-        "y": 127.86,
+        "x": 127.92,
+        "y": 104.27,
         "held": false,
         "trail": [
           [
-            98.34,
-            93.54
+            99.73,
+            99.57
           ],
           [
-            130.35,
-            124.0
+            122.68,
+            120.69
+          ],
+          [
+            130.13,
+            130.49
           ]
         ]
       },
       {
         "symbol": "PYPL",
-        "x": 118.87,
-        "y": 95.49,
+        "x": 119.85,
+        "y": 98.97,
         "held": false,
         "trail": [
           [
-            124.48,
-            95.36
+            133.56,
+            125.42
           ],
           [
-            119.64,
-            93.39
+            121.1,
+            96.51
+          ],
+          [
+            119.15,
+            89.21
           ]
         ]
       },
       {
         "symbol": "QCOM",
-        "x": 87.43,
-        "y": 111.31,
+        "x": 89.05,
+        "y": 108.64,
         "held": true,
         "trail": [
           [
-            78.55,
-            92.19
+            85.94,
+            100.3
           ],
           [
-            84.66,
-            95.55
+            81.97,
+            95.89
+          ],
+          [
+            85.95,
+            100.02
           ]
         ]
       },
       {
         "symbol": "RDDT",
-        "x": 90.12,
-        "y": 100.13,
+        "x": 86.84,
+        "y": 96.56,
         "held": false,
         "trail": [
           [
-            90.01,
-            82.79
+            108.3,
+            91.5
           ],
           [
-            89.33,
-            82.61
+            89.93,
+            82.53
+          ],
+          [
+            88.35,
+            81.58
           ]
         ]
       },
       {
         "symbol": "REGN",
-        "x": 118.31,
-        "y": 98.74,
+        "x": 122.38,
+        "y": 105.77,
         "held": false,
         "trail": [
           [
-            119.82,
-            111.38
+            115.33,
+            114.39
           ],
           [
-            121.05,
-            110.35
+            115.71,
+            108.9
+          ],
+          [
+            119.08,
+            103.26
           ]
         ]
       },
       {
         "symbol": "RKLB",
-        "x": 92.9,
-        "y": 122.81,
+        "x": 89.98,
+        "y": 115.03,
         "held": true,
         "trail": [
           [
-            75.64,
-            118.05
+            67.53,
+            91.88
           ],
           [
-            89.25,
-            129.01
+            78.22,
+            118.0
+          ],
+          [
+            90.72,
+            134.35
           ]
         ]
       },
       {
         "symbol": "ROP",
-        "x": 108.3,
-        "y": 93.98,
+        "x": 111.73,
+        "y": 100.57,
         "held": false,
         "trail": [
           [
-            115.24,
-            103.9
+            121.29,
+            118.55
           ],
           [
-            112.6,
-            97.16
+            111.1,
+            105.51
+          ],
+          [
+            111.24,
+            91.71
           ]
         ]
       },
       {
         "symbol": "ROST",
-        "x": 100.23,
-        "y": 89.41,
+        "x": 99.75,
+        "y": 92.92,
         "held": false,
         "trail": [
           [
-            112.11,
-            103.27
+            117.28,
+            119.36
           ],
           [
-            108.48,
-            95.89
+            107.34,
+            100.77
+          ],
+          [
+            107.32,
+            91.51
           ]
         ]
       },
       {
         "symbol": "RUN",
-        "x": 78.52,
-        "y": 93.79,
+        "x": 83.85,
+        "y": 97.38,
         "held": true,
         "trail": [
           [
-            83.72,
-            95.8
+            78.4,
+            83.74
           ],
           [
-            79.83,
-            99.89
-          ]
-        ]
-      },
-      {
-        "symbol": "SBUX",
-        "x": 101.43,
-        "y": 98.4,
-        "held": false,
-        "trail": [
-          [
-            103.08,
-            97.83
+            86.11,
+            99.96
           ],
           [
-            100.98,
-            94.99
-          ]
-        ]
-      },
-      {
-        "symbol": "SE",
-        "x": 112.35,
-        "y": 96.38,
-        "held": false,
-        "trail": [
-          [
-            116.57,
-            100.26
-          ],
-          [
-            114.17,
-            99.01
-          ]
-        ]
-      },
-      {
-        "symbol": "SHOP",
-        "x": 117.92,
-        "y": 114.95,
-        "held": false,
-        "trail": [
-          [
-            102.58,
-            89.87
-          ],
-          [
-            127.94,
-            109.43
-          ]
-        ]
-      },
-      {
-        "symbol": "SMCI",
-        "x": 121.47,
-        "y": 133.83,
-        "held": true,
-        "trail": [
-          [
-            90.77,
-            121.85
-          ],
-          [
-            98.66,
-            102.66
-          ]
-        ]
-      },
-      {
-        "symbol": "SNAP",
-        "x": 103.48,
-        "y": 100.34,
-        "held": true,
-        "trail": [
-          [
-            103.13,
-            113.91
-          ],
-          [
-            107.04,
-            114.06
-          ]
-        ]
-      },
-      {
-        "symbol": "SNDK",
-        "x": 97.68,
-        "y": 126.45,
-        "held": false,
-        "trail": [
-          [
-            77.25,
-            92.57
-          ],
-          [
-            73.21,
-            93.89
-          ]
-        ]
-      },
-      {
-        "symbol": "SNPS",
-        "x": 94.53,
-        "y": 104.7,
-        "held": false,
-        "trail": [
-          [
-            90.29,
-            108.31
-          ],
-          [
-            94.23,
+            82.23,
             104.89
           ]
         ]
       },
       {
-        "symbol": "SOFI",
-        "x": 100.21,
-        "y": 93.84,
+        "symbol": "SBUX",
+        "x": 100.49,
+        "y": 99.25,
+        "held": false,
+        "trail": [
+          [
+            106.7,
+            103.62
+          ],
+          [
+            101.25,
+            98.17
+          ],
+          [
+            103.06,
+            96.59
+          ]
+        ]
+      },
+      {
+        "symbol": "SE",
+        "x": 114.78,
+        "y": 101.98,
+        "held": false,
+        "trail": [
+          [
+            119.16,
+            100.92
+          ],
+          [
+            112.55,
+            98.4
+          ],
+          [
+            130.1,
+            109.18
+          ]
+        ]
+      },
+      {
+        "symbol": "SHOP",
+        "x": 117.5,
+        "y": 112.71,
+        "held": false,
+        "trail": [
+          [
+            120.35,
+            107.74
+          ],
+          [
+            104.25,
+            94.27
+          ],
+          [
+            125.48,
+            104.26
+          ]
+        ]
+      },
+      {
+        "symbol": "SMCI",
+        "x": 119.44,
+        "y": 122.8,
         "held": true,
         "trail": [
           [
-            106.79,
-            103.53
+            92.77,
+            112.47
           ],
           [
-            102.83,
-            99.29
+            97.26,
+            123.61
+          ],
+          [
+            100.27,
+            108.08
+          ]
+        ]
+      },
+      {
+        "symbol": "SNAP",
+        "x": 106.6,
+        "y": 93.04,
+        "held": true,
+        "trail": [
+          [
+            100.12,
+            114.47
+          ],
+          [
+            114.57,
+            128.13
+          ],
+          [
+            110.64,
+            110.5
+          ]
+        ]
+      },
+      {
+        "symbol": "SNDK",
+        "x": 94.52,
+        "y": 113.97,
+        "held": false,
+        "trail": [
+          [
+            67.68,
+            66.09
+          ],
+          [
+            82.94,
+            88.82
+          ],
+          [
+            75.76,
+            111.93
+          ]
+        ]
+      },
+      {
+        "symbol": "SNPS",
+        "x": 94.33,
+        "y": 104.38,
+        "held": false,
+        "trail": [
+          [
+            89.91,
+            101.07
+          ],
+          [
+            90.38,
+            106.83
+          ],
+          [
+            94.6,
+            105.21
+          ]
+        ]
+      },
+      {
+        "symbol": "SOFI",
+        "x": 104.57,
+        "y": 97.94,
+        "held": true,
+        "trail": [
+          [
+            103.49,
+            94.87
+          ],
+          [
+            106.77,
+            101.83
+          ],
+          [
+            102.35,
+            98.89
           ]
         ]
       },
       {
         "symbol": "STX",
-        "x": 100.98,
-        "y": 106.06,
+        "x": 93.33,
+        "y": 99.7,
         "held": false,
         "trail": [
           [
-            95.21,
-            100.99
+            89.54,
+            89.63
           ],
           [
-            89.19,
-            92.03
+            93.61,
+            91.24
+          ],
+          [
+            91.75,
+            102.47
           ]
         ]
       },
       {
         "symbol": "STXX",
-        "x": 92.82,
-        "y": 116.68,
+        "x": 78.45,
+        "y": 98.3,
         "held": false,
         "trail": [
           [
-            79.55,
-            101.8
+            67.96,
+            73.93
           ],
           [
-            72.87,
-            90.04
+            79.81,
+            85.91
+          ],
+          [
+            76.87,
+            113.11
           ]
         ]
       },
       {
         "symbol": "TMUS",
-        "x": 99.87,
-        "y": 101.31,
+        "x": 99.85,
+        "y": 104.48,
         "held": false,
         "trail": [
           [
-            98.58,
-            90.58
+            104.89,
+            104.58
           ],
           [
-            96.97,
-            96.02
+            95.58,
+            91.66
+          ],
+          [
+            97.55,
+            93.0
           ]
         ]
       },
       {
         "symbol": "TRI",
-        "x": 109.73,
-        "y": 93.1,
+        "x": 113.91,
+        "y": 93.49,
         "held": false,
         "trail": [
           [
-            117.87,
-            102.94
+            126.32,
+            118.77
           ],
           [
-            115.09,
-            96.51
+            121.84,
+            113.91
+          ],
+          [
+            115.48,
+            91.42
           ]
         ]
       },
       {
         "symbol": "TSLA",
-        "x": 90.61,
-        "y": 106.97,
+        "x": 94.89,
+        "y": 113.4,
         "held": true,
         "trail": [
           [
-            84.71,
-            90.8
+            82.22,
+            85.38
           ],
           [
-            86.8,
-            106.61
+            83.68,
+            88.92
+          ],
+          [
+            88.03,
+            107.06
           ]
         ]
       },
       {
         "symbol": "TTWO",
-        "x": 100.95,
-        "y": 94.6,
+        "x": 98.76,
+        "y": 97.65,
         "held": false,
         "trail": [
           [
-            106.71,
-            100.6
+            112.26,
+            109.9
           ],
           [
-            106.35,
-            96.93
+            101.13,
+            98.43
+          ],
+          [
+            105.13,
+            93.65
           ]
         ]
       },
       {
         "symbol": "TXN",
-        "x": 92.72,
-        "y": 100.36,
+        "x": 91.43,
+        "y": 96.94,
         "held": false,
         "trail": [
           [
-            92.39,
-            94.83
+            98.1,
+            96.85
           ],
           [
-            94.46,
-            96.5
+            94.32,
+            96.16
+          ],
+          [
+            95.15,
+            96.99
           ]
         ]
       },
       {
         "symbol": "U",
-        "x": 145.28,
-        "y": 124.75,
+        "x": 145.13,
+        "y": 122.89,
         "held": false,
         "trail": [
           [
-            116.46,
-            107.51
+            117.42,
+            104.69
           ],
           [
-            140.04,
-            125.35
+            118.1,
+            111.02
+          ],
+          [
+            141.7,
+            120.68
           ]
         ]
       },
       {
         "symbol": "UMAC",
-        "x": 136.02,
-        "y": 126.66,
+        "x": 125.87,
+        "y": 105.98,
         "held": false,
         "trail": [
           [
-            107.39,
-            124.54
+            98.42,
+            108.54
           ],
           [
-            119.03,
-            117.62
+            118.77,
+            125.55
+          ],
+          [
+            114.78,
+            116.62
           ]
         ]
       },
       {
         "symbol": "USAR",
-        "x": 98.07,
-        "y": 124.34,
+        "x": 96.39,
+        "y": 115.2,
         "held": true,
         "trail": [
           [
-            78.87,
-            112.77
+            70.55,
+            91.08
           ],
           [
-            95.74,
-            130.26
+            83.68,
+            116.29
+          ],
+          [
+            96.22,
+            136.4
           ]
         ]
       },
       {
         "symbol": "V",
-        "x": 103.46,
-        "y": 94.68,
+        "x": 103.87,
+        "y": 97.44,
         "held": true,
         "trail": [
           [
-            109.27,
-            98.03
+            114.89,
+            107.27
           ],
           [
-            103.61,
-            91.72
+            106.6,
+            98.88
+          ],
+          [
+            104.12,
+            90.63
           ]
         ]
       },
       {
         "symbol": "VOO",
-        "x": 101.65,
-        "y": 98.02,
+        "x": 102.02,
+        "y": 99.97,
         "held": true,
         "trail": [
           [
-            103.7,
-            100.77
+            105.46,
+            104.6
           ],
           [
-            102.39,
-            98.17
+            102.06,
+            100.18
+          ],
+          [
+            102.32,
+            97.02
           ]
         ]
       },
       {
         "symbol": "VRSK",
-        "x": 94.45,
-        "y": 89.22,
+        "x": 98.65,
+        "y": 96.7,
         "held": false,
         "trail": [
           [
-            105.86,
-            91.14
+            122.65,
+            114.82
           ],
           [
-            95.51,
-            80.16
+            102.01,
+            92.63
+          ],
+          [
+            95.62,
+            77.96
           ]
         ]
       },
       {
         "symbol": "VRTX",
-        "x": 108.44,
-        "y": 105.98,
+        "x": 113.14,
+        "y": 112.6,
         "held": false,
         "trail": [
           [
-            102.33,
-            95.08
+            111.65,
+            107.41
           ],
           [
-            109.24,
-            100.84
+            100.48,
+            95.0
+          ],
+          [
+            110.38,
+            98.86
           ]
         ]
       },
       {
         "symbol": "WBD",
-        "x": 106.41,
-        "y": 106.21,
+        "x": 106.57,
+        "y": 111.13,
         "held": false,
         "trail": [
           [
-            100.19,
-            100.76
+            101.81,
+            99.99
           ],
           [
-            100.39,
-            100.86
+            95.9,
+            98.22
+          ],
+          [
+            101.42,
+            99.61
           ]
         ]
       },
       {
         "symbol": "WDAY",
-        "x": 129.62,
-        "y": 105.57,
+        "x": 134.16,
+        "y": 109.63,
         "held": false,
         "trail": [
           [
-            122.78,
-            106.58
+            126.18,
+            118.21
           ],
           [
-            128.38,
-            110.36
+            122.38,
+            112.98
+          ],
+          [
+            126.08,
+            99.92
           ]
         ]
       },
       {
         "symbol": "WDC",
-        "x": 89.42,
-        "y": 93.36,
+        "x": 83.65,
+        "y": 86.96,
         "held": false,
         "trail": [
           [
-            95.78,
-            105.31
+            88.17,
+            86.52
           ],
           [
-            77.74,
-            82.87
+            96.2,
+            96.01
+          ],
+          [
+            78.15,
+            88.63
           ]
         ]
       },
       {
         "symbol": "WDCX",
-        "x": 68.53,
-        "y": 88.27,
+        "x": 59.67,
+        "y": 73.77,
         "held": false,
         "trail": [
           [
-            77.63,
-            111.13
+            63.4,
+            69.13
           ],
           [
-            51.81,
-            70.91
-          ]
-        ]
-      },
-      {
-        "symbol": "WMT",
-        "x": 99.94,
-        "y": 101.92,
-        "held": false,
-        "trail": [
-          [
-            98.06,
-            101.0
+            80.9,
+            94.22
           ],
           [
-            97.46,
-            97.26
-          ]
-        ]
-      },
-      {
-        "symbol": "WULF",
-        "x": 72.27,
-        "y": 86.62,
-        "held": true,
-        "trail": [
-          [
-            83.43,
-            102.71
-          ],
-          [
-            71.89,
-            89.51
-          ]
-        ]
-      },
-      {
-        "symbol": "XEL",
-        "x": 99.07,
-        "y": 99.38,
-        "held": false,
-        "trail": [
-          [
-            99.69,
-            97.6
-          ],
-          [
-            96.09,
-            90.08
-          ]
-        ]
-      },
-      {
-        "symbol": "ZS",
-        "x": 125.9,
-        "y": 113.19,
-        "held": false,
-        "trail": [
-          [
-            111.23,
-            103.47
-          ],
-          [
-            122.81,
-            113.59
-          ]
-        ]
-      },
-      {
-        "symbol": "AAOI",
-        "x": 98.73,
-        "y": 124.17,
-        "held": false,
-        "trail": [
-          [
-            79.51,
-            118.16
-          ],
-          [
-            96.09,
-            140.71
-          ]
-        ]
-      },
-      {
-        "symbol": "CRDO",
-        "x": 101.74,
-        "y": 106.94,
-        "held": true,
-        "trail": [
-          [
-            95.14,
-            99.48
-          ],
-          [
-            100.55,
-            106.44
-          ]
-        ]
-      },
-      {
-        "symbol": "MUU",
-        "x": 82.77,
-        "y": 130.43,
-        "held": true,
-        "trail": [
-          [
-            63.46,
-            82.89
-          ],
-          [
-            66.99,
+            52.33,
             82.54
           ]
         ]
       },
       {
-        "symbol": "NET",
-        "x": 113.44,
-        "y": 98.63,
+        "symbol": "WMT",
+        "x": 99.56,
+        "y": 103.98,
+        "held": false,
+        "trail": [
+          [
+            102.62,
+            109.44
+          ],
+          [
+            95.75,
+            101.7
+          ],
+          [
+            98.3,
+            95.78
+          ]
+        ]
+      },
+      {
+        "symbol": "WULF",
+        "x": 72.53,
+        "y": 89.31,
         "held": true,
         "trail": [
           [
-            115.02,
-            96.97
+            77.48,
+            97.58
           ],
           [
-            118.81,
-            103.53
+            81.21,
+            96.27
+          ],
+          [
+            75.12,
+            96.96
+          ]
+        ]
+      },
+      {
+        "symbol": "XEL",
+        "x": 99.61,
+        "y": 103.14,
+        "held": false,
+        "trail": [
+          [
+            107.06,
+            106.88
+          ],
+          [
+            96.57,
+            96.15
+          ],
+          [
+            97.4,
+            90.98
+          ]
+        ]
+      },
+      {
+        "symbol": "ZS",
+        "x": 124.42,
+        "y": 109.3,
+        "held": false,
+        "trail": [
+          [
+            112.26,
+            106.17
+          ],
+          [
+            113.83,
+            108.55
+          ],
+          [
+            123.79,
+            110.27
+          ]
+        ]
+      },
+      {
+        "symbol": "AAOI",
+        "x": 92.77,
+        "y": 100.33,
+        "held": true,
+        "trail": [
+          [
+            63.05,
+            82.89
+          ],
+          [
+            92.46,
+            120.25
+          ],
+          [
+            97.8,
+            155.12
+          ]
+        ]
+      },
+      {
+        "symbol": "CRDO",
+        "x": 97.13,
+        "y": 97.22,
+        "held": true,
+        "trail": [
+          [
+            87.97,
+            84.88
+          ],
+          [
+            99.9,
+            101.08
+          ],
+          [
+            103.99,
+            118.21
+          ]
+        ]
+      },
+      {
+        "symbol": "MUU",
+        "x": 82.28,
+        "y": 116.64,
+        "held": true,
+        "trail": [
+          [
+            67.35,
+            67.94
+          ],
+          [
+            70.54,
+            76.17
+          ],
+          [
+            68.75,
+            102.07
+          ]
+        ]
+      },
+      {
+        "symbol": "NET",
+        "x": 109.83,
+        "y": 93.27,
+        "held": true,
+        "trail": [
+          [
+            114.46,
+            95.39
+          ],
+          [
+            117.75,
+            101.25
+          ],
+          [
+            117.17,
+            102.37
           ]
         ]
       },
       {
         "symbol": "NU",
-        "x": 105.5,
-        "y": 94.74,
+        "x": 106.95,
+        "y": 100.22,
         "held": false,
         "trail": [
           [
-            111.36,
-            99.82
+            119.11,
+            111.08
           ],
           [
-            102.85,
-            87.74
+            106.72,
+            94.71
+          ],
+          [
+            101.5,
+            85.22
           ]
         ]
       },
       {
         "symbol": "UBER",
-        "x": 102.57,
-        "y": 100.71,
+        "x": 107.2,
+        "y": 108.19,
         "held": true,
         "trail": [
           [
-            101.84,
-            99.55
+            104.12,
+            105.94
           ],
           [
-            107.5,
-            108.16
+            99.09,
+            99.33
+          ],
+          [
+            108.27,
+            103.99
           ]
         ]
       },
       {
         "symbol": "CBRS",
-        "x": 117.61,
-        "y": 121.13,
-        "held": true,
-        "trail": []
-      },
-      {
-        "symbol": "RDW",
-        "x": 110.83,
-        "y": 165.71,
+        "x": 102.52,
+        "y": 96.44,
         "held": true,
         "trail": [
           [
-            66.88,
-            107.96
+            109.71,
+            122.41
+          ]
+        ]
+      },
+      {
+        "symbol": "RDW",
+        "x": 105.8,
+        "y": 142.88,
+        "held": false,
+        "trail": [
+          [
+            74.05,
+            117.4
           ],
           [
-            106.1,
-            161.95
+            104.74,
+            156.36
           ]
         ]
       },
       {
         "symbol": "SNXX",
-        "x": 69.38,
-        "y": 163.7,
+        "x": 65.16,
+        "y": 128.76,
         "held": true,
         "trail": [
           [
-            42.38,
-            79.26
+            32.89,
+            38.83
           ],
           [
-            39.25,
-            86.88
+            50.61,
+            74.94
+          ],
+          [
+            42.1,
+            128.0
           ]
         ]
       },
       {
         "symbol": "WETO",
-        "x": 41.89,
-        "y": 337.74,
+        "x": 37.34,
+        "y": 405.54,
         "held": true,
         "trail": [
           [
-            12.4,
-            14.22
+            9.21,
+            9.77
           ],
           [
-            7.37,
-            56.26
+            7.6,
+            128.13
+          ]
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "x": 96.66,
+        "y": 99.82,
+        "held": true,
+        "trail": [
+          [
+            97.84,
+            99.24
+          ],
+          [
+            96.84,
+            95.64
+          ],
+          [
+            98.51,
+            100.69
+          ]
+        ]
+      },
+      {
+        "symbol": "EL",
+        "x": 115.57,
+        "y": 113.25,
+        "held": true,
+        "trail": [
+          [
+            107.64,
+            111.82
+          ],
+          [
+            102.05,
+            102.15
+          ],
+          [
+            103.85,
+            96.48
           ]
         ]
       }
