@@ -76,3 +76,8 @@ footer{color:var(--text)}
 .driver-chip.up{background:rgba(43,158,74,.10);color:#217a39;border:1px solid rgba(43,158,74,.30)}
 .driver-chip.down{background:rgba(217,72,72,.10);color:#b23030;border:1px solid rgba(217,72,72,.30)}
 .chart-wrap.xl{height:560px}
+.opt-row{display:grid;grid-template-columns:78px 52px 1fr 1fr auto;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);margin-bottom:7px;font-size:12px;font-family:var(--mono)}
+.opt-row.win{background:rgba(43,158,74,.08);border-color:rgba(43,158,74,.35)}
+.opt-row.win strong{color:var(--green)}
+.opt-row.loss{background:rgba(217,72,72,.08);border-color:rgba(217,72,72,.35)}
+.opt-row.loss strong{color:var(--red)}

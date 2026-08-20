@@ -11,7 +11,7 @@ const tooltip={backgroundColor:'#ffffff',borderColor:C.line,borderWidth:1,titleC
 const baseScales={x:{grid:{display:false},ticks:{maxRotation:0}},y:{grid:{color:'rgba(28,43,54,.10)'},border:{display:false}}};
 
 async function init(){
-  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();renderRRG();renderWrap();renderBench();renderWeekday();renderDrivers();bind();reveal();}
+  try{D=await fetch('dashboard-data.json').then(r=>{if(!r.ok)throw Error(r.statusText);return r.json()});hydrate();buildCharts();buildActivityCharts();updateActivity(activityWindow);renderMarket();renderMacro();renderCalendar();renderWatch();renderRRG();renderOptions();renderCaution();renderWrap();renderBench();renderWeekday();renderDrivers();bind();reveal();}
   catch(e){document.querySelector('main').innerHTML=`<section class="hero"><div><p class="eyebrow">DATA CONNECTION</p><h1>Dashboard data<br><span>couldn't load.</span></h1><p class="hero-copy">Run this site through a local web server, or regenerate dashboard-data.json. ${e.message}</p></div></section>`}
 }
 function hydrate(){const s=D.summary;
@@ -309,6 +309,24 @@ function renderRRG(){
     plugins:[quadrantBg,trailsAndLabels]});
   document.querySelector('#rrgToggle').onclick=e=>{const ds=charts.rrg.data.datasets[0];ds.hidden=!ds.hidden;
     e.target.textContent=`Nasdaq-100 backdrop: ${ds.hidden?'OFF':'ON'}`;e.target.classList.toggle('active',!ds.hidden);charts.rrg.update()};
+}
+let optWindow=5;
+function renderOptions(){
+  const O=D.options;if(!O||!O.trades?.length)return;
+  document.querySelector('#optionsPanel').hidden=false;
+  const cutoff=new Date((D.market?.asOf||D.sourceThrough)+'T12:00:00');cutoff.setDate(cutoff.getDate()-optWindow);
+  const cut=cutoff.toISOString().slice(0,10);
+  const rows=O.trades.filter(t=>t.date>cut);
+  const done=rows.filter(t=>t.pnl!=null),net=done.reduce((a,t)=>a+t.pnl,0);
+  set('#optSummary',done.length?`${done.length} resolved · net ${money(net)}${rows.length>done.length?` · ${rows.length-done.length} open`:''}`:rows.length?`${rows.length} open position${rows.length===1?'':'s'}, none resolved in window`:'No options activity in window');
+  document.querySelector('#optSummary').classList.toggle('negative',net<0);
+  document.querySelector('#optRows').innerHTML=rows.map(t=>`<div class="opt-row ${t.pnl==null?'':t.pnl>=0?'win':'loss'}"><span class="price-pair">${t.date}</span><b>${t.symbol}</b><span>${t.desc}</span><span class="sub" style="margin:0">${(t.strategy||'').replace(/_/g,' ')} · ${t.status}</span><strong>${t.pnl!=null?money(t.pnl):`open · ${money(t.cost)} at risk`}</strong></div>`).join('')||'<p style="color:var(--muted);font-size:12px">Nothing in this window.</p>';
+  document.querySelectorAll('[data-opt-range]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-opt-range]').forEach(x=>x.classList.remove('active'));b.classList.add('active');optWindow=+b.dataset.optRange;renderOptions()});
+}
+function renderCaution(){
+  const c=D.caution;if(!c?.items?.length)return;
+  document.querySelector('#cautionStrip').hidden=false;
+  document.querySelector('#cautionList').innerHTML=c.items.map(i=>`<div><b>${i.symbol}</b> — ${i.notes.join(' · ')}</div>`).join('');
 }
 function reveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(x=>io.observe(x))}
 function ring(sel,n){document.querySelector(sel).style.setProperty('--pct',n)}function set(sel,v){document.querySelector(sel).textContent=v}function showTip(e,t){const x=document.querySelector('#tooltip');x.textContent=t;x.style.display='block';x.style.left=`${e.clientX+12}px`;x.style.top=`${e.clientY+12}px`}function hideTip(){document.querySelector('#tooltip').style.display='none'}

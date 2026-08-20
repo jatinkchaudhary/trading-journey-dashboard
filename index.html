@@ -102,6 +102,7 @@
         <article class="panel wide"><div class="panel-head"><div><h3>Daily realized P&amp;L</h3><p>Closed-trade result for each day in the window</p></div></div><div class="chart-wrap"><canvas id="activityDailyChart"></canvas></div></article>
         <article class="panel"><div class="panel-head"><div><h3>Buy vs. sell volume</h3><p>Dollar volume traded</p></div></div><div class="composition"><div class="donut-wrap"><canvas id="activityCompositionChart"></canvas><div class="donut-center"><small>NET FLOW</small><strong id="actDonutNet">—</strong></div></div><div class="split-stats"><div><i class="good"></i><span>Buys</span><strong id="actSplitBuy">—</strong></div><div><i class="bad"></i><span>Sells</span><strong id="actSplitSell">—</strong></div></div></div></article>
         <article class="panel wide"><div class="panel-head"><div><h3>Symbol activity</h3><p>Net dollar amount traded per symbol</p></div></div><div class="chart-wrap tall"><canvas id="activitySymbolChart"></canvas></div></article>
+        <article class="panel" id="optionsPanel" hidden><div class="panel-head"><div><h3>Options trades</h3><p>Resolved contracts — green profit, red loss</p></div><div class="range-control" role="group" aria-label="Options window"><button data-opt-range="1">1D</button><button data-opt-range="5" class="active">5D</button><button data-opt-range="21">1M</button></div></div><div id="optSummary" class="micro-stat" style="margin-bottom:10px">—</div><div id="optRows"></div></article>
         <article class="panel"><div class="panel-head"><div><h3>Trades per day</h3><p>Bar height = fills · green = profitable day, red = loss day (realized)</p></div></div><div class="chart-wrap"><canvas id="activityCountChart"></canvas></div></article>
       </div>
 
@@ -153,6 +154,7 @@
 
     <section id="watch" class="section reveal" hidden>
       <div class="section-head"><div><p class="eyebrow">08 / WATCHLIST</p><h2>Eyes on, for the next session.</h2></div></div>
+      <div id="cautionStrip" class="focus-strip" style="margin:0 0 22px;border-color:rgba(221,143,14,.5)" hidden><div class="focus-icon">⚠</div><div><span>TECHNICAL CAUTION</span><strong>Handle these holdings with care</strong></div><div id="cautionList" style="font-size:12px;line-height:1.8"></div></div>
       <div id="watchMacro" class="focus-strip" style="margin:0 0 22px" hidden><div class="focus-icon">★</div><div><span>MACRO EVENT AHEAD</span><strong id="watchMacroTitle">—</strong></div><p id="watchMacroDetail">—</p></div>
       <div class="watch-grid" id="watchGrid"></div>
     </section>

@@ -112,6 +112,8 @@ def build_market(d):
     d['calendar'] = cal
     build_macro(d)
     build_rrg(d)
+    build_options(d)
+    build_caution(d)
     return True
 
 MACRO_META = {
@@ -255,6 +257,85 @@ def build_rrg(d):
         return False
     d['rrg'] = {'asOf': d['sourceThrough'], 'benchmark': hist.get('benchmark', 'QQQ'),
                 'window': W, 'points': points}
+    return True
+
+def build_options(d):
+    """Options trade log. Data/options_fetch.json (daily new filled orders:
+    [{id,date,symbol,direction,premium,strategy,effect,qty,strike,otype,exp}])
+    is appended to Data/options_ledger.json (dedup by id). A contract
+    (symbol,strike,otype,exp) resolves when closed or expired:
+    realized = credits - debits."""
+    lpath = os.path.join(HERE, 'Data', 'options_ledger.json')
+    ledger = load(lpath) or {'orders': []}
+    fetched = load(os.path.join(HERE, 'Data', 'options_fetch.json'))
+    if fetched:
+        seen = {o['id'] for o in ledger['orders']}
+        ledger['orders'] += [o for o in fetched if o['id'] not in seen]
+        with open(lpath, 'w', encoding='utf-8') as fh:
+            json.dump(ledger, fh, indent=1)
+    if not ledger['orders']:
+        return False
+    today = d['sourceThrough']
+    groups = {}
+    for o in ledger['orders']:
+        groups.setdefault((o['symbol'], o['strike'], o['otype'], o['exp']), []).append(o)
+    trades = []
+    for (sym, strike, otype, exp), orders in groups.items():
+        debit = sum(o['premium'] for o in orders if o['direction'] == 'debit')
+        credit = sum(o['premium'] for o in orders if o['direction'] == 'credit')
+        opened = sum(o['qty'] for o in orders if o['effect'] == 'open')
+        closed = sum(o['qty'] for o in orders if o['effect'] == 'close')
+        desc = f"${strike:g}{otype[0].upper()} exp {exp[5:]}"
+        strat = orders[0].get('strategy') or ''
+        if closed >= opened or exp < today:
+            done = max(min(exp, today), max(o['date'] for o in orders))
+            trades.append({'date': done, 'symbol': sym, 'desc': desc, 'strategy': strat,
+                           'pnl': r2(credit - debit), 'status': 'expired' if closed < opened else 'closed'})
+        else:
+            trades.append({'date': orders[-1]['date'], 'symbol': sym, 'desc': desc, 'strategy': strat,
+                           'pnl': None, 'status': 'open', 'cost': r2(debit - credit)})
+    trades.sort(key=lambda t: t['date'], reverse=True)
+    d['options'] = {'asOf': today, 'trades': trades}
+    return True
+
+def build_caution(d):
+    """Technical-caution notes for held symbols, computed locally from
+    Data/rrg_history.json closes (RSI14, 50d trend, 20d drawdown) plus
+    existing market/RRG signals. Zero external calls."""
+    hist = load(os.path.join(HERE, 'Data', 'rrg_history.json'))
+    if not hist:
+        return False
+    closes = hist['closes']
+    stocks = {s['symbol']: s for s in d.get('market', {}).get('stocks', [])}
+    rrg = {p['symbol']: p for p in d.get('rrg', {}).get('points', [])}
+    out = []
+    for p in d['positions']:
+        sym = p['symbol']
+        px = closes.get(sym)
+        notes, score = [], 0
+        if px and len(px) >= 30:
+            series = [px[k] for k in sorted(px)]
+            deltas = [series[i] - series[i - 1] for i in range(len(series) - 14, len(series))]
+            gains = sum(x for x in deltas if x > 0) / 14
+            losses = -sum(x for x in deltas if x < 0) / 14
+            rsi = 100 - 100 / (1 + gains / losses) if losses else 100.0
+            sma50 = sum(series[-50:]) / min(50, len(series))
+            vs50 = (series[-1] / sma50 - 1) * 100
+            dd20 = (series[-1] / max(series[-20:]) - 1) * 100
+            if rsi <= 30: notes.append(f'RSI {rsi:.0f} — oversold, knife still falling'); score += 3
+            elif rsi >= 78: notes.append(f'RSI {rsi:.0f} — very extended'); score += 2
+            if vs50 <= -4: notes.append(f'{vs50:.0f}% below 50-day trend'); score += 2
+            if dd20 <= -12: notes.append(f'{dd20:.0f}% off its 20-day high'); score += 2
+        s = stocks.get(sym)
+        if s and s.get('volumeRatio') and s['volumeRatio'] >= 1.5 and (s.get('changePct') or 0) < 0:
+            notes.append(f"{s['volumeRatio']}× volume on a down day — distribution"); score += 2
+        r = rrg.get(sym)
+        if r and r['x'] < 100 and r['y'] < 100:
+            notes.append('RRG lagging — losing to QQQ and decelerating'); score += 1
+        if len(notes) >= 2:
+            out.append({'symbol': sym, 'score': score, 'notes': notes})
+    out.sort(key=lambda c: -c['score'])
+    d['caution'] = {'asOf': d['sourceThrough'], 'items': out[:6]}
     return True
 
 def main():
