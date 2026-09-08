@@ -17281,16 +17281,16 @@
       {
         "symbol": "SPX",
         "name": "S&P 500",
-        "value": 7673.66,
-        "prevValue": 7718.6,
-        "changePct": -0.58
+        "value": 7673.52,
+        "prevValue": 7673.66,
+        "changePct": -0.0
       },
       {
         "symbol": "NDX",
         "name": "Nasdaq 100",
         "value": 29507.7,
-        "prevValue": 29544.16,
-        "changePct": -0.12
+        "prevValue": 29507.7,
+        "changePct": 0.0
       }
     ],
     "stocks": [
@@ -18716,7 +18716,7 @@
         "kind": "index",
         "label": "S&P 500",
         "desc": "Broad US market index",
-        "value": 7673.66,
+        "value": 7673.52,
         "changePct": -0.58
       },
       {
@@ -18732,24 +18732,24 @@
         "kind": "index",
         "label": "Dow (1/100 scale)",
         "desc": "Blue-chip industrials index, shown at 1/100 of the Dow",
-        "value": 527.88,
-        "changePct": -1.17
+        "value": 527.86,
+        "changePct": -1.18
       },
       {
         "symbol": "VIX",
         "kind": "index",
         "label": "Volatility (VIX)",
         "desc": "Fear gauge \u2014 cost of hedging the S&P 500. Below 15 calm, above 20 nervous",
-        "value": 15.61,
-        "changePct": 7.43
+        "value": 15.76,
+        "changePct": 8.47
       },
       {
         "symbol": "BRTI",
         "kind": "index",
         "label": "Bitcoin",
         "desc": "Live BTC price \u2014 speculative risk appetite",
-        "value": 78421.16,
-        "changePct": -1.71
+        "value": 78472.11,
+        "changePct": -1.64
       },
       {
         "symbol": "XAU",
@@ -18809,11 +18809,11 @@
       }
     ],
     "regime": {
-      "score": 0.11,
+      "score": 0.13,
       "label": "MIXED",
-      "vix": 15.61,
+      "vix": 15.76,
       "vixBand": "normal",
-      "detail": "Risk assets vs. safe havens score +0.11. VIX at 15.61 (normal)."
+      "detail": "Risk assets vs. safe havens score +0.13. VIX at 15.76 (normal)."
     },
     "history": [
       {
@@ -19142,11 +19142,11 @@
       {
         "date": "2026-09-08",
         "values": {
-          "SPX": 7673.66,
+          "SPX": 7673.52,
           "NDX": 29507.7,
-          "DJX": 527.88,
-          "VIX": 15.61,
-          "BRTI": 78421.16,
+          "DJX": 527.86,
+          "VIX": 15.76,
+          "BRTI": 78472.11,
           "XAU": 4546.48,
           "XAG": 66.44,
           "USO": 146.03,
@@ -19407,7 +19407,7 @@
     },
     {
       "date": "2026-09-08",
-      "spx": 7673.66
+      "spx": 7673.52
     }
   ],
   "rrg": {
